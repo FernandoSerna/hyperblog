@@ -1,0 +1,9 @@
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\bin\Debug\enviar_correo.exe
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\bin\Debug\enviar_correo.pdb
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\bin\Debug\enviar_correo.xml
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\enviar_correo.vbproj.GenerateResource.Cache
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\enviar_correo.exe
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\enviar_correo.xml
+C:\sistemas\desarrollo\oracle\enviar_correo\enviar_correo\obj\x86\Debug\enviar_correo.pdb

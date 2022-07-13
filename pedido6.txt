@@ -1,0 +1,24 @@
+
+             CANTIA S.A. DE C.V.
+PEDIDO: 6
+FECHA: 16/12/2009 10:50:48 a.m.
+CLIENTE: Armando Alba
+VENDEDOR: 03 HECTOR NUÑEZ
+
+-----------------------------------------
+SKU: M1500
+DESCRIPCION: LIBRERO  TERRA 7 HAYA M1500
+CANTIDAD: 1
+
+SKU: M1280
+DESCRIPCION: SOFA CAMA TAMESI CHEDRON M1280
+CANTIDAD: 1
+
+-----------------------------------------
+
+
+
+
+
+
+i

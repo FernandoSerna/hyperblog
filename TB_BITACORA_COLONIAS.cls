@@ -1,0 +1,50 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "TB_BITACORA_COLONIAS"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+Public MensajeError As String
+Dim cmd As New Command
+'ANADIR UN REGISTRO
+Public Function Anadir(clVcha_pai_pais_id As String, clVcha_est_estado_id As String, clVcha_ciu_ciudad_id As String, clVcha_col_colonia_id As String, clVCHA_BIT_CAMPO As String, clvar_operacion_bitacora As String, clVCHA_BIT_VALOR_ANTERIOR As String, clVCHA_BIT_VALOR_ACTUAL As String, clVcha_aud_usuario As String, clVcha_aud_maquina As String, clDtim_aud_fecha As String) As Boolean
+Dim rs As adodb.Recordset, Cadena As String
+Anadir = True
+'On Error GoTo HELL
+
+Set cmd.ActiveConnection = cnn
+   cmd.CommandType = adCmdStoredProc
+   cmd.CommandText = "BITCOLONIAS_I"
+   cmd("@VCHA_PAI_PAIS_ID") = clVcha_pai_pais_id
+   cmd("@VCHA_EST_ESTADO_ID") = clVcha_est_estado_id
+   cmd("@VCHA_CIU_CIUDAD_ID") = clVcha_ciu_ciudad_id
+   cmd("@VCHA_COL_COLONIA_ID") = clVcha_col_colonia_id
+   cmd("@VCHA_BIT_CAMPO") = clVCHA_BIT_CAMPO
+   cmd("@CHAR_BIT_OPERACION") = clvar_operacion_bitacora
+   cmd("@VCHA_BIT_VALOR_ANTERIOR") = clVCHA_BIT_VALOR_ANTERIOR
+   cmd("@VCHA_BIT_VALOR_ACTUAL") = clVCHA_BIT_VALOR_ACTUAL
+   cmd("@VCHA_AUD_USUARIO") = clVcha_aud_usuario
+   cmd("@VCHA_AUD_MAQUINA") = clVcha_aud_maquina
+   cmd("@DTIM_AUD_FECHA") = clDtim_aud_fecha
+   cmd.execute
+Set cmd = Nothing
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Anadir = False
+    GoTo SIGUE
+End Function
+
+
+
+

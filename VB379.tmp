@@ -1,0 +1,716 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
+Object = "{080026CA-5CAE-11D6-82C2-000021B74250}#11.0#0"; "VBSKFREE.OCX"
+Begin VB.Form frmtransportes 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Transportes"
+   ClientHeight    =   6120
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   5850
+   Icon            =   "frmtitulares.frx":0000
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   Moveable        =   0   'False
+   ScaleHeight     =   6120
+   ScaleWidth      =   5850
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      ForeColor       =   &H80000008&
+      Height          =   255
+      Left            =   2775
+      ScaleHeight     =   225
+      ScaleWidth      =   225
+      TabIndex        =   21
+      Top             =   90
+      Width           =   255
+   End
+   Begin VB.Frame Frame2 
+      Height          =   540
+      Left            =   135
+      TabIndex        =   5
+      Top             =   2535
+      Width           =   5655
+      Begin VB.TextBox txt_buscar 
+         Height          =   285
+         Left            =   2055
+         TabIndex        =   9
+         Top             =   180
+         Width           =   1350
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Busqueda de transportes:"
+         Height          =   195
+         Left            =   195
+         TabIndex        =   6
+         Top             =   195
+         Width           =   1815
+      End
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   " Transportes "
+      Height          =   2145
+      Left            =   135
+      TabIndex        =   0
+      Top             =   405
+      Width           =   5655
+      Begin VB.ComboBox cmb_transportes 
+         Height          =   315
+         Index           =   2
+         Left            =   1275
+         TabIndex        =   19
+         Top             =   840
+         Width           =   2670
+      End
+      Begin VB.TextBox txt_transportes 
+         Height          =   285
+         Index           =   5
+         Left            =   1275
+         TabIndex        =   12
+         Top             =   1755
+         Width           =   1020
+      End
+      Begin VB.TextBox txt_transportes 
+         Height          =   285
+         Index           =   4
+         Left            =   1275
+         TabIndex        =   11
+         Top             =   1455
+         Width           =   1020
+      End
+      Begin VB.TextBox txt_transportes 
+         Height          =   285
+         Index           =   3
+         Left            =   1275
+         TabIndex        =   10
+         Top             =   1155
+         Width           =   1020
+      End
+      Begin VB.TextBox txt_transportes 
+         Height          =   285
+         Index           =   1
+         Left            =   1275
+         TabIndex        =   2
+         Top             =   540
+         Width           =   4155
+      End
+      Begin VB.TextBox txt_transportes 
+         Height          =   285
+         Index           =   0
+         Left            =   1275
+         MaxLength       =   3
+         TabIndex        =   1
+         Top             =   225
+         Width           =   690
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo:"
+         Height          =   195
+         Index           =   8
+         Left            =   855
+         TabIndex        =   23
+         Top             =   885
+         Width           =   360
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Cms."
+         Height          =   195
+         Index           =   7
+         Left            =   2340
+         TabIndex        =   18
+         Top             =   1815
+         Width           =   345
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Cms."
+         Height          =   195
+         Index           =   6
+         Left            =   2340
+         TabIndex        =   17
+         Top             =   1515
+         Width           =   345
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Cms."
+         Height          =   195
+         Index           =   5
+         Left            =   2340
+         TabIndex        =   16
+         Top             =   1215
+         Width           =   345
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Largo:"
+         Height          =   195
+         Index           =   4
+         Left            =   765
+         TabIndex        =   15
+         Top             =   1770
+         Width           =   450
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Alto:"
+         Height          =   195
+         Index           =   3
+         Left            =   900
+         TabIndex        =   14
+         Top             =   1485
+         Width           =   315
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Ancho:"
+         Height          =   195
+         Index           =   0
+         Left            =   705
+         TabIndex        =   13
+         Top             =   1170
+         Width           =   510
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Descripción:"
+         Height          =   195
+         Index           =   2
+         Left            =   330
+         TabIndex        =   4
+         Top             =   540
+         Width           =   885
+      End
+      Begin VB.Label lab_paises 
+         AutoSize        =   -1  'True
+         Caption         =   "Clave:"
+         Height          =   195
+         Index           =   1
+         Left            =   765
+         TabIndex        =   3
+         Top             =   240
+         Width           =   450
+      End
+   End
+   Begin VB.Frame Frame3 
+      Height          =   2925
+      Left            =   135
+      TabIndex        =   7
+      Top             =   3090
+      Width           =   5670
+      Begin MSComctlLib.ImageList ImageList1 
+         Left            =   600
+         Top             =   0
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483643
+         ImageWidth      =   16
+         ImageHeight     =   16
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   10
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":000C
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":08E6
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":11C0
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":175C
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":2036
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":2910
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":31EA
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":3504
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":381E
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":3DBA
+               Key             =   ""
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ImageList icono_encabezado 
+         Left            =   0
+         Top             =   0
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483643
+         ImageWidth      =   12
+         ImageHeight     =   12
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   2
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":40D4
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frmtitulares.frx":49AE
+               Key             =   ""
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ListView lv_transportes 
+         Height          =   3510
+         Left            =   45
+         TabIndex        =   20
+         Top             =   150
+         Width           =   5565
+         _ExtentX        =   9816
+         _ExtentY        =   6191
+         View            =   3
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   6
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "Clave"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Text            =   "Nombre"
+            Object.Width           =   7937
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Text            =   "tipo"
+            Object.Width           =   0
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Text            =   "ancho"
+            Object.Width           =   0
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Text            =   "alto"
+            Object.Width           =   0
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Text            =   "largo"
+            Object.Width           =   0
+         EndProperty
+      End
+   End
+   Begin MSComctlLib.Toolbar Toolbar1 
+      Height          =   330
+      Left            =   135
+      TabIndex        =   22
+      Top             =   15
+      Width           =   2310
+      _ExtentX        =   4075
+      _ExtentY        =   582
+      ButtonWidth     =   609
+      ButtonHeight    =   582
+      Appearance      =   1
+      Style           =   1
+      ImageList       =   "ImageList1"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   8
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Nuevo Registro"
+            ImageIndex      =   1
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Guardar Registro"
+            ImageIndex      =   2
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Deshacer cambios"
+            ImageIndex      =   3
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Eliminar Registro"
+            ImageIndex      =   4
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Imprimir Lista"
+            ImageIndex      =   5
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
+         EndProperty
+         BeginProperty Button8 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Object.ToolTipText     =   "Salir de Esta Ventana"
+            ImageIndex      =   6
+         EndProperty
+      EndProperty
+   End
+   Begin vbskfree.Skinner Skinner2 
+      Left            =   0
+      Top             =   0
+      _ExtentX        =   1270
+      _ExtentY        =   1270
+      MaxButton       =   0
+      MinButton       =   0
+      CloseButtonToolTipText=   "Cerrar"
+      MinButtonToolTipText=   "Minimizar"
+      MaxButtonToolTipText=   "Maximizar"
+      RestoreButtonToolTipText=   "Restaurar"
+   End
+   Begin VB.Frame Frame4 
+      Height          =   120
+      Left            =   105
+      TabIndex        =   8
+      Top             =   285
+      Width           =   5685
+   End
+End
+Attribute VB_Name = "frmtransportes"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim var_hubo_cambios As Boolean
+
+Private Sub cmd_buscar_Click()
+    Call pro_busca_registro(lv_transportes, txt_buscar, False)
+    txt_buscar = ""
+    pro_textos
+
+End Sub
+
+
+
+
+Private Sub Form_Activate()
+Dim var_resultado As Variant
+Dim mientras As Integer
+mientras = 1
+If mientras = 0 Then
+
+    If sw_primera_validacion = False Then
+    
+        If var_swpassword = False Then
+        Call menuvisible(Frmmenu2, False)
+            var_resultado = InStr(1, var_menus, Me.caption & "*1")
+            If var_resultado <> 0 Then
+                Set var_forma = frmtransportes
+                var_swpassword = True
+                sw_primera_validacion = True
+                frmtransportes.Hide
+                frmpasswords.Show 1
+            End If
+        End If
+        If var_swpassword = False Then
+            var_resultado = InStr(1, var_menus, Me.caption & "*01")
+            If var_resultado <> 0 Then
+                Set var_forma = frmtransportes
+                var_swpassword = True
+                sw_primera_validacion = True
+                frmtransportes.Hide
+                frmpasswords2.txt_supervisor = var_supervisor
+                frmpasswords2.Show
+            End If
+        End If
+    End If
+    End If
+End Sub
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 27 Then
+      End
+   End If
+End Sub
+
+Private Sub Form_Load()
+    var_modifica_registro = True
+    lv_transportes.SmallIcons = ImageList1
+    Call pro_encabezadosView(Me, lv_transportes, False)
+    Call pro_llena_listview1
+    pro_textos
+
+    Call pro_AsignarAViewColor(lv_transportes, Picture1, vbWhite, vbGray)
+    rs.Open "select * from tb_transportes", cnn, adOpenDynamic, adLockOptimistic
+    If rs.BOF Then
+       Toolbar1.Buttons.Item(2).Enabled = False
+       Toolbar1.Buttons.Item(3).Enabled = False
+       Toolbar1.Buttons.Item(4).Enabled = False
+     Else
+       Toolbar1.Buttons.Item(2).Enabled = True
+       Toolbar1.Buttons.Item(3).Enabled = True
+       Toolbar1.Buttons.Item(4).Enabled = True
+     End If
+     rs.Close
+
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    var_swpassword = False
+    var_modifica_registro = False
+    Call menuvisible(Frmmenu2, True)
+End Sub
+
+Private Sub lv_transportes_ItemClick(ByVal Item As MSComctlLib.ListItem)
+    Set lv_transportes.SelectedItem = Item
+        pro_textos
+        var_modifica_registro = True
+        txt_transportes(0).Enabled = False
+
+End Sub
+
+Private Sub tool_atras_siguiente_ButtonClick(ByVal Button As MSComctlLib.Button)
+Select Case Button.Index
+    Case 1
+        lv_transportes.SetFocus
+        Call pro_avanzar(Me, lv_transportes, Button)
+        pro_textos
+    Case 2
+        lv_transportes.SetFocus
+        Call pro_avanzar(Me, lv_transportes, Button)
+        pro_textos
+    Case 3
+        Call pro_busca_registro(lv_transportes, txt_buscar, False)
+        txt_buscar = ""
+        pro_textos
+    End Select
+End Sub
+
+Private Sub Toolbar1_ButtonClick(ByVal Button As MSComctlLib.Button)
+    Select Case Button.Index
+    Case 1
+        Call pro_limpiatextos(Me)
+        txt_transportes(0).Enabled = True
+        txt_transportes(0).SetFocus: var_modifica_registro = False
+        Toolbar1.Buttons.Item(2).Enabled = True
+        Toolbar1.Buttons.Item(3).Enabled = True
+    Case 2
+        var_resultado = InStr(1, var_menus, Me.caption)
+        var_inicio = var_resultado + Len(Me.caption) + 3
+        If Mid(var_menus, var_inicio, 1) = "1" Then
+            Set var_forma = frmtransportes
+            var_swpassword = True
+            sw_primera_validacion = False
+            frmpasswords.Show 1
+        Else
+            If Mid(var_menus, var_inicio, 2) = "01" Then
+                Set var_forma = frmtransportes
+                var_swpassword = True
+                sw_primera_validacion = False
+                frmpasswords2.txt_supervisor = var_supervisor
+                frmpasswords2.Show 1
+            Else
+               Call pro_guardar_transportes
+               rs.Open "select * from tb_transportes", cnn, adOpenDynamic, adLockOptimistic
+               If rs.BOF Then
+                  Toolbar1.Buttons.Item(2).Enabled = False
+                  Toolbar1.Buttons.Item(3).Enabled = False
+                  Toolbar1.Buttons.Item(4).Enabled = False
+               Else
+                  Toolbar1.Buttons.Item(2).Enabled = True
+                  Toolbar1.Buttons.Item(3).Enabled = True
+                  Toolbar1.Buttons.Item(4).Enabled = True
+               End If
+               rs.Close
+            End If
+        End If
+    Case 3
+       Call pro_textos
+    Case 4
+        var_resultado = InStr(1, var_menus, Me.caption)
+        var_inicio = var_resultado + Len(Me.caption) + 3
+        If Mid(var_menus, var_inicio, 1) = "1" Then
+            Set var_forma = frmtransportes
+            var_swpassword = True
+            sw_primera_validacion = False
+            frmpasswords.Show 1
+        Else
+            If Mid(var_menus, var_inicio, 2) = "01" Then
+                Set var_forma = frmtransportes
+                var_swpassword = True
+                sw_primera_validacion = False
+                frmpasswords2.txt_supervisor = var_supervisor
+                frmpasswords2.Show 1
+            Else
+               Call pro_elimina_transportes
+               rs.Open "select * from tb_transportes", cnn, adOpenDynamic, adLockOptimistic
+               If rs.BOF Then
+                  Toolbar1.Buttons.Item(2).Enabled = False
+                  Toolbar1.Buttons.Item(3).Enabled = False
+                  Toolbar1.Buttons.Item(4).Enabled = False
+               Else
+                  Toolbar1.Buttons.Item(2).Enabled = True
+                  Toolbar1.Buttons.Item(3).Enabled = True
+                  Toolbar1.Buttons.Item(4).Enabled = True
+               End If
+               rs.Close
+            End If
+        End If
+    Case 6
+        If vector_valida_passwords(var_indice_menu) = "*" Then
+           frmpasswords.Show
+        Else
+           Call gPrintListView(lv_transportes, "LISTADO DE transportes")
+        End If
+    Case 8
+        Unload Me
+    End Select
+
+End Sub
+
+Sub pro_guardar_transportes()
+
+Dim ok As Boolean
+
+Set TB_TRANSPORTES = New TB_TRANSPORTES
+    
+    ok = True
+    If txt_transportes(0) <> "" And txt_transportes(1) <> "" And txt_transportes(3) <> "" And txt_transportes(4) <> "" Then
+        If var_hubo_cambios Then
+            ok = TB_TRANSPORTES.Anadir(txt_transportes(0), txt_transportes(1), cmb_transportes(2), txt_transportes(3), txt_transportes(4), txt_transportes(5))
+            If ok Then
+                pro_actualiza_ListView
+                txt_transportes(0).Enabled = False
+                MsgBox "Informacion Guardada Correctamente ! ", vbOKOnly + vbInformation, "Aviso"
+                txt_registros = lv_transportes.ListItems.Count
+                var_modifica_registro = True
+            Else
+                MsgBox "No se puede grabar registro: " + TB_TRANSPORTES.MensajeError, vbOKOnly + vbCritical, "ATENCION"
+            End If
+        End If
+    End If
+    
+Set TB_TRANSPORTES = Nothing: var_hubo_cambios = False
+
+End Sub
+
+Sub pro_elimina_transportes()
+   Dim var_llave_usuarios As String
+   Set TB_TRANSPORTES = New TB_TRANSPORTES
+   On Error GoTo SALIR:
+   ok = True
+   If txt_transportes(0) <> "" And txt_transportes(1) <> "" And var_modifica_registro = True Then
+      If MsgBox("Desea Eliminar este Registro", vbInformation + vbYesNo, "Aviso") = vbYes Then
+         ok = TB_TRANSPORTES.Eliminar(txt_transportes(0))
+      Else
+         GoTo SALIR:
+      End If
+      If ok Then
+        MsgBox "Se Elimino Correctamente el Registro", vbInformation
+        lv_transportes.ListItems.Remove (lv_transportes.SelectedItem.Index)
+        Call pro_limpiatextos(Me)
+        txt_registros = lv_transportes.ListItems.Count
+        lv_transportes.SelectedItem.Selected = True
+        pro_textos
+      Else
+        MsgBox "No se puede eliminar registro: " + TB_TRANSPORTES.MensajeError, vbOKOnly + vbCritical, "ATENCION"
+      End If
+   End If
+SALIR:
+   Set TB_TRANSPORTES = Nothing
+End Sub
+
+
+Sub pro_llena_listview1()
+   Dim list_item As ListItem
+   rs.Open "select * from TB_transportes", cnn, adOpenDynamic, adLockOptimistic
+   While Not rs.EOF
+      Set list_item = lv_transportes.ListItems.Add(, , rs(0).Value): list_item.SmallIcon = 9
+      list_item.SubItems(1) = IIf(IsNull(rs(1).Value), "", rs(1).Value)
+      list_item.SubItems(2) = IIf(IsNull(rs(2).Value), "", rs(2).Value)
+      list_item.SubItems(3) = IIf(IsNull(rs(3).Value), "", rs(3).Value)
+      list_item.SubItems(4) = IIf(IsNull(rs(4).Value), "", rs(4).Value)
+      list_item.SubItems(5) = IIf(IsNull(rs(5).Value), "", rs(5).Value)
+      rs.MoveNext:
+    Wend
+    rs.Close
+End Sub
+
+
+Sub pro_textos()
+On Error GoTo err0:
+        txt_transportes(0) = lv_transportes.SelectedItem
+        txt_transportes(1) = lv_transportes.SelectedItem.SubItems(1)
+        cmb_transportes(2) = lv_transportes.SelectedItem.SubItems(2)
+        txt_transportes(3) = lv_transportes.SelectedItem.SubItems(3)
+        txt_transportes(4) = lv_transportes.SelectedItem.SubItems(4)
+        txt_transportes(5) = lv_transportes.SelectedItem.SubItems(5)
+err0:
+End Sub
+
+Private Sub pro_actualiza_ListView()
+Dim list_item As ListItem
+
+    If var_modifica_registro = False Then
+        Set list_item = lv_transportes.ListItems.Add(, , txt_transportes(0)): list_item.SmallIcon = 9
+        list_item.SubItems(1) = txt_transportes(1)
+        list_item.SubItems(2) = cmb_transportes(2)
+        list_item.SubItems(3) = txt_transportes(3)
+        list_item.SubItems(4) = txt_transportes(4)
+        list_item.SubItems(5) = txt_transportes(5)
+        list_item.EnsureVisible
+        list_item.Selected = True
+    Else
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).Checked = False
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index) = txt_transportes(0)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).ListSubItems(1) = txt_transportes(1)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).ListSubItems(2) = cmb_transportes(2)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).ListSubItems(3) = txt_transportes(3)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).ListSubItems(4) = txt_transportes(4)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).ListSubItems(5) = txt_transportes(5)
+        lv_transportes.ListItems.Item(lv_transportes.SelectedItem.Index).Selected = True
+    End If
+'    lv_transportes.SetFocus
+End Sub
+
+Private Sub txt_transportes_Change(Index As Integer)
+       KeyAscii = Asc(UCase(Chr(KeyAscii)))
+       var_hubo_cambios = True
+End Sub
+
+Private Sub txt_transportes_KeyPress(Index As Integer, KeyAscii As Integer)
+    If KeyAscii = 13 Then
+       If Index < 4 Then
+          txt_transportes(Index + 1).SetFocus
+       Else
+          txt_transportes(0).SetFocus
+       End If
+    Else
+       KeyAscii = Asc(UCase(Chr(KeyAscii)))
+       var_hubo_cambios = True
+    End If
+    
+End Sub
+

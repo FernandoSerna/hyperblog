@@ -1,0 +1,765 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.Form frmembarques 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Generar Embarque"
+   ClientHeight    =   4155
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   5925
+   Icon            =   "frmembarques.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   MinButton       =   0   'False
+   ScaleHeight     =   4155
+   ScaleWidth      =   5925
+   Begin VB.Frame frm_lista 
+      Height          =   2400
+      Left            =   165
+      TabIndex        =   25
+      Top             =   1635
+      Width           =   5685
+      Begin MSComctlLib.ListView lv_lista 
+         Height          =   1830
+         Left            =   45
+         TabIndex        =   26
+         Top             =   480
+         Width           =   5595
+         _ExtentX        =   9869
+         _ExtentY        =   3228
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         FullRowSelect   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   2
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "Clave"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Text            =   "Nombre"
+            Object.Width           =   7937
+         EndProperty
+      End
+      Begin VB.Label lbl_lista 
+         BackColor       =   &H8000000D&
+         ForeColor       =   &H8000000E&
+         Height          =   255
+         Left            =   30
+         TabIndex        =   27
+         Top             =   135
+         Width           =   5610
+      End
+   End
+   Begin VB.CommandButton cmd_guardar 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   150
+      Picture         =   "frmembarques.frx":08CA
+      Style           =   1  'Graphical
+      TabIndex        =   10
+      ToolTipText     =   "Guardar Alt + G"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.CommandButton cmd_salir 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   5415
+      Picture         =   "frmembarques.frx":09CC
+      Style           =   1  'Graphical
+      TabIndex        =   12
+      ToolTipText     =   "Salir"
+      Top             =   0
+      Width           =   330
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   " Datos para embarque "
+      Height          =   3585
+      Left            =   165
+      TabIndex        =   11
+      Top             =   435
+      Width           =   5655
+      Begin VB.TextBox txt_jaula 
+         Height          =   315
+         Left            =   1005
+         TabIndex        =   2
+         Top             =   750
+         Width           =   1095
+      End
+      Begin VB.ComboBox cmb_choferes 
+         Height          =   315
+         Left            =   2115
+         TabIndex        =   8
+         Top             =   2895
+         Width           =   3420
+      End
+      Begin VB.TextBox txt_cubicaje 
+         Enabled         =   0   'False
+         Height          =   315
+         Left            =   1005
+         TabIndex        =   9
+         Top             =   3225
+         Width           =   1095
+      End
+      Begin VB.TextBox txt_chofer 
+         Height          =   315
+         Left            =   1005
+         TabIndex        =   7
+         Top             =   2895
+         Width           =   1095
+      End
+      Begin VB.TextBox txt_fecha 
+         Enabled         =   0   'False
+         Height          =   315
+         Left            =   2940
+         TabIndex        =   1
+         Top             =   420
+         Width           =   1095
+      End
+      Begin VB.TextBox txt_numero 
+         Enabled         =   0   'False
+         Height          =   315
+         Left            =   1005
+         TabIndex        =   0
+         Top             =   420
+         Width           =   1095
+      End
+      Begin VB.TextBox txt_agente 
+         Height          =   315
+         Left            =   1005
+         TabIndex        =   3
+         Top             =   1080
+         Width           =   1095
+      End
+      Begin VB.ComboBox cmb_agentes 
+         Height          =   315
+         Left            =   2115
+         TabIndex        =   4
+         Top             =   1080
+         Width           =   3420
+      End
+      Begin VB.TextBox txt_vehiculo 
+         Height          =   315
+         Left            =   1020
+         TabIndex        =   6
+         Top             =   2565
+         Width           =   1095
+      End
+      Begin MSComctlLib.ListView lv_rutas 
+         Height          =   1170
+         Left            =   990
+         TabIndex        =   5
+         Top             =   1395
+         Width           =   4560
+         _ExtentX        =   8043
+         _ExtentY        =   2064
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         FullRowSelect   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   7
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "Clave"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Text            =   "Nombre"
+            Object.Width           =   6174
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Text            =   "telefono"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Text            =   "tipoagente"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Text            =   "zona"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Text            =   "estatus"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Text            =   "empresa"
+            Object.Width           =   2
+         EndProperty
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Jaula:"
+         Height          =   195
+         Index           =   10
+         Left            =   240
+         TabIndex        =   24
+         Top             =   810
+         Width           =   420
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "3"
+         Height          =   195
+         Index           =   9
+         Left            =   2385
+         TabIndex        =   23
+         Top             =   3255
+         Width           =   90
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Cm."
+         Height          =   195
+         Index           =   8
+         Left            =   1920
+         TabIndex        =   22
+         Top             =   1680
+         Width           =   270
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Cm."
+         Height          =   195
+         Index           =   7
+         Left            =   2145
+         TabIndex        =   21
+         Top             =   3315
+         Width           =   270
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Cubicaje:"
+         Height          =   195
+         Index           =   6
+         Left            =   240
+         TabIndex        =   20
+         Top             =   3285
+         Width           =   660
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Chofer:"
+         Height          =   195
+         Index           =   5
+         Left            =   240
+         TabIndex        =   19
+         Top             =   2955
+         Width           =   510
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Fecha:"
+         Height          =   195
+         Index           =   4
+         Left            =   2265
+         TabIndex        =   18
+         Top             =   480
+         Width           =   495
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Número:"
+         Height          =   195
+         Index           =   3
+         Left            =   240
+         TabIndex        =   17
+         Top             =   480
+         Width           =   600
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Rutas:"
+         Height          =   195
+         Index           =   2
+         Left            =   240
+         TabIndex        =   16
+         Top             =   1440
+         Width           =   465
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Agente:"
+         Height          =   195
+         Index           =   1
+         Left            =   240
+         TabIndex        =   14
+         Top             =   1140
+         Width           =   555
+      End
+      Begin VB.Label lab_estados 
+         AutoSize        =   -1  'True
+         Caption         =   "Placas:"
+         Height          =   195
+         Index           =   0
+         Left            =   240
+         TabIndex        =   13
+         Top             =   2625
+         Width           =   525
+      End
+   End
+   Begin MSComctlLib.ImageList ImageList 
+      Left            =   5040
+      Top             =   645
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   16
+      ImageHeight     =   16
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   11
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":1006
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":18E0
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":21BA
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":2756
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":3032
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":390C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":41E6
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":42F8
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":440A
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":451C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmembarques.frx":462E
+            Key             =   ""
+         EndProperty
+      EndProperty
+   End
+   Begin VB.Frame Frame4 
+      Height          =   120
+      Index           =   0
+      Left            =   150
+      TabIndex        =   15
+      Top             =   285
+      Width           =   5655
+   End
+End
+Attribute VB_Name = "frmembarques"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim var_contador_porcentaje As Integer
+Dim var_cubicaje As Double
+
+
+
+Private Sub cmb_agentes_Click()
+   'txt_agente = Obtener_llave(cnn, rsaux, "TB_agentes", "VCHA_age_NOMBRE", cmb_agentes, 1, "T")
+   rs.Open "select * from tb_agentes where vcha_Age_nombre = '" + Me.cmb_agentes + "' and vcha_emp_empresa_id = '" + var_empresa + "'"
+   If Not rs.EOF Then
+      Me.txt_agente = IIf(IsNull(rs!VCHA_AGE_AGENTE_ID), "", rs!VCHA_AGE_AGENTE_ID)
+   End If
+   rs.Close
+   lv_rutas.ListItems.Clear
+   Dim list_item As ListItem
+   numero_items_rutas = 0
+   rs.Open "select vcha_rut_ruta_id,vcha_rut_nombre from TB_rutas where vcha_age_agente_id = '" + txt_agente + "'", cnn, adOpenDynamic, adLockOptimistic
+   While Not rs.EOF
+         Set list_item = lv_rutas.ListItems.Add(, , rs(0).Value)
+         list_item.SubItems(1) = IIf(IsNull(rs(1).Value), "", rs(1).Value)
+         rs.MoveNext:
+         numero_items_aseguradoras = numero_items_aseguradoras + 1
+   Wend
+   rs.Close
+End Sub
+
+Private Sub cmb_agentes_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      If Trim(txt_agente) <> "" Then
+         txt_agente.Enabled = False
+         cmb_agentes.Enabled = False
+         lv_rutas.ListItems.Clear
+         Dim list_item As ListItem
+         numero_items_rutas = 0
+         rs.Open "select vcha_rut_ruta_id,vcha_rut_nombre from TB_rutas where vcha_age_agente_id = '" + txt_agente + "'", cnn, adOpenDynamic, adLockOptimistic
+         While Not rs.EOF
+            Set list_item = lv_rutas.ListItems.Add(, , rs(0).Value)
+             list_item.SubItems(1) = IIf(IsNull(rs(1).Value), "", rs(1).Value)
+             rs.MoveNext:
+             numero_items_aseguradoras = numero_items_aseguradoras + 1
+         Wend
+          rs.Close
+          txt_vehiculo.Enabled = True
+          txt_vehiculo.SetFocus
+      End If
+   End If
+End Sub
+
+Private Sub cmb_almacenes_Click()
+   txt_almacen = Obtener_llave(cnn, rsaux, "TB_almacenes", "VCHA_alm_NOMBRE", cmb_almacenes, 2, "T")
+End Sub
+
+Private Sub cmb_almacenes_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      If Trim(txt_almacen) <> "" Then
+         txt_almacen.Enabled = False
+         cmb_almacenes.Enabled = False
+         txt_vehiculo.Enabled = True
+         txt_vehiculo.SetFocus
+      End If
+   End If
+End Sub
+
+
+Private Sub cmb_choferes_Click()
+   txt_chofer = Obtener_llave(cnn, rsaux, "TB_CHOFERES", "VCHA_CHO_NOMBRE", cmb_choferes, 0, "T")
+End Sub
+
+Private Sub cmb_choferes_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      Me.cmd_guardar.SetFocus
+   End If
+End Sub
+
+
+
+Private Sub cmd_guardar_Click()
+   Dim var_posible As Boolean
+   Dim var_posible_chofer As Boolean
+   var_posible = True
+   var_posible_chofer = True
+   If var_empresa = "02" Or var_empresa = "03" Then
+      If Me.txt_vehiculo <> "" Then
+         rs.Open "SELECT * FROM TB_TRANSPORTES WHERE VCHA_TRN_NOMBRE = '" + Me.txt_vehiculo + "'", cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            var_posible = True
+         Else
+            MsgBox "Placas de vehiculo incorrectas", vbOKOnly, "ATENCION"
+            var_posible = False
+         End If
+         rs.Close
+      Else
+         var_posible = False
+      End If
+      If Me.txt_chofer <> "" Then
+         rs.Open "SELECT * FROM tb_choferes WHERE vcha_cho_chofer_id = '" + Me.txt_chofer + "'", cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            var_posible_chofer = True
+         Else
+            MsgBox "Chofer incorrecto", vbOKOnly, "ATENCION"
+            var_posible_chofer = False
+         End If
+         rs.Close
+      Else
+         var_posible_chofer = False
+      End If
+   Else
+      var_posible_chofer = True
+      var_posible = True
+   End If
+   If var_posible = True Then
+      If var_posible_chofer = True Then
+         If Trim(txt_numero) <> "" And Trim(Me.txt_agente) <> "" And Trim(Me.txt_jaula) <> "" Then
+            cnn.BeginTrans
+            rs.Open "select * from vw_maximo_embarque where vcha_emp_empresa_id = '" + var_empresa + "'", cnn, adOpenDynamic, adLockOptimistic
+            If rs.EOF Then
+               var_numero_embarque = 1
+            Else
+               var_numero_embarque = rs!maximo_embarque + 1
+            End If
+            rs.Close
+            Set TB_ENC_EMBARQUE_I = New TB_ENC_EMBARQUE_I
+            ok = False
+            rs.Open "insert into tb_encabezado_embarques (VCHA_EMP_EMPRESA_ID, VCHA_UOR_UNIDAD_ID, INTE_EMB_EMBARQUE, INTE_JAU_JAULA_ID, VCHA_VEH_VEHICULO_ID, VCHA_AGE_AGENTE_ID, DTIM_EMB_FECHA_INICIO, DTIM_EMB_FECHA_FINAL, CHAR_EMB_ESTATUS, VCHA_CHO_CHOFER_ID, FLOA_EMB_CUBICAJE, CHAR_EMB_TIPO, INTE_EMB_BLOQUEADO, VCHA_EMB_BLOQUEADO_POR, VCHA_AUD_MAQUINA, VCHA_AUD_USUARIO) values ('" + var_empresa + "', '" + var_unidad_organizacional + "', " + CStr(var_numero_embarque) + ", " + txt_jaula + ", '" + txt_vehiculo + "', '" + txt_agente + "', getdate(), '', '', '" + txt_chofer + "', " + CStr(var_cubicaje) + ",'',0, '','" + fun_NombrePc + "','" + var_clave_usuario_global + "')", cnn, adOpenDynamic, adLockOptimistic
+            frmnumero_embarque.txt_embarque = var_numero_embarque
+            cnn.CommitTrans
+            Unload Me
+         Else
+            MsgBox "Falta información", vbOKOnly, "ATENCION"
+         End If
+      Else
+         MsgBox "Chofer incorrecto", vbOKOnly, "ATENCION"
+      End If
+   Else
+      MsgBox "Debe de indicar un vehiculo", vbOKOnly, "ATENCION"
+   End If
+End Sub
+
+Private Sub cmd_salir_Click()
+   Unload Me
+End Sub
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+   If Shift = 4 And KeyCode = 71 Then
+      cmd_guardar_Click
+   End If
+End Sub
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 27 Then
+      Unload Me
+   End If
+End Sub
+
+Private Sub Form_Load()
+   Me.frm_lista.Visible = False
+   var_cadena_seguridad = ""
+   Top = 2000
+   Left = 2500
+   var_cubicaje = 0
+   rs.Open "select * from vw_maximo_embarque where vcha_emp_empresa_id = '" + var_empresa + "'", cnn, adOpenDynamic, adLockOptimistic
+   If rs.EOF Then
+      var_numero_embarque = 1
+   Else
+      var_numero_embarque = rs!maximo_embarque + 1
+   End If
+   rs.Close
+   txt_numero = var_numero_embarque
+   txt_fecha = Date
+   rs.Open "select * from tb_agentes where vcha_emp_empresa_id = '" + var_empresa + "' order by vcha_age_nombre", cnn, adOpenDynamic, adLockBatchOptimistic
+   Call RecsetToCombo(cmb_agentes.hwnd, rs, 2)
+   rs.Close
+   rs.Open "select * from tb_choferes order by vcha_cho_nombre", cnn, adOpenDynamic, adLockBatchOptimistic
+   Call RecsetToCombo(cmb_choferes.hwnd, rs, 1)
+   rs.Close
+   txt_vehiculo.Enabled = False
+   txt_agente.Enabled = False
+   cmb_agentes.Enabled = False
+   txt_jaula.Enabled = True
+End Sub
+
+
+Private Sub Form_Unload(Cancel As Integer)
+   Call activa_forma(var_activa_forma_embarques)
+End Sub
+
+Private Sub lv_lista_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      Me.txt_vehiculo = lv_lista.selectedItem.SubItems(1)
+      Me.txt_vehiculo.SetFocus
+   End If
+   If KeyAscii = 27 Then
+      Me.txt_vehiculo.SetFocus
+   End If
+End Sub
+
+Private Sub lv_lista_LostFocus()
+   Me.frm_lista.Visible = False
+End Sub
+
+Private Sub txt_agente_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 39 Or KeyAscii = 61 Then
+      KeyAscii = 0
+   End If
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_almacen_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+       If Trim(txt_almacen) <> "" Then
+          rs.Open "select * from tb_almacenes where vcha_alm_almacen_id = '" + txt_almacen + "'", cnn, adOpenDynamic, adLockOptimistic
+          If Not rs.EOF Then
+             cmb_almacenes.Text = rs!VCHA_ALM_NOMBRE
+             cmb_almacenes.Enabled = False
+             txt_almacen.Enabled = False
+             rs.Close
+             txt_vehiculo.Enabled = True
+             txt_vehiculo.SetFocus
+          Else
+             txt_almacen = ""
+             MsgBox "Almacen Incorrecto", vbOKOnly, "ATENCION"
+             rs.Close
+             cmb_almacenes.SetFocus
+          End If
+       End If
+    End If
+End Sub
+
+
+Private Sub txt_agente_LostFocus()
+      If Trim(txt_agente) <> "" Then
+         rs.Open "select * from tb_agentes where vcha_age_agente_id = '" + txt_agente + "'", cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            cmb_agentes.Text = rs!VCHA_AGE_NOMBRE
+            cmb_agentes.Enabled = False
+            txt_agente.Enabled = False
+            rs.Close
+            lv_rutas.ListItems.Clear
+            Dim list_item As ListItem
+            numero_items_rutas = 0
+            rs.Open "select vcha_rut_ruta_id,vcha_rut_nombre from TB_rutas where vcha_age_agente_id = '" + txt_agente + "'", cnn, adOpenDynamic, adLockOptimistic
+            While Not rs.EOF
+               Set list_item = lv_rutas.ListItems.Add(, , rs(0).Value)
+               list_item.SubItems(1) = IIf(IsNull(rs(1).Value), "", rs(1).Value)
+               rs.MoveNext:
+               numero_items_aseguradoras = numero_items_aseguradoras + 1
+            Wend
+            rs.Close
+            txt_vehiculo.Enabled = True
+            txt_vehiculo.SetFocus
+         Else
+            txt_agente = ""
+            MsgBox "Agente Incorrecto", vbOKOnly, "ATENCION"
+            rs.Close
+            cmb_agentes.SetFocus
+         End If
+      End If
+End Sub
+
+Private Sub txt_chofer_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 39 Or KeyAscii = 61 Then
+      KeyAscii = 0
+   End If
+   If KeyAscii = 13 Then
+      If Trim(txt_chofer) <> "" Then
+         rs.Open "select * from tb_choferes where vcha_cho_chofer_id = '" + txt_chofer + "'", cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            cmb_choferes.Text = rs!vcha_cho_nombre
+            'cmb_choferes.Enabled = False
+            'txt_chofer.Enabled = False
+            rs.Close
+         Else
+            txt_chofer = ""
+            rs.Close
+            MsgBox "Chofer Incorrecto", vbOKOnly, "ATENCION"
+            cmb_choferes.SetFocus
+         End If
+      End If
+   End If
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_cubicaje_KeyPress(KeyAscii As Integer)
+   Me.cmd_guardar.SetFocus
+End Sub
+
+Private Sub txt_fecha_KeyPress(KeyAscii As Integer)
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_jaula_KeyPress(KeyAscii As Integer)
+   Select Case KeyAscii
+   Case 48 To 57, 52, 13, 8, 46
+   Case Else
+       KeyAscii = 0
+   End Select
+   If KeyAscii = 13 Then
+      If Trim(txt_jaula) <> "" Then
+         rs.Open "select * from tb_jaulas where inte_jau_jaula_id = " + txt_jaula, cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            rs.Close
+            txt_agente.Enabled = True
+            cmb_agentes.Enabled = True
+         Else
+            rs.Close
+            txt_agente.Enabled = False
+            cmb_agentes.Enabled = False
+            MsgBox "La jaula no existe", vbOKOnly, "ATENCION"
+         End If
+      End If
+   End If
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_numero_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 39 Or KeyAscii = 61 Then
+      KeyAscii = 0
+   End If
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_vehiculo_KeyDown(KeyCode As Integer, Shift As Integer)
+   If KeyCode = 116 Then
+      lv_lista.ListItems.Clear
+      rs.Open "select * from tb_transportes", cnn, adOpenDynamic, adLockOptimistic
+      While Not rs.EOF
+            Set list_item = lv_lista.ListItems.Add(, , rs!VCHA_TRN_TRANSPORTE_ID)
+            list_item.SubItems(1) = IIf(IsNull(rs!vcha_trn_nombre), "", rs!vcha_trn_nombre)
+            rs.MoveNext
+      Wend
+      rs.Close
+      lbl_lista = "TRANSPORTES"
+      var_tipo_lista = 100
+      Dim var_n As Integer
+      var_n = lv_lista.ListItems.Count
+      If var_n > 6 Then
+         lv_lista.ColumnHeaders(2).Width = 4270.71
+      Else
+         lv_lista.ColumnHeaders(2).Width = 4499.71
+      End If
+      frm_lista.Visible = True
+      lv_lista.SetFocus
+   End If
+End Sub
+
+Private Sub txt_vehiculo_KeyPress(KeyAscii As Integer)
+   Dim var_largo As Double
+   Dim var_ancho As Double
+   Dim var_alto As Double
+   If KeyAscii = 39 Or KeyAscii = 61 Then
+      KeyAscii = 0
+   End If
+   KeyAscii = Asc(UCase(Chr(KeyAscii)))
+   Call pro_enfoque(KeyAscii)
+End Sub
+
+Private Sub txt_vehiculo_LostFocus()
+   If Trim(Me.txt_vehiculo) <> "" Then
+      rs.Open "select * from tb_transportes where vcha_trn_nombre = '" + Me.txt_vehiculo + "'", cnn, adOpenDynamic, adLockOptimistic
+      If Not rs.EOF Then
+         Me.txt_cubicaje = IIf(IsNull(rs!floa_trn_cubicaje), 0, rs!floa_trn_cubicaje)
+      Else
+         MsgBox "Placas de vehiculo incorrecto", vbOKOnly, "ATENCION"
+         Me.txt_vehiculo = ""
+         Me.txt_cubicaje = ""
+      End If
+      rs.Close
+   Else
+      Me.txt_cubicaje = ""
+   End If
+End Sub

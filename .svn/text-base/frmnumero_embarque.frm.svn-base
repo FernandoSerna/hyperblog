@@ -1,0 +1,205 @@
+VERSION 5.00
+Begin VB.Form frmnumero_embarque 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Número de Embarque"
+   ClientHeight    =   975
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   3345
+   Icon            =   "frmnumero_embarque.frx":0000
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   MinButton       =   0   'False
+   ScaleHeight     =   975
+   ScaleWidth      =   3345
+   Begin VB.TextBox txt_embarque 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   225
+      TabIndex        =   0
+      Top             =   195
+      Width           =   2910
+   End
+End
+Attribute VB_Name = "frmnumero_embarque"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim var_habilita_forma As Boolean
+Dim var_bloqueado As Integer
+
+
+Private Sub Form_Activate()
+   txt_embarque.SetFocus
+End Sub
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 27 Then
+      Unload Me
+   End If
+End Sub
+
+Private Sub Form_Load()
+   var_cadena_seguridad = ""
+   var_habilita_forma = True
+   Top = 3000
+   Left = 3850
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+   If var_bloqueado = 1 And var_numero_embarque > 0 Then
+      rs.Open "UPDATE TB_ENCABEZADO_EMBARQUES SET INTE_EMB_BLOQUEADO = 0, VCHA_EMB_BLOQUEADO_POR = '' WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "' AND INTE_EMB_EMBARQUE = " + CStr(var_numero_embarque), cnn, adOpenDynamic, adLockOptimistic
+   End If
+   If var_bloqueado = 0 And var_numero_embarque > 0 Then
+      If rs.State = 1 Then
+         rs.Close
+      End If
+      rs.Open "UPDATE TB_ENCABEZADO_EMBARQUES SET INTE_EMB_BLOQUEADO = 0, VCHA_EMB_BLOQUEADO_POR = '' WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "' AND INTE_EMB_EMBARQUE = " + CStr(var_numero_embarque), cnn, adOpenDynamic, adLockOptimistic
+   End If
+   var_es_embarque = False
+   Call activa_forma(var_activa_forma_numero_embarque)
+End Sub
+
+Private Sub txt_embarque_GotFocus()
+   Frmmenu2.StatusBar1.Panels(1) = "Presione Shift + F5 para ver la información de los embarques"
+End Sub
+
+Private Sub txt_embarque_KeyDown(KeyCode As Integer, Shift As Integer)
+   If Shift = 1 And KeyCode = 116 Then
+      frmbusqueda_embarque.Show 1
+   End If
+End Sub
+
+Private Sub txt_embarque_KeyPress(KeyAscii As Integer)
+   Dim var_bloqueado As Integer
+   Dim var_nombre_bloqueado As String
+   Dim var_maquina_embarque As String
+   Select Case KeyAscii
+   Case 48 To 57, 52, 13, 8, 46
+   Case Else
+       KeyAscii = 0
+   End Select
+   
+   If KeyAscii = 13 Then
+      If Trim(txt_embarque) <> "" Then
+         If var_numero_embarque > 0 Then
+            If var_numero_embarque = CDbl(Me.txt_embarque) Then
+               If rs.State = 1 Then
+                  rs.Close
+               End If
+               rs.Open "UPDATE TB_ENCABEZADO_EMBARQUES SET INTE_EMB_BLOQUEADO = 0, VCHA_EMB_BLOQUEADO_POR = '' WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "' AND INTE_EMB_EMBARQUE = " + txt_embarque, cnn, adOpenDynamic, adLockOptimistic
+            End If
+         End If
+         rs.Open "select * from tb_encabezado_embarques where inte_emb_embarque = " + txt_embarque + " and vcha_emp_empresa_id = '" + var_empresa + "'", cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            var_maquina_embarque = IIf(IsNull(rs!vcha_aud_maquina), "", rs!vcha_aud_maquina)
+            var_estatus_embarque = Trim(IIf(IsNull(rs!CHAR_EMB_ESTATUS), "", rs!CHAR_EMB_ESTATUS))
+            If var_numero_embarque > 0 Then
+               If var_numero_embarque <> CDbl(Me.txt_embarque) And var_bloqueado = 0 Then
+                  rsaux4.Open "UPDATE TB_ENCABEZADO_EMBARQUES SET INTE_EMB_BLOQUEADO = 0, VCHA_EMB_BLOQUEADO_POR = '' WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "' AND INTE_EMB_EMBARQUE = " + CStr(var_numero_embarque), cnn, adOpenDynamic, adLockOptimistic
+               End If
+            End If
+            var_bloqueado = IIf(IsNull(rs!inte_emb_bloqueado), 0, rs!inte_emb_bloqueado)
+            If var_bloqueado = 0 Then
+               var_bloqueado = 0
+               var_numero_embarque = rs!inte_emb_embarque
+               var_numero_jaula = rs!inte_jau_jaula_id
+               rs.Close
+               rs.Open "UPDATE TB_ENCABEZADO_EMBARQUES SET INTE_EMB_BLOQUEADO = 1, VCHA_EMB_BLOQUEADO_POR = '" + var_clave_usuario_global + "' WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "' AND INTE_EMB_EMBARQUE = " + txt_embarque, cnn, adOpenDynamic, adLockOptimistic
+               If var_paquete = True Then
+                  frmcodigo_acceso.lbl_embarque.Caption = "Embarque:" + Str(var_numero_embarque)
+                  frmcodigo_acceso.Show
+               Else
+                  rs.Open "select * from tb_detalle_cajas with (nolock) where vcha_emp_empresa_id = '" + var_empresa + "' and inte_emb_embarque = " + Me.txt_embarque, cnn, adOpenDynamic, adLockOptimistic
+                  If Not rs.EOF Then
+                     var_tipo_pedido = Trim(rs!char_ped_tipo)
+                     rs.Close
+                     rs.Open "select * from tb_tipopedidos where char_tpe_tipo_pedido_id = '" + var_tipo_pedido + "'", cnn, adOpenDynamic, adLockOptimistic
+                     var_clave_movimiento = ""
+                     If Not rs.EOF Then
+                        var_clave_movimiento = Trim(IIf(IsNull(rs!VCHA_MOV_MOVIMIENTO_ID), "", rs!VCHA_MOV_MOVIMIENTO_ID))
+                     Else
+                        var_clave_movimiento = ""
+                     End If
+                     If Trim(var_clave_movimiento) <> "" Then
+                        rs.Close
+                        rs.Open "select * from tb_movimientos where vcha_mov_movimiento_id = '" + var_clave_movimiento + "'", cnn, adOpenDynamic, adLockOptimistic
+                        var_nombre_movimiento = rs!vcha_mov_nombre
+                        var_tipo_documento = IIf(IsNull(rs!char_mov_documento), "", rs!char_mov_documento)
+                        rs.Close
+                        If Len(var_nombre_movimiento) > 26 Then
+                           frmsalidas_cajas.lblnombremovimiento.Font.Size = 18
+                        Else
+                           frmsalidas_cajas.lblnombremovimiento.Font.Size = 24
+                        End If
+                        frmsalidas_cajas.lblnombremovimiento.Caption = var_nombre_movimiento
+                        frmsalidas_cajas.Show
+                     Else
+                        rs.Close
+                        frmcodigo_acceso.lbl_embarque.Caption = "Embarque:" + Str(var_numero_embarque)
+                        frmcodigo_acceso.Show
+                     End If
+                  Else
+                     rs.Close
+                     If var_maquina_embarque = "" Then
+                        var_si = 1
+                     Else
+                        var_si = 1
+                        If var_maquina_embarque <> fun_NombrePc Then
+                            var_si = 0
+                        End If
+                     End If
+                     If var_si = 1 Then
+                        frmcodigo_acceso.lbl_embarque.Caption = "Embarque:" + Str(var_numero_embarque)
+                        frmcodigo_acceso.Show
+                     Else
+                        MsgBox "No se puedede cargar el embarque ya que fue creado en la maquina " + var_maquina_embarque, vbOKOnly, "ATENCION"
+                     End If
+                  End If
+               End If
+            Else
+               var_bloqueado = 1
+               var_nombre_bloqueado = ""
+               rsaux4.Open "select * from tb_usuarios where vcha_usu_usuario_id = '" + rs!vcha_emb_bloqueado_por + "'", cnn, adOpenDynamic, adLockOptimistic
+               If Not rsaux4.EOF Then
+                  var_nombre_bloqueado = IIf(IsNull(rsaux4!VCHA_USU_NOMBRE), "", rsaux4!VCHA_USU_NOMBRE) + " " + IIf(IsNull(rsaux4!VCHA_USU_APELLIDOS), "", rsaux4!VCHA_USU_APELLIDOS)
+               End If
+               rsaux4.Close
+               rs.Close
+               If Trim(var_nombre_bloqueado) <> "" Then
+                  MsgBox "El embarque esta siendo usado por el usuario " + var_nombre_bloqueado
+               Else
+                  MsgBox "El embarque esta siendo usado por otro usuario", vbOKOnly, "ATENCION"
+               End If
+            End If
+         Else
+            rs.Close
+            'wmp.Controls.Play
+            si = MsgBox("El número de embarque no existe, ¿Desea dar uno de alta uno nuevo?", vbYesNo, "ATENCION")
+            If si = 6 Then
+               frmembarques.Show
+            End If
+         End If
+      Else
+         si = MsgBox("¿Desea dar un embarque de alta?", vbYesNo, "ATENCION")
+         If si = 6 Then
+            frmembarques.Show
+         End If
+      End If
+   End If
+End Sub
+
+Private Sub txt_embarque_LostFocus()
+   Frmmenu2.StatusBar1.Panels(1) = ""
+End Sub

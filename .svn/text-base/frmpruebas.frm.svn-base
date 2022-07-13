@@ -1,0 +1,111 @@
+VERSION 5.00
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Begin VB.Form frmpruebas 
+   Caption         =   "Form1"
+   ClientHeight    =   3015
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   8490
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form1"
+   MDIChild        =   -1  'True
+   ScaleHeight     =   3015
+   ScaleWidth      =   8490
+   Begin MSAdodcLib.Adodc Adodc1 
+      Height          =   1035
+      Left            =   4515
+      Top             =   915
+      Width           =   1800
+      _ExtentX        =   3175
+      _ExtentY        =   1826
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   8
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   ""
+      OLEDBString     =   ""
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   ""
+      Caption         =   "Adodc1"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   600
+      Left            =   750
+      TabIndex        =   0
+      Top             =   435
+      Width           =   2460
+   End
+   Begin VB.Menu mnu_opciones 
+      Caption         =   "Opciones"
+      Visible         =   0   'False
+      Begin VB.Menu mnu_agregar 
+         Caption         =   "Agregar Opción"
+      End
+      Begin VB.Menu mnu_eliminar 
+         Caption         =   "Eliminar Opción"
+      End
+   End
+End
+Attribute VB_Name = "frmpruebas"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub Command1_Click()
+   rs.Open "select * from tb_agentes", cnn, adOpenDynamic, adLockOptimistic
+   While Not rs.EOF
+         rsaux2.Open "select * from tb_lineas", cnn, adOpenDynamic, adLockOptimistic
+         While Not rsaux2.EOF
+               rsaux.Open "select * from tb_comisiones where vcha_lin_linea_id = '50'", cnn, adOpenDynamic, adLockOptimistic
+               If Not rsaux.EOF Then
+                  While Not rsaux.EOF
+                       rsaux3.Open "select * from tb_comisiones where vcha_age_agente_id = '" + rs!VCHA_AGE_AGENTE_ID + "' and vcha_lin_linea_id = '" + rsaux2!VCHA_LIN_LINEA_ID + "' and FLOA_COM_LIMITE_INFERIOR = " + CStr(rsaux!FLOA_COM_LIMITE_INFERIOR) + " and FLOA_COM_LIMITE_SUPERIOR = " + CStr(rsaux!FLOA_COM_LIMITE_superior) + " and FLOA_COM_PORCENTAJE = " + CStr(rsaux!FLOA_COM_PORCENTAJE), cnn, adOpenDynamic, adLockOptimistic
+                       If rsaux3.EOF Then
+                          rsaux3.Close
+                          rsaux3.Open "insert into tb_comisiones (vcha_age_agente_id, vcha_lin_linea_id, FLOA_COM_LIMITE_INFERIOR, FLOA_COM_LIMITE_SUPERIOR, FLOA_COM_PORCENTAJE) values ('" + rs!VCHA_AGE_AGENTE_ID + "', '" + rsaux2!VCHA_LIN_LINEA_ID + "', " + CStr(rsaux!FLOA_COM_LIMITE_INFERIOR) + ", " + CStr(rsaux!FLOA_COM_LIMITE_superior) + "," + CStr(rsaux!FLOA_COM_PORCENTAJE) + ")"
+                       Else
+                          rsaux3.Close
+                       End If
+                       rsaux.MoveNext
+                  Wend
+               End If
+               rsaux.Close
+               rsaux2.MoveNext
+         Wend
+         rsaux2.Close
+         rs.MoveNext
+   Wend
+   rs.Close
+MsgBox "ya", vbOKOnly, ""
+End Sub
+

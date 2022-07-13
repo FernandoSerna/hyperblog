@@ -1,0 +1,20 @@
+Se facturo el pedido 246195 con los siguientes datos
+
+Cliente: FLORES TORRES PATRICIA
+
+Guias: 
+0071673368
+
+Lugar de entrega de la mercancia: 
+   Dirección: OCURRE OFICINAS
+   Colonia:   VICENTE GUERRERO CENTRO
+   Ciudad:    VICENTE GUERRERO
+   Municipio: VICENTE GUERRERO
+   Estado:    DURANGO
+   Pais:      MEXICO
+
+Facturas:
+ 36002 con importe de      11,823.94 PESOS
+ 36003 con importe de       4,545.73 PESOS
+==================================
+Por un total de                  16,369.67 PESOS

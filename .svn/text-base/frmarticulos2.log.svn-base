@@ -1,0 +1,4 @@
+Línea 253: la clase MSComCtl2.MonthView del control mes no era una clase de control cargada.
+Línea 463: la clase MSMask.MaskEdBox del control msk_precio no era una clase de control cargada.
+Línea 475: la clase MSMask.MaskEdBox del control msk_costo no era una clase de control cargada.
+Línea 1308: la clase TabDlg.SSTab del control tabarticulos no era una clase de control cargada.

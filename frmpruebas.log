@@ -1,0 +1,5 @@
+Línea 39: la clase MSCommLib.MSComm del control mscomm1 no era una clase de control cargada.
+Línea 42: el nombre de la propiedad _ExtentX de mscomm1 no es válido.
+Línea 43: el nombre de la propiedad _ExtentY de mscomm1 no es válido.
+Línea 44: el nombre de la propiedad _Version de mscomm1 no es válido.
+Línea 45: el nombre de la propiedad DTREnable de mscomm1 no es válido.

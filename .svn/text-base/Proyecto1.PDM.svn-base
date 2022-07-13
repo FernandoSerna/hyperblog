@@ -1,0 +1,2242 @@
+[Root]
+Most Recent Package=Paquete de instalación estándar 8
+
+
+[Package|Paquete de instalación estándar 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\produccion\paquete
+
+[Package|Paquete de instalación estándar 1|Configure DAO ISAMs]
+Applicable=Yes
+Xbase=No
+Excel=Yes
+Exchange=No
+Text=No
+Jet 2.x=No
+Lotus=No
+Paradox=No
+
+[Package|Paquete de instalación estándar 1|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Paquete de instalación estándar 1|Files Found]
+
+[Package|Paquete de instalación estándar 1|Files Released]
+CC245ES.DLL=
+CR2C40ES.DLL=
+U2FXLS.DLL=
+U2FWORDW.DLL=
+U2FWKS.DLL=
+U2FTEXT.DLL=
+U2FSEPV.DLL=
+U2FRTF.DLL=
+U2FREC.DLL=
+U2FHTML.DLL=
+U2FDIF.DLL=
+U2FCR.DLL=
+U2DMAPI.DLL=
+X3D4DKES.DLL=
+P3S4ODES.DLL=
+P3RDAOES.DLL=
+P3CDAOES.DLL=
+P3BDAOES.DLL=
+P3D4BDES.DLL=
+CRXLAT32.DLL=
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 1|Missing Dependency Information]
+C:\WINNT\SYSTEM32\xp.ocx=
+C:\WINNT\SYSTEM32\FM20.DLL=
+C:\WINNT\SYSTEM32\vbskfree.ocx=
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=
+
+[Package|Paquete de instalación estándar 1|Out-of-Date Dependency Information]
+C:\WINNT\SYSTEM32\crystl32.ocx=
+C:\WINNT\SYSTEM32\MSRDO20.DLL=
+C:\WINNT\SYSTEM32\MSMASK32.OCX=
+C:\WINNT\SYSTEM32\TABCTL32.OCX=
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=
+C:\WINNT\SYSTEM32\MSADODC.OCX=
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=
+C:\WINNT\SYSTEM32\Mscomctl.ocx=
+
+[Package|Paquete de instalación estándar 1|Files Added]
+c:\proyres\rep_movimientos.rpt=
+c:\proyres\rep_inventario.rpt=
+c:\proyres\rep_inventario_costo.rpt=
+c:\proyres\rep_inventario_h1.rpt=
+c:\proyres\mov.rpt=
+
+[Package|Paquete de instalación estándar 1|Files Removed]
+c:\winnt\system32\u2ddisk.dll=
+
+[Package|Paquete de instalación estándar 1|Files In Project]
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\SYSTEM32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=Yes
+C:\WINNT\SYSTEM32\xp.ocx=Yes
+C:\WINNT\SYSTEM32\MSCOMCTL.OCX=Yes
+C:\WINNT\SYSTEM32\MSCMCES.DLL=Yes
+C:\WINNT\SYSTEM32\vbskfree.ocx=Yes
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\WINNT\SYSTEM32\FLXGDES.DLL=Yes
+C:\WINNT\SYSTEM32\MSADODC.OCX=Yes
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=Yes
+C:\WINNT\SYSTEM32\STDFTES.DLL=Yes
+C:\WINNT\SYSTEM32\ADODCES.DLL=Yes
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=Yes
+C:\WINNT\SYSTEM32\MSCC2ES.DLL=Yes
+C:\WINNT\SYSTEM32\TABCTL32.OCX=Yes
+C:\WINNT\SYSTEM32\TABCTES.DLL=Yes
+C:\WINNT\SYSTEM32\MSBIND.DLL=Yes
+C:\WINNT\SYSTEM32\FM20.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINNT\SYSTEM32\MSMASK32.OCX=Yes
+C:\WINNT\SYSTEM32\MSMSKES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Designer\MSCDRUN.DLL=Yes
+C:\WINNT\SYSTEM32\MSRDO20.DLL=Yes
+C:\WINNT\SYSTEM32\RDOCURS.DLL=Yes
+C:\WINNT\SYSTEM32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Designer\CONNDES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINNT\SYSTEM32\MSJET35.DLL=Yes
+C:\WINNT\SYSTEM32\MSJTER35.DLL=Yes
+C:\WINNT\SYSTEM32\MSJINT35.DLL=Yes
+C:\WINNT\SYSTEM32\VBAJET32.DLL=Yes
+C:\WINNT\SYSTEM32\EXPSRV.DLL=Yes
+C:\WINNT\SYSTEM32\MSRD2X35.DLL=Yes
+C:\WINNT\SYSTEM32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINNT\SYSTEM32\VB5DB.DLL=Yes
+C:\WINNT\SYSTEM32\crystl32.ocx=Yes
+C:\WINNT\SYSTEM32\crpe32.dll=Yes
+C:\WINNT\SYSTEM32\implode.dll=Yes
+C:\WINNT\SYSTEM32\pg32.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\CO2C40EN.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT20.DLL=Yes
+C:\WINNT\SYSTEM32\p2bbnd.dll=Yes
+C:\WINNT\SYSTEM32\p2bdao.dll=Yes
+C:\WINNT\SYSTEM32\p2ctdao.dll=Yes
+C:\WINNT\SYSTEM32\p2irdao.dll=Yes
+C:\WINNT\SYSTEM32\p2sodbc.dll=Yes
+C:\WINNT\SYSTEM32\u2ddisk.dll=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\proyres\sistema.exe=Yes
+C:\WINNT\SYSTEM32\MSEXCL35.DLL=Yes
+C:\proyres\rep_movimientos.rpt=Yes
+C:\proyres\rep_inventario.rpt=Yes
+C:\proyres\rep_inventario_costo.rpt=Yes
+C:\proyres\rep_inventario_h1.rpt=Yes
+C:\proyres\mov.rpt=Yes
+
+[Package|Paquete de instalación estándar 1|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 1|Install Locations]
+C:\Documents and Settings\Administrador\Escritorio\sistema.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\SYSTEM32\xp.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCMCES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\vbskfree.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\FLXGDES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\STDFTES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\ADODCES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\FM20.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\progra\sistema.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSMASK32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSMSKES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Designer\MSCDRUN.DLL=$(CommonFiles)\Designer
+C:\WINNT\SYSTEM32\MSRDO20.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\RDOCURS.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Designer\CONNDES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINNT\SYSTEM32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\EXPSRV.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\crystl32.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\crpe32.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\implode.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\pg32.dll=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\CO2C40EN.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT20.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\p2bbnd.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2bdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2ctdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2irdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2sodbc.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\u2ddisk.dll=$(WinPath)\Crystal
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\proyres\sistema.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSEXCL35.DLL=$(WinSysPathSysFile)
+C:\proyres\rep_movimientos.rpt=$(AppPath)
+C:\proyres\rep_inventario.rpt=$(AppPath)
+C:\proyres\rep_inventario_costo.rpt=$(AppPath)
+C:\proyres\rep_inventario_h1.rpt=$(AppPath)
+C:\proyres\mov.rpt=$(AppPath)
+
+[Package|Paquete de instalación estándar 1|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Administrador\Escritorio\sistema.exe=No
+C:\progra\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\proyres\sistema.exe=No
+C:\proyres\rep_movimientos.rpt=No
+C:\proyres\rep_inventario.rpt=No
+C:\proyres\rep_inventario_costo.rpt=No
+C:\proyres\rep_inventario_h1.rpt=No
+C:\proyres\mov.rpt=No
+
+[Package|Paquete de instalación estándar 1|Distribution]
+Type=single
+Size=
+Title=Sistema Integral de Produccion
+
+[Package|Paquete de instalación estándar 1|Package]
+PackageFolder=C:\produccion\paquete
+ProjectFolder=C:\proyres
+ServerSideCab=
+File1=C:\produccion\paquete\setup.exe
+File2=C:\produccion\paquete\Setup.Lst
+File3=C:\produccion\paquete\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Paquete de instalación estándar 1|IconGroups]
+Group0=Produccion
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 1|Produccion]
+Icon1=sistema.exe
+Title1=Produccion
+StartIn1=$(AppPath)
+Key1=Icon1
+
+
+[Package|Paquete de instalación estándar 2|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\proyres\Paquete
+
+[Package|Paquete de instalación estándar 2|Configure DAO ISAMs]
+Applicable=Yes
+Xbase=No
+Excel=No
+Exchange=No
+Text=No
+Jet 2.x=No
+Lotus=No
+Paradox=No
+
+[Package|Paquete de instalación estándar 2|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Paquete de instalación estándar 2|Files Found]
+
+[Package|Paquete de instalación estándar 2|Files Released]
+CC245ES.DLL=
+CR2C40ES.DLL=
+U2FXLS.DLL=
+U2FWORDW.DLL=
+U2FWKS.DLL=
+U2FTEXT.DLL=
+U2FSEPV.DLL=
+U2FRTF.DLL=
+U2FREC.DLL=
+U2FHTML.DLL=
+U2FDIF.DLL=
+U2FCR.DLL=
+U2DMAPI.DLL=
+X3D4DKES.DLL=
+P3S4ODES.DLL=
+P3RDAOES.DLL=
+P3CDAOES.DLL=
+P3BDAOES.DLL=
+P3D4BDES.DLL=
+CRXLAT32.DLL=
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 2|Missing Dependency Information]
+C:\WINNT\SYSTEM32\xp.ocx=
+C:\WINNT\SYSTEM32\vbskfree.ocx=
+C:\WINNT\SYSTEM32\FM20.DLL=
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=
+
+[Package|Paquete de instalación estándar 2|Out-of-Date Dependency Information]
+C:\WINNT\SYSTEM32\crystl32.ocx=
+C:\WINNT\SYSTEM32\MSMASK32.OCX=
+C:\WINNT\SYSTEM32\TABCTL32.OCX=
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=
+C:\WINNT\SYSTEM32\MSADODC.OCX=
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=
+C:\WINNT\SYSTEM32\Mscomctl.ocx=
+C:\WINNT\SYSTEM32\MSRDO20.DLL=
+
+[Package|Paquete de instalación estándar 2|Files Added]
+
+[Package|Paquete de instalación estándar 2|Files Removed]
+
+[Package|Paquete de instalación estándar 2|Files In Project]
+C:\proyres\sistema.exe=Yes
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\SYSTEM32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=Yes
+C:\WINNT\SYSTEM32\MSBIND.DLL=Yes
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=Yes
+C:\WINNT\SYSTEM32\STDFTES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Designer\MSCDRUN.DLL=Yes
+C:\WINNT\SYSTEM32\MSRDO20.DLL=Yes
+C:\WINNT\SYSTEM32\RDOCURS.DLL=Yes
+C:\WINNT\SYSTEM32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Designer\CONNDES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINNT\SYSTEM32\MSJET35.DLL=Yes
+C:\WINNT\SYSTEM32\MSJTER35.DLL=Yes
+C:\WINNT\SYSTEM32\MSJINT35.DLL=Yes
+C:\WINNT\SYSTEM32\VBAJET32.DLL=Yes
+C:\WINNT\SYSTEM32\EXPSRV.DLL=Yes
+C:\WINNT\SYSTEM32\MSRD2X35.DLL=Yes
+C:\WINNT\SYSTEM32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINNT\SYSTEM32\VB5DB.DLL=Yes
+C:\WINNT\SYSTEM32\Mscomctl.ocx=Yes
+C:\WINNT\SYSTEM32\MSCMCES.DLL=Yes
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\WINNT\SYSTEM32\FLXGDES.DLL=Yes
+C:\WINNT\SYSTEM32\MSADODC.OCX=Yes
+C:\WINNT\SYSTEM32\ADODCES.DLL=Yes
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=Yes
+C:\WINNT\SYSTEM32\MSCC2ES.DLL=Yes
+C:\WINNT\SYSTEM32\TABCTL32.OCX=Yes
+C:\WINNT\SYSTEM32\TABCTES.DLL=Yes
+C:\WINNT\SYSTEM32\FM20.DLL=Yes
+C:\WINNT\SYSTEM32\MSMASK32.OCX=Yes
+C:\WINNT\SYSTEM32\MSMSKES.DLL=Yes
+C:\WINNT\SYSTEM32\vbskfree.ocx=Yes
+C:\WINNT\SYSTEM32\xp.ocx=Yes
+C:\WINNT\SYSTEM32\crystl32.ocx=Yes
+C:\WINNT\SYSTEM32\crpe32.dll=Yes
+C:\WINNT\SYSTEM32\implode.dll=Yes
+C:\WINNT\SYSTEM32\pg32.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\CO2C40EN.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT20.DLL=Yes
+C:\WINNT\SYSTEM32\p2bbnd.dll=Yes
+C:\WINNT\SYSTEM32\p2bdao.dll=Yes
+C:\WINNT\SYSTEM32\p2ctdao.dll=Yes
+C:\WINNT\SYSTEM32\p2irdao.dll=Yes
+C:\WINNT\SYSTEM32\p2sodbc.dll=Yes
+C:\WINNT\SYSTEM32\u2ddisk.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Paquete de instalación estándar 2|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 2|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 2|Install Locations]
+C:\proyres\sistema.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\STDFTES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Designer\MSCDRUN.DLL=$(CommonFiles)\Designer
+C:\WINNT\SYSTEM32\MSRDO20.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\RDOCURS.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Designer\CONNDES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINNT\SYSTEM32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\EXPSRV.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\Mscomctl.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCMCES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\FLXGDES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\ADODCES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\FM20.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSMASK32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSMSKES.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\vbskfree.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\xp.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\crystl32.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\crpe32.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\implode.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\pg32.dll=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\CO2C40EN.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT20.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\p2bbnd.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2bdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2ctdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2irdao.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\p2sodbc.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\u2ddisk.dll=$(WinPath)\Crystal
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Paquete de instalación estándar 2|Configure Shared Files]
+Applicable=Yes
+C:\proyres\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Paquete de instalación estándar 2|Distribution]
+Type=single
+Size=
+Title=Proyecto1
+
+[Package|Paquete de instalación estándar 2|IconGroups]
+Group0=Proyecto1
+PrivateGroup0=Verdadero
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 2|Proyecto1]
+Icon1=sistema.exe
+Title1=Proyecto1
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 2|Package]
+PackageFolder=C:\proyres\Paquete
+ProjectFolder=C:\proyres
+ServerSideCab=
+File1=C:\proyres\Paquete\setup.exe
+File2=C:\proyres\Paquete\Setup.Lst
+File3=C:\proyres\Paquete\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Paquete de instalación estándar 3|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\sistemas\desarrollo\integral\Paquete
+
+[Package|Paquete de instalación estándar 3|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Paquete de instalación estándar 3|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=
+
+[Package|Paquete de instalación estándar 3|Files Found]
+
+[Package|Paquete de instalación estándar 3|Files Released]
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 3|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\sistemas\desarrollo\integral\FM20.DLL=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+
+[Package|Paquete de instalación estándar 3|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Mscomctl.ocx=
+
+[Package|Paquete de instalación estándar 3|Files Added]
+
+[Package|Paquete de instalación estándar 3|Files Removed]
+
+[Package|Paquete de instalación estándar 3|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\sistemas\desarrollo\integral\FM20.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+C:\xp.ocx=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Paquete de instalación estándar 3|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 3|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 3|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\FM20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Paquete de instalación estándar 3|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Paquete de instalación estándar 3|Distribution]
+Type=single
+Size=
+Title=sistema
+
+[Package|Paquete de instalación estándar 3|IconGroups]
+Group0=sistema
+PrivateGroup0=Verdadero
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 3|sistema]
+Icon1=sistema.exe
+Title1=sistema
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 3|Package]
+PackageFolder=C:\sistemas\desarrollo\integral\Paquete
+ProjectFolder=C:\sistemas\desarrollo\integral
+ServerSideCab=
+File1=C:\sistemas\desarrollo\integral\Paquete\setup.exe
+File2=C:\sistemas\desarrollo\integral\Paquete\Setup.Lst
+File3=C:\sistemas\desarrollo\integral\Paquete\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Paquete de instalación estándar 4|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\sistemas\desarrollo\integral\Paquete (2)
+
+[Package|Paquete de instalación estándar 4|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Paquete de instalación estándar 4|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=
+
+[Package|Paquete de instalación estándar 4|Files Found]
+
+[Package|Paquete de instalación estándar 4|Files Released]
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 4|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\sistemas\desarrollo\integral\FM20.DLL=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+
+[Package|Paquete de instalación estándar 4|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Mscomctl.ocx=
+
+[Package|Paquete de instalación estándar 4|Files Added]
+
+[Package|Paquete de instalación estándar 4|Files Removed]
+
+[Package|Paquete de instalación estándar 4|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\sistemas\desarrollo\integral\FM20.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+C:\xp.ocx=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Paquete de instalación estándar 4|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 4|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 4|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\FM20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Paquete de instalación estándar 4|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Paquete de instalación estándar 4|Distribution]
+Type=single
+Size=
+Title=Proyecto1
+
+[Package|Paquete de instalación estándar 4|IconGroups]
+Group0=Proyecto1
+PrivateGroup0=Verdadero
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 4|Proyecto1]
+Icon1=sistema.exe
+Title1=Proyecto1
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 4|Package]
+PackageFolder=C:\sistemas\desarrollo\integral\Paquete (2)
+ProjectFolder=C:\sistemas\desarrollo\integral
+ServerSideCab=
+File1=C:\sistemas\desarrollo\integral\Paquete (2)\setup.exe
+File2=C:\sistemas\desarrollo\integral\Paquete (2)\Setup.Lst
+File3=C:\sistemas\desarrollo\integral\Paquete (2)\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Paquete de instalación estándar 5|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\sistemas\desarrollo\integral\Paquete
+
+[Package|Paquete de instalación estándar 5|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Paquete de instalación estándar 5|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Paquete de instalación estándar 5|Files Found]
+
+[Package|Paquete de instalación estándar 5|Files Released]
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 5|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\sistemas\desarrollo\integral\FM20.DLL=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+
+[Package|Paquete de instalación estándar 5|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Mscomctl.ocx=
+
+[Package|Paquete de instalación estándar 5|Files Added]
+
+[Package|Paquete de instalación estándar 5|Files Removed]
+
+[Package|Paquete de instalación estándar 5|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\sistemas\desarrollo\integral\FM20.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+C:\xp.ocx=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Paquete de instalación estándar 5|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 5|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 5|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\FM20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Paquete de instalación estándar 5|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Paquete de instalación estándar 5|Distribution]
+Type=single
+Size=
+Title=sistema
+
+[Package|Paquete de instalación estándar 5|IconGroups]
+Group0=sistema
+PrivateGroup0=Verdadero
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 5|sistema]
+Icon1=sistema.exe
+Title1=sistema
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 5|Package]
+PackageFolder=C:\sistemas\desarrollo\integral\Paquete
+ProjectFolder=C:\sistemas\desarrollo\integral
+ServerSideCab=
+File1=C:\sistemas\desarrollo\integral\Paquete\setup.exe
+File2=C:\sistemas\desarrollo\integral\Paquete\Setup.Lst
+File3=C:\sistemas\desarrollo\integral\Paquete\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Paquete de instalación estándar 6|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\sistemas\desarrollo\prototipo
+
+[Package|Paquete de instalación estándar 6|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=No
+
+[Package|Paquete de instalación estándar 6|Configure DAO ODBC]
+JetWorkspace=No
+ODBCDirect=No
+
+[Package|Paquete de instalación estándar 6|Files Found]
+
+[Package|Paquete de instalación estándar 6|Files Released]
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 6|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\sistemas\desarrollo\integral\FM20.DLL=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+C:\WINDOWS\system32\FM20.DLL=
+
+[Package|Paquete de instalación estándar 6|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Mscomctl.ocx=
+C:\WINDOWS\system32\MSRDO20.DLL=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+
+[Package|Paquete de instalación estándar 6|Files Added]
+
+[Package|Paquete de instalación estándar 6|Files Removed]
+c:\xp.ocx=
+c:\archivos de programa\seagate software\viewers\activexviewer\xqviewer.dll=
+
+[Package|Paquete de instalación estándar 6|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=No
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+C:\xp.ocx=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\system32\FM20.DLL=Yes
+
+[Package|Paquete de instalación estándar 6|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 6|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 6|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\FM20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINDOWS\system32\FM20.DLL=$(WinSysPath)
+
+[Package|Paquete de instalación estándar 6|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Paquete de instalación estándar 6|Distribution]
+Type=single
+Size=
+Title=Prototipo de Sistema de Información
+
+[Package|Paquete de instalación estándar 6|IconGroups]
+Group0=Proyecto1
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 6|Proyecto1]
+Icon1=sistema.exe
+Title1=Proyecto1
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 6|Package]
+PackageFolder=C:\sistemas\desarrollo\prototipo
+ProjectFolder=C:\sistemas\desarrollo\integral
+ServerSideCab=
+File1=C:\sistemas\desarrollo\prototipo\setup.exe
+File2=C:\sistemas\desarrollo\prototipo\Setup.Lst
+File3=C:\sistemas\desarrollo\prototipo\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Paquete de instalación estándar 7|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\sistemas\desarrollo\integral\Paquete
+
+[Package|Paquete de instalación estándar 7|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+
+[Package|Paquete de instalación estándar 7|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Paquete de instalación estándar 7|Files Found]
+
+[Package|Paquete de instalación estándar 7|Files Released]
+SSCSDK80.DLL=
+GDI.DLL=
+User.DLL=
+
+[Package|Paquete de instalación estándar 7|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\WINDOWS\system32\p3smnes.dll=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+
+[Package|Paquete de instalación estándar 7|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Comdlg32.ocx=
+C:\WINDOWS\system32\MSCOMCT2.OCX=
+C:\WINDOWS\system32\Mscomctl.ocx=
+C:\WINDOWS\system32\MSRDO20.DLL=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+
+[Package|Paquete de instalación estándar 7|Files Added]
+
+[Package|Paquete de instalación estándar 7|Files Removed]
+
+[Package|Paquete de instalación estándar 7|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Report Designer Component\craxdrt.dll=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\WINDOWS\system32\Crpaig80.dll=Yes
+C:\WINDOWS\system32\P2smon.dll=Yes
+C:\WINDOWS\system32\p3smnes.dll=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+C:\xp.ocx=Yes
+C:\WINDOWS\system32\Comdlg32.ocx=Yes
+C:\WINDOWS\system32\CMDLGES.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Paquete de instalación estándar 7|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 7|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 7|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Report Designer Component\craxdrt.dll=$(WinSysPath)
+C:\WINDOWS\system32\Implode.dll=$(AppPath)
+C:\WINDOWS\system32\Crpaig80.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2smon.dll=$(WinSysPath)
+C:\WINDOWS\system32\p3smnes.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGES.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Paquete de instalación estándar 7|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+
+[Package|Paquete de instalación estándar 7|Distribution]
+Type=single
+Size=
+Title=Sistema del Almacen General
+
+[Package|Paquete de instalación estándar 7|Package]
+PackageFolder=C:\sistemas\desarrollo\integral\Paquete
+ProjectFolder=C:\sistemas\desarrollo\integral
+ServerSideCab=
+File1=C:\sistemas\desarrollo\integral\Paquete\setup.exe
+File2=C:\sistemas\desarrollo\integral\Paquete\Setup.Lst
+File3=C:\sistemas\desarrollo\integral\Paquete\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Paquete de instalación estándar 7|IconGroups]
+Group0=sistema
+PrivateGroup0=Falso
+Parent0=$(Programs)
+Group1=Sistema del Almacen General
+PrivateGroup1=Falso
+Parent1=$(Programs)
+
+[Package|Paquete de instalación estándar 7|sistema]
+Icon1=sistema.exe
+Title1=sistema
+StartIn1=$(AppPath)
+Key1=Icon1
+
+
+[Package|Paquete de instalación estándar 8|Sistema del almacen general]
+Icon1=inicio.exe
+Title1=Sistema del almacen general
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 8|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=c:\instalador_2
+
+[Package|Paquete de instalación estándar 8|Configure DAO ISAMs]
+Applicable=Yes
+Jet 2.x=Yes
+Xbase=Yes
+Excel=Yes
+Exchange=Yes
+Text=Yes
+Lotus=Yes
+Paradox=Yes
+
+[Package|Paquete de instalación estándar 8|Configure DAO ODBC]
+JetWorkspace=Yes
+ODBCDirect=Yes
+
+[Package|Paquete de instalación estándar 8|Files Found]
+
+[Package|Paquete de instalación estándar 8|Files Released]
+SSCSDK80.DLL=
+GDI.DLL=
+User.DLL=
+sistema.dbf=
+
+[Package|Paquete de instalación estándar 8|Missing Dependency Information]
+C:\xp.ocx=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=
+C:\sistemas\desarrollo\integral\vbskfree.ocx=
+C:\WINDOWS\system32\p3smnes.dll=
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=
+C:\WINDOWS\system32\MSEXCH35.DLL=
+C:\WINDOWS\system32\wmp.dll=
+C:\WINDOWS\system32\iashlpr.dll=
+C:\WINDOWS\msagent\agentctl.dll=
+C:\WINDOWS\system32\cselexpt.ocx=
+C:\WINDOWS\system32\craxdrt.dll=
+C:\WINDOWS\system32\crviewer.dll=
+C:\WINDOWS\system32\xqviewer.dll=
+C:\sistemas\desarrollo\integral\inicio.exe=
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\Office10\MSO.DLL=
+C:\Archivos de programa\Microsoft Office\Office10\EXCEL.EXE=
+C:\WINDOWS\Crystal\Crxlat32.dll=
+C:\WINDOWS\Crystal\p2bbtrv.dll=
+C:\WINDOWS\Crystal\p2bact3.dll=
+C:\WINDOWS\Crystal\p2bact.dll=
+C:\WINDOWS\Crystal\P2lsyb10.dll=
+C:\WINDOWS\Crystal\p2bxbse.dll=
+C:\WINDOWS\Crystal\p2ctbtrv.dll=
+C:\WINDOWS\Crystal\p2iract3.dll=
+C:\WINDOWS\Crystal\p2iract.dll=
+C:\WINDOWS\Crystal\p2ixbse.dll=
+C:\WINDOWS\Crystal\P2ldb2.dll=
+C:\WINDOWS\Crystal\P2LIFMX.dll=
+C:\WINDOWS\Crystal\p2lodbc.dll=
+C:\WINDOWS\Crystal\p2lora7.dll=
+C:\WINDOWS\Crystal\P2lsql.dll=
+C:\WINDOWS\Crystal\p2ssql.dll=
+C:\WINDOWS\Crystal\p2molap.dll=
+C:\WINDOWS\Crystal\p2sacl.dll=
+C:\WINDOWS\Crystal\p2sdb2.dll=
+C:\WINDOWS\Crystal\p2sexsr.dll=
+C:\WINDOWS\Crystal\p2sfs.dll=
+C:\WINDOWS\Crystal\p2sifmx.dll=
+C:\WINDOWS\Crystal\p2smapi.dll=
+C:\WINDOWS\Crystal\p2smcube.dll=
+C:\WINDOWS\Crystal\p2sNote.dll=
+C:\WINDOWS\Crystal\p2solap.dll=
+C:\WINDOWS\Crystal\p2soledb.dll=
+C:\WINDOWS\Crystal\p2sora7.dll=
+C:\WINDOWS\Crystal\p2soutlk.dll=
+C:\WINDOWS\Crystal\p2srepl.dll=
+C:\WINDOWS\Crystal\p3ra3es.dll=
+C:\WINDOWS\Crystal\p2ssyb10.dll=
+C:\WINDOWS\Crystal\p2strack.dll=
+C:\WINDOWS\Crystal\p3da3es.dll=
+C:\WINDOWS\Crystal\p3dates.dll=
+C:\WINDOWS\Crystal\p3dbtes.dll=
+C:\WINDOWS\Crystal\p3dxbes.dll=
+C:\WINDOWS\Crystal\p3ixbes.dll=
+C:\WINDOWS\Crystal\p3ld2es.dll=
+C:\WINDOWS\Crystal\p3lifes.dll=
+C:\WINDOWS\Crystal\p3lodes.dll=
+C:\WINDOWS\Crystal\p3lores.dll=
+C:\WINDOWS\Crystal\p3lsqes.dll=
+C:\WINDOWS\Crystal\p3lsyes.dll=
+C:\WINDOWS\Crystal\P3mopes.dll=
+C:\WINDOWS\Crystal\p3sstes.dll=
+C:\WINDOWS\Crystal\p3rates.dll=
+C:\WINDOWS\Crystal\p3saces.dll=
+C:\WINDOWS\Crystal\p3sd2es.dll=
+C:\WINDOWS\Crystal\p3sfses.dll=
+C:\WINDOWS\Crystal\p3sifes.dll=
+C:\WINDOWS\Crystal\p3slnes.dll=
+C:\WINDOWS\Crystal\p3smces.dll=
+C:\WINDOWS\Crystal\p3smpes.dll=
+C:\WINDOWS\Crystal\p3so7es.dll=
+C:\WINDOWS\Crystal\p3soles.dll=
+C:\WINDOWS\Crystal\P3sopes.dll=
+C:\WINDOWS\Crystal\p3soues.dll=
+C:\WINDOWS\Crystal\p3srpes.dll=
+C:\WINDOWS\Crystal\p3ssqes.dll=
+C:\WINDOWS\Crystal\u2frec.dll=
+C:\WINDOWS\Crystal\p3stkes.dll=
+C:\WINDOWS\Crystal\p3sxses.dll=
+C:\WINDOWS\Crystal\p3tbtes.dll=
+C:\WINDOWS\Crystal\u2dapp.dll=
+C:\WINDOWS\Crystal\u2ddisk.dll=
+C:\WINDOWS\Crystal\u2dmapi.dll=
+C:\WINDOWS\Crystal\u2dnotes.dll=
+C:\WINDOWS\Crystal\u2dpost.dll=
+C:\WINDOWS\Crystal\u2dvim.dll=
+C:\WINDOWS\Crystal\u2fcr.dll=
+C:\WINDOWS\Crystal\u2fdif.dll=
+C:\WINDOWS\Crystal\u2fhtml.dll=
+C:\WINDOWS\Crystal\u2fodbc.dll=
+C:\WINDOWS\Crystal\u3ls1es.dll=
+C:\WINDOWS\Crystal\u2frtf.dll=
+C:\WINDOWS\Crystal\u2fsepv.dll=
+C:\WINDOWS\Crystal\u2ftext.dll=
+C:\WINDOWS\Crystal\u2fwks.dll=
+C:\WINDOWS\Crystal\u2fwordw.dll=
+C:\WINDOWS\Crystal\u2fxls.dll=
+C:\WINDOWS\Crystal\u2l2000.dll=
+C:\WINDOWS\Crystal\u2lcom.dll=
+C:\WINDOWS\Crystal\u2ldts.dll=
+C:\WINDOWS\Crystal\u2lexch.dll=
+C:\WINDOWS\Crystal\u2lfinra.dll=
+C:\WINDOWS\Crystal\u2lsamp1.dll=
+C:\WINDOWS\Crystal\u3l20es.dll=
+C:\WINDOWS\Crystal\u3lfres.dll=
+C:\WINDOWS\Crystal\x3frces.dll=
+C:\WINDOWS\Crystal\u3lxces.dll=
+C:\WINDOWS\Crystal\u25dts.dll=
+C:\WINDOWS\Crystal\u3520es.dll=
+C:\WINDOWS\Crystal\u252000.dll=
+C:\WINDOWS\Crystal\x3dapes.dll=
+C:\WINDOWS\Crystal\x3ddkes.dll=
+C:\WINDOWS\Crystal\x3dmpes.dll=
+C:\WINDOWS\Crystal\x3dntes.dll=
+C:\WINDOWS\Crystal\x3dptes.dll=
+C:\WINDOWS\Crystal\x3dvmes.dll=
+C:\WINDOWS\Crystal\x3fcres.dll=
+C:\WINDOWS\Crystal\x3fdfes.dll=
+C:\WINDOWS\Crystal\x3fhtes.dll=
+C:\WINDOWS\Crystal\x3fodes.dll=
+C:\WINDOWS\Crystal\x3fxles.dll=
+C:\WINDOWS\Crystal\x3frtes.dll=
+C:\WINDOWS\Crystal\x3fsves.dll=
+C:\WINDOWS\Crystal\x3ftxes.dll=
+C:\WINDOWS\Crystal\x3fwdes.dll=
+C:\WINDOWS\Crystal\x3fwkes.dll=
+C:\sistemas\desarrollo\integral\xp.ocx=
+C:\sistemas\desarrollo\integral\combomultic.ocx=
+
+[Package|Paquete de instalación estándar 8|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\Comdlg32.ocx=
+C:\WINDOWS\system32\MSCOMCT2.OCX=
+C:\WINDOWS\system32\Mscomctl.ocx=
+C:\WINDOWS\system32\MSRDO20.DLL=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+
+[Package|Paquete de instalación estándar 8|Files Added]
+c:\sistemas\desarrollo\integral\catálogo de artículos.rpt=
+c:\sistemas\desarrollo\integral\numero_letras.rpt=
+c:\sistemas\desarrollo\integral\mov.rpt=
+c:\sistemas\desarrollo\integral\rep_descuento_pago_correcto.rpt=
+c:\sistemas\desarrollo\integral\orden_compra.rpt=
+c:\sistemas\desarrollo\integral\rep_cartera.rpt=
+c:\sistemas\desarrollo\integral\rep_clasificacion_clientes.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_traspasos.rpt=
+c:\sistemas\desarrollo\integral\rep_descuentos_volumen.rpt=
+c:\sistemas\desarrollo\integral\rep_devolucion_valuado.rpt=
+c:\sistemas\desarrollo\integral\rep_devoluciones_1.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_comparacion.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_comparacion_devoluciones.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_produccion.rpt=
+c:\sistemas\desarrollo\integral\rep_kardex.rpt=
+c:\sistemas\desarrollo\integral\rep_estado_cuenta.rpt=
+c:\sistemas\desarrollo\integral\rep_etiquetas_cajas.rpt=
+c:\sistemas\desarrollo\integral\rep_facturas.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_costo.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_h1.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_h2.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_entradas_devoluciones.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_1.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_entradas.rpt=
+c:\sistemas\desarrollo\integral\rp_pedidos.rpt=
+c:\sistemas\desarrollo\integral\rep_progreso_equipos.rpt=
+c:\sistemas\desarrollo\integral\rep_relación_facturas.rpt=
+c:\sistemas\desarrollo\integral\rep_reporte_movimientos.rpt=
+c:\sistemas\desarrollo\integral\rep_salida_vistas.rpt=
+c:\sistemas\desarrollo\integral\rep_salidas_traspasos.rpt=
+c:\sistemas\desarrollo\integral\inicio.exe=
+c:\windows\crystal\crxlat32.dll=
+c:\windows\crystal\p2bbtrv.dll=
+c:\windows\crystal\p2bact3.dll=
+c:\windows\crystal\p2bact.dll=
+c:\windows\crystal\p2lsyb10.dll=
+c:\windows\crystal\p2bxbse.dll=
+c:\windows\crystal\p2ctbtrv.dll=
+c:\windows\crystal\p2iract3.dll=
+c:\windows\crystal\p2iract.dll=
+c:\windows\crystal\p2ixbse.dll=
+c:\windows\crystal\p2ldb2.dll=
+c:\windows\crystal\p2lifmx.dll=
+c:\windows\crystal\p2lodbc.dll=
+c:\windows\crystal\p2lora7.dll=
+c:\windows\crystal\p2lsql.dll=
+c:\windows\crystal\p2ssql.dll=
+c:\windows\crystal\p2molap.dll=
+c:\windows\crystal\p2sacl.dll=
+c:\windows\crystal\p2sdb2.dll=
+c:\windows\crystal\p2sexsr.dll=
+c:\windows\crystal\p2sfs.dll=
+c:\windows\crystal\p2sifmx.dll=
+c:\windows\crystal\p2smapi.dll=
+c:\windows\crystal\p2smcube.dll=
+c:\windows\crystal\p2snote.dll=
+c:\windows\crystal\p2solap.dll=
+c:\windows\crystal\p2soledb.dll=
+c:\windows\crystal\p2sora7.dll=
+c:\windows\crystal\p2soutlk.dll=
+c:\windows\crystal\p2srepl.dll=
+c:\windows\crystal\p3ra3es.dll=
+c:\windows\crystal\p2ssyb10.dll=
+c:\windows\crystal\p2strack.dll=
+c:\windows\crystal\p3da3es.dll=
+c:\windows\crystal\p3dates.dll=
+c:\windows\crystal\p3dbtes.dll=
+c:\windows\crystal\p3dxbes.dll=
+c:\windows\crystal\p3ixbes.dll=
+c:\windows\crystal\p3ld2es.dll=
+c:\windows\crystal\p3lifes.dll=
+c:\windows\crystal\p3lodes.dll=
+c:\windows\crystal\p3lores.dll=
+c:\windows\crystal\p3lsqes.dll=
+c:\windows\crystal\p3lsyes.dll=
+c:\windows\crystal\p3mopes.dll=
+c:\windows\crystal\p3sstes.dll=
+c:\windows\crystal\p3rates.dll=
+c:\windows\crystal\p3saces.dll=
+c:\windows\crystal\p3sd2es.dll=
+c:\windows\crystal\p3sfses.dll=
+c:\windows\crystal\p3sifes.dll=
+c:\windows\crystal\p3slnes.dll=
+c:\windows\crystal\p3smces.dll=
+c:\windows\crystal\p3smpes.dll=
+c:\windows\crystal\p3so7es.dll=
+c:\windows\crystal\p3soles.dll=
+c:\windows\crystal\p3sopes.dll=
+c:\windows\crystal\p3soues.dll=
+c:\windows\crystal\p3srpes.dll=
+c:\windows\crystal\p3ssqes.dll=
+c:\windows\crystal\u2frec.dll=
+c:\windows\crystal\p3stkes.dll=
+c:\windows\crystal\p3sxses.dll=
+c:\windows\crystal\p3tbtes.dll=
+c:\windows\crystal\u2dapp.dll=
+c:\windows\crystal\u2ddisk.dll=
+c:\windows\crystal\u2dmapi.dll=
+c:\windows\crystal\u2dnotes.dll=
+c:\windows\crystal\u2dpost.dll=
+c:\windows\crystal\u2dvim.dll=
+c:\windows\crystal\u2fcr.dll=
+c:\windows\crystal\u2fdif.dll=
+c:\windows\crystal\u2fhtml.dll=
+c:\windows\crystal\u2fodbc.dll=
+c:\windows\crystal\u2frdef.dll=
+c:\windows\crystal\u3ls1es.dll=
+c:\windows\crystal\u2frtf.dll=
+c:\windows\crystal\u2fsepv.dll=
+c:\windows\crystal\u2ftext.dll=
+c:\windows\crystal\u2fwks.dll=
+c:\windows\crystal\u2fwordw.dll=
+c:\windows\crystal\u2fxls.dll=
+c:\windows\crystal\u2l2000.dll=
+c:\windows\crystal\u2lcom.dll=
+c:\windows\crystal\u2ldts.dll=
+c:\windows\crystal\u2lexch.dll=
+c:\windows\crystal\u2lfinra.dll=
+c:\windows\crystal\u2lsamp1.dll=
+c:\windows\crystal\u3l20es.dll=
+c:\windows\crystal\u3lfres.dll=
+c:\windows\crystal\x3frces.dll=
+c:\windows\crystal\u3lxces.dll=
+c:\windows\crystal\u25dts.dll=
+c:\windows\crystal\u3520es.dll=
+c:\windows\crystal\u252000.dll=
+c:\windows\crystal\x3dapes.dll=
+c:\windows\crystal\x3ddkes.dll=
+c:\windows\crystal\x3dmpes.dll=
+c:\windows\crystal\x3dntes.dll=
+c:\windows\crystal\x3dptes.dll=
+c:\windows\crystal\x3dvmes.dll=
+c:\windows\crystal\x3fcres.dll=
+c:\windows\crystal\x3fdfes.dll=
+c:\windows\crystal\x3fhtes.dll=
+c:\windows\crystal\x3fodes.dll=
+c:\windows\crystal\x3fxles.dll=
+c:\windows\crystal\x3frdes.dll=
+c:\windows\crystal\x3frtes.dll=
+c:\windows\crystal\x3fsves.dll=
+c:\windows\crystal\x3ftxes.dll=
+c:\windows\crystal\x3fwdes.dll=
+c:\windows\crystal\x3fwkes.dll=
+c:\sistemas\desarrollo\integral\xp.ocx=
+c:\sistemas\desarrollo\integral\combomultic.ocx=
+c:\sistemas\desarrollo\integral\vbskfree.ocx=
+c:\sistemas\desarrollo\integral\sid.sid=
+
+[Package|Paquete de instalación estándar 8|Files Removed]
+c:\windows\system32\agentctl.dll=
+c:\windows\system32\craxdrt.dll=
+c:\windows\system32\crviewer.dll=
+c:\sistemas\desarrollo\integral\rep_cartera.rpt=
+c:\sistemas\desarrollo\integral\rep_clasificacion_clientes.rpt=
+c:\sistemas\desarrollo\integral\rep_descuento_pago_correcto.rpt=
+c:\sistemas\desarrollo\integral\rep_descuentos_volumen.rpt=
+c:\sistemas\desarrollo\integral\rep_devolucion_valuado.rpt=
+c:\sistemas\desarrollo\integral\rep_devoluciones_1.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_comparacion.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_comparacion_devoluciones.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_produccion.rpt=
+c:\sistemas\desarrollo\integral\rep_entradas_traspasos.rpt=
+c:\sistemas\desarrollo\integral\rep_estado_cuenta.rpt=
+c:\sistemas\desarrollo\integral\rep_etiquetas_cajas.rpt=
+c:\sistemas\desarrollo\integral\rep_facturas.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_costo.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_h1.rpt=
+c:\sistemas\desarrollo\integral\rep_inventario_h2.rpt=
+c:\sistemas\desarrollo\integral\rep_kardex.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_1.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_entradas.rpt=
+c:\sistemas\desarrollo\integral\rep_movimientos_entradas_devoluciones.rpt=
+c:\sistemas\desarrollo\integral\rep_progreso_equipos.rpt=
+c:\sistemas\desarrollo\integral\sistema.dbf=
+c:\windows\system32\xqviewer.dll=
+
+[Package|Paquete de instalación estándar 8|Files In Project]
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\STDFTES.DLL=Yes
+C:\WINDOWS\system32\MSRDO20.DLL=Yes
+C:\WINDOWS\system32\RDOCURS.DLL=Yes
+C:\WINDOWS\system32\RDO20ES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\WINDOWS\system32\MSJET35.DLL=Yes
+C:\WINDOWS\system32\MSJTER35.DLL=Yes
+C:\WINDOWS\system32\MSJINT35.DLL=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\MSRD2X35.DLL=Yes
+C:\WINDOWS\system32\MSREPL35.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\WINDOWS\system32\Mscomctl.ocx=Yes
+C:\WINDOWS\system32\MSCMCES.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDES.DLL=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\ADODCES.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2ES.DLL=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\TABCTES.DLL=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSMSKES.DLL=Yes
+C:\WINDOWS\system32\Comdlg32.ocx=Yes
+C:\WINDOWS\system32\CMDLGES.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\WINDOWS\system32\iashlpr.dll=Yes
+C:\WINDOWS\system32\COMCTL32.OCX=Yes
+C:\WINDOWS\system32\CMCTLES.DLL=Yes
+C:\WINDOWS\system32\MCI32.OCX=Yes
+C:\WINDOWS\system32\MCIES.DLL=Yes
+C:\WINDOWS\system32\MSMAPI32.OCX=Yes
+C:\WINDOWS\system32\MSMPIES.DLL=Yes
+C:\WINDOWS\system32\wmp.dll=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\WINDOWS\system32\DATGDES.DLL=Yes
+C:\WINDOWS\system32\MSEXCL35.DLL=Yes
+C:\WINDOWS\system32\MSEXCH35.DLL=Yes
+C:\WINDOWS\system32\MSLTUS35.DLL=Yes
+C:\WINDOWS\system32\MSPDOX35.DLL=Yes
+C:\WINDOWS\system32\MSTEXT35.DLL=Yes
+C:\WINDOWS\system32\MSXBSE35.DLL=Yes
+C:\sistemas\desarrollo\integral\Catálogo de Artículos.rpt=Yes
+C:\sistemas\desarrollo\integral\numero_letras.rpt=Yes
+C:\sistemas\desarrollo\integral\mov.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_descuento_pago_correcto.rpt=No
+C:\sistemas\desarrollo\integral\orden_compra.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_cartera.rpt=No
+C:\sistemas\desarrollo\integral\rep_clasificacion_clientes.rpt=No
+C:\sistemas\desarrollo\integral\rep_entradas_traspasos.rpt=No
+C:\sistemas\desarrollo\integral\rep_descuentos_volumen.rpt=No
+C:\sistemas\desarrollo\integral\rep_devolucion_valuado.rpt=No
+C:\sistemas\desarrollo\integral\rep_devoluciones_1.rpt=No
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion.rpt=No
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion_devoluciones.rpt=No
+C:\sistemas\desarrollo\integral\rep_entradas_produccion.rpt=No
+C:\sistemas\desarrollo\integral\rep_kardex.rpt=No
+C:\sistemas\desarrollo\integral\rep_estado_cuenta.rpt=No
+C:\sistemas\desarrollo\integral\rep_etiquetas_cajas.rpt=No
+C:\sistemas\desarrollo\integral\rep_facturas.rpt=No
+C:\sistemas\desarrollo\integral\rep_inventario.rpt=No
+C:\sistemas\desarrollo\integral\rep_inventario_costo.rpt=No
+C:\sistemas\desarrollo\integral\rep_inventario_h1.rpt=No
+C:\sistemas\desarrollo\integral\rep_inventario_h2.rpt=No
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas_devoluciones.rpt=No
+C:\sistemas\desarrollo\integral\rep_movimientos.rpt=No
+C:\sistemas\desarrollo\integral\rep_movimientos_1.rpt=No
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas.rpt=No
+C:\sistemas\desarrollo\integral\rp_pedidos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_progreso_equipos.rpt=No
+C:\sistemas\desarrollo\integral\rep_relación_facturas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_reporte_movimientos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_salida_vistas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_salidas_traspasos.rpt=Yes
+C:\sistemas\desarrollo\integral\inicio.exe=Yes
+C:\Archivos de programa\Microsoft Office\Office10\EXCEL.EXE=Yes
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\Office10\MSO.DLL=Yes
+C:\WINDOWS\Crystal\Crxlat32.dll=Yes
+C:\WINDOWS\Crystal\p2bbtrv.dll=Yes
+C:\WINDOWS\Crystal\p2bact3.dll=Yes
+C:\WINDOWS\Crystal\p2bact.dll=Yes
+C:\WINDOWS\Crystal\P2lsyb10.dll=Yes
+C:\WINDOWS\Crystal\p2bxbse.dll=Yes
+C:\WINDOWS\Crystal\p2ctbtrv.dll=Yes
+C:\WINDOWS\Crystal\p2iract3.dll=Yes
+C:\WINDOWS\Crystal\p2iract.dll=Yes
+C:\WINDOWS\Crystal\p2ixbse.dll=Yes
+C:\WINDOWS\Crystal\P2ldb2.dll=Yes
+C:\WINDOWS\Crystal\P2LIFMX.dll=Yes
+C:\WINDOWS\Crystal\p2lodbc.dll=Yes
+C:\WINDOWS\Crystal\p2lora7.dll=Yes
+C:\WINDOWS\Crystal\P2lsql.dll=Yes
+C:\WINDOWS\Crystal\p2ssql.dll=Yes
+C:\WINDOWS\Crystal\p2molap.dll=Yes
+C:\WINDOWS\Crystal\p2sacl.dll=Yes
+C:\WINDOWS\Crystal\p2sdb2.dll=Yes
+C:\WINDOWS\Crystal\p2sexsr.dll=Yes
+C:\WINDOWS\Crystal\p2sfs.dll=Yes
+C:\WINDOWS\Crystal\p2sifmx.dll=Yes
+C:\WINDOWS\Crystal\p2smapi.dll=Yes
+C:\WINDOWS\Crystal\p2smcube.dll=Yes
+C:\WINDOWS\Crystal\p2sNote.dll=Yes
+C:\WINDOWS\Crystal\p2solap.dll=Yes
+C:\WINDOWS\Crystal\p2soledb.dll=Yes
+C:\WINDOWS\Crystal\p2sora7.dll=Yes
+C:\WINDOWS\Crystal\p2soutlk.dll=Yes
+C:\WINDOWS\Crystal\p2srepl.dll=Yes
+C:\WINDOWS\Crystal\p3ra3es.dll=Yes
+C:\WINDOWS\Crystal\p2ssyb10.dll=Yes
+C:\WINDOWS\Crystal\p2strack.dll=Yes
+C:\WINDOWS\Crystal\p3da3es.dll=Yes
+C:\WINDOWS\Crystal\p3dates.dll=Yes
+C:\WINDOWS\Crystal\p3dbtes.dll=Yes
+C:\WINDOWS\Crystal\p3dxbes.dll=Yes
+C:\WINDOWS\Crystal\p3ixbes.dll=Yes
+C:\WINDOWS\Crystal\p3ld2es.dll=Yes
+C:\WINDOWS\Crystal\p3lifes.dll=Yes
+C:\WINDOWS\Crystal\p3lodes.dll=Yes
+C:\WINDOWS\Crystal\p3lores.dll=Yes
+C:\WINDOWS\Crystal\p3lsqes.dll=Yes
+C:\WINDOWS\Crystal\p3lsyes.dll=Yes
+C:\WINDOWS\Crystal\P3mopes.dll=Yes
+C:\WINDOWS\Crystal\p3sstes.dll=Yes
+C:\WINDOWS\Crystal\p3rates.dll=Yes
+C:\WINDOWS\Crystal\p3saces.dll=Yes
+C:\WINDOWS\Crystal\p3sd2es.dll=Yes
+C:\WINDOWS\Crystal\p3sfses.dll=Yes
+C:\WINDOWS\Crystal\p3sifes.dll=Yes
+C:\WINDOWS\Crystal\p3slnes.dll=Yes
+C:\WINDOWS\Crystal\p3smces.dll=Yes
+C:\WINDOWS\Crystal\p3smpes.dll=Yes
+C:\WINDOWS\Crystal\p3so7es.dll=Yes
+C:\WINDOWS\Crystal\p3soles.dll=Yes
+C:\WINDOWS\Crystal\P3sopes.dll=Yes
+C:\WINDOWS\Crystal\p3soues.dll=Yes
+C:\WINDOWS\Crystal\p3srpes.dll=Yes
+C:\WINDOWS\Crystal\p3ssqes.dll=Yes
+C:\WINDOWS\Crystal\u2frec.dll=Yes
+C:\WINDOWS\Crystal\p3stkes.dll=Yes
+C:\WINDOWS\Crystal\p3sxses.dll=Yes
+C:\WINDOWS\Crystal\p3tbtes.dll=Yes
+C:\WINDOWS\Crystal\u2dapp.dll=Yes
+C:\WINDOWS\Crystal\u2ddisk.dll=Yes
+C:\WINDOWS\Crystal\u2dmapi.dll=Yes
+C:\WINDOWS\Crystal\u2dnotes.dll=Yes
+C:\WINDOWS\Crystal\u2dpost.dll=Yes
+C:\WINDOWS\Crystal\u2dvim.dll=Yes
+C:\WINDOWS\Crystal\u2fcr.dll=Yes
+C:\WINDOWS\Crystal\u2fdif.dll=Yes
+C:\WINDOWS\Crystal\u2fhtml.dll=Yes
+C:\WINDOWS\Crystal\u2fodbc.dll=Yes
+C:\WINDOWS\Crystal\u2frdef.dll=Yes
+C:\WINDOWS\Crystal\u3ls1es.dll=Yes
+C:\WINDOWS\Crystal\u2frtf.dll=Yes
+C:\WINDOWS\Crystal\u2fsepv.dll=Yes
+C:\WINDOWS\Crystal\u2ftext.dll=Yes
+C:\WINDOWS\Crystal\u2fwks.dll=Yes
+C:\WINDOWS\Crystal\u2fwordw.dll=Yes
+C:\WINDOWS\Crystal\u2fxls.dll=Yes
+C:\WINDOWS\Crystal\u2l2000.dll=Yes
+C:\WINDOWS\Crystal\u2lcom.dll=Yes
+C:\WINDOWS\Crystal\u2ldts.dll=Yes
+C:\WINDOWS\Crystal\u2lexch.dll=Yes
+C:\WINDOWS\Crystal\u2lfinra.dll=Yes
+C:\WINDOWS\Crystal\u2lsamp1.dll=Yes
+C:\WINDOWS\Crystal\u3l20es.dll=Yes
+C:\WINDOWS\Crystal\u3lfres.dll=Yes
+C:\WINDOWS\Crystal\x3frces.dll=Yes
+C:\WINDOWS\Crystal\u3lxces.dll=Yes
+C:\WINDOWS\Crystal\u25dts.dll=Yes
+C:\WINDOWS\Crystal\u3520es.dll=Yes
+C:\WINDOWS\Crystal\u252000.dll=Yes
+C:\WINDOWS\Crystal\x3dapes.dll=Yes
+C:\WINDOWS\Crystal\x3ddkes.dll=Yes
+C:\WINDOWS\Crystal\x3dmpes.dll=Yes
+C:\WINDOWS\Crystal\x3dntes.dll=Yes
+C:\WINDOWS\Crystal\x3dptes.dll=Yes
+C:\WINDOWS\Crystal\x3dvmes.dll=Yes
+C:\WINDOWS\Crystal\x3fcres.dll=Yes
+C:\WINDOWS\Crystal\x3fdfes.dll=Yes
+C:\WINDOWS\Crystal\x3fhtes.dll=Yes
+C:\WINDOWS\Crystal\x3fodes.dll=Yes
+C:\WINDOWS\Crystal\x3fxles.dll=Yes
+C:\WINDOWS\Crystal\x3frdes.dll=Yes
+C:\WINDOWS\Crystal\x3frtes.dll=Yes
+C:\WINDOWS\Crystal\x3fsves.dll=Yes
+C:\WINDOWS\Crystal\x3ftxes.dll=Yes
+C:\WINDOWS\Crystal\x3fwdes.dll=Yes
+C:\WINDOWS\Crystal\x3fwkes.dll=Yes
+C:\sistemas\desarrollo\integral\xp.ocx=Yes
+C:\sistemas\desarrollo\integral\combomultic.ocx=Yes
+C:\sistemas\desarrollo\integral\vbskfree.ocx=Yes
+C:\sistemas\desarrollo\integral\SID.SID=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\Archivos de programa\Seagate Software\Report Designer Component\craxdrt.dll=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\WINDOWS\system32\Crpaig80.dll=Yes
+C:\WINDOWS\system32\P2smon.dll=Yes
+C:\WINDOWS\system32\p3smnes.dll=Yes
+C:\WINDOWS\msagent\agentctl.dll=Yes
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=Yes
+
+[Package|Paquete de instalación estándar 8|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 8|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 8|Install Locations]
+C:\sistemas\desarrollo\integral\sistema.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDO20ES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\xqviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Report Designer Component\craxdrt.dll=$(WinSysPath)
+C:\WINDOWS\system32\Implode.dll=$(AppPath)
+C:\WINDOWS\system32\Crpaig80.dll=$(WinSysPath)
+C:\WINDOWS\system32\P2smon.dll=$(WinSysPath)
+C:\WINDOWS\system32\p3smnes.dll=$(WinSysPath)
+C:\WINDOWS\system32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2ES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMSKES.DLL=$(WinSysPath)
+C:\sistemas\desarrollo\integral\vbskfree.ocx=$(WinSysPath)
+C:\Archivos de programa\Seagate Software\Viewers\ActiveXViewer\cselexpt.ocx=$(WinSysPath)
+C:\xp.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGES.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\WINDOWS\msagent\agentctl.dll=$(WinSysPath)
+C:\WINDOWS\system32\iashlpr.dll=$(WinSysPath)
+C:\WINDOWS\system32\COMCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMCTLES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MCIES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMPIES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\wmp.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\DATGDES.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSEXCL35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSEXCH35.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSLTUS35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSPDOX35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSTEXT35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSXBSE35.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\xqviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\crviewer.dll=$(WinSysPath)
+C:\WINDOWS\system32\craxdrt.dll=$(WinSysPath)
+C:\WINDOWS\system32\agentctl.dll=$(WinSysPath)
+C:\WINDOWS\system32\cselexpt.ocx=$(WinSysPath)
+C:\sistemas\desarrollo\integral\Catálogo de Artículos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\numero_letras.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\mov.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_descuento_pago_correcto.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\orden_compra.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_cartera.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_clasificacion_clientes.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_entradas_traspasos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_descuentos_volumen.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_devolucion_valuado.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_devoluciones_1.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion_devoluciones.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_entradas_produccion.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_kardex.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_estado_cuenta.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_etiquetas_cajas.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_facturas.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_inventario.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_inventario_costo.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_inventario_h1.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_inventario_h2.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas_devoluciones.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_movimientos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_movimientos_1.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rp_pedidos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_progreso_equipos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_relación_facturas.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_reporte_movimientos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_salida_vistas.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\rep_salidas_traspasos.rpt=$(AppPath)
+C:\sistemas\desarrollo\integral\inicio.exe=$(AppPath)
+C:\sistemas\desarrollo\integral\sistema.dbf=$(AppPath)
+C:\Archivos de programa\Microsoft Office\Office10\EXCEL.EXE=$(AppPath)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\Office10\MSO.DLL=$(WinSysPath)
+C:\WINDOWS\Crystal\Crxlat32.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bbtrv.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bact3.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bact.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P2lsyb10.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2bxbse.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ctbtrv.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2iract3.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2iract.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ixbse.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P2ldb2.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P2LIFMX.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2lodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2lora7.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P2lsql.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssql.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2molap.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sacl.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sdb2.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sexsr.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sfs.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sifmx.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2smapi.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2smcube.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sNote.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2solap.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2soledb.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2sora7.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2soutlk.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2srepl.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3ra3es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2ssyb10.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p2strack.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3da3es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3dates.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3dbtes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3dxbes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3ixbes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3ld2es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3lifes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3lodes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3lores.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3lsqes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3lsyes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P3mopes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3sstes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3rates.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3saces.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3sd2es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3sfses.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3sifes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3slnes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3smces.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3smpes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3so7es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3soles.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\P3sopes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3soues.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3srpes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3ssqes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frec.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3stkes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3sxses.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\p3tbtes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dapp.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ddisk.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dmapi.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dnotes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dpost.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2dvim.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fcr.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fdif.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fhtml.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fodbc.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frdef.dll=$(AppPath)
+C:\WINDOWS\Crystal\u3ls1es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2frtf.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fsepv.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ftext.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwks.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fwordw.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2fxls.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2l2000.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lcom.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2ldts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lexch.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lfinra.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u2lsamp1.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u3l20es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u3lfres.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3frces.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u3lxces.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u25dts.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u3520es.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\u252000.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3dapes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3ddkes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3dmpes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3dntes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3dptes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3dvmes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fcres.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fdfes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fhtes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fodes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fxles.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3frdes.dll=$(AppPath)
+C:\WINDOWS\Crystal\x3frtes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fsves.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3ftxes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fwdes.dll=$(WinSysPath)
+C:\WINDOWS\Crystal\x3fwkes.dll=$(WinSysPath)
+C:\sistemas\desarrollo\integral\xp.ocx=$(WinSysPath)
+C:\sistemas\desarrollo\integral\combomultic.ocx=$(WinSysPath)
+C:\sistemas\desarrollo\integral\SID.SID=$(AppPath)
+
+[Package|Paquete de instalación estándar 8|Configure Shared Files]
+Applicable=Yes
+C:\sistemas\desarrollo\integral\sistema.exe=Yes
+C:\WINDOWS\system32\Implode.dll=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\sistemas\desarrollo\integral\Catálogo de Artículos.rpt=Yes
+C:\sistemas\desarrollo\integral\numero_letras.rpt=Yes
+C:\sistemas\desarrollo\integral\mov.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_descuento_pago_correcto.rpt=Yes
+C:\sistemas\desarrollo\integral\orden_compra.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_cartera.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_clasificacion_clientes.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_entradas_traspasos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_descuentos_volumen.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_devolucion_valuado.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_devoluciones_1.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_entradas_comparacion_devoluciones.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_entradas_produccion.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_kardex.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_estado_cuenta.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_etiquetas_cajas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_facturas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_inventario.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_inventario_costo.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_inventario_h1.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_inventario_h2.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas_devoluciones.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_movimientos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_movimientos_1.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_movimientos_entradas.rpt=Yes
+C:\sistemas\desarrollo\integral\rp_pedidos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_progreso_equipos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_relación_facturas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_reporte_movimientos.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_salida_vistas.rpt=Yes
+C:\sistemas\desarrollo\integral\rep_salidas_traspasos.rpt=Yes
+C:\sistemas\desarrollo\integral\inicio.exe=Yes
+C:\sistemas\desarrollo\integral\sistema.dbf=No
+C:\Archivos de programa\Microsoft Office\Office10\EXCEL.EXE=Yes
+C:\WINDOWS\Crystal\u2frdef.dll=Yes
+C:\WINDOWS\Crystal\x3frdes.dll=Yes
+C:\sistemas\desarrollo\integral\SID.SID=Yes
+
+[Package|Paquete de instalación estándar 8|Distribution]
+Type=single
+Size=
+Title=Sistema del almacen general
+
+[Package|Paquete de instalación estándar 8|Package]
+PackageFolder=c:\instalador_2
+ProjectFolder=C:\Sistemas\desarrollo\integral
+ServerSideCab=
+File1=c:\instalador_2\setup.exe
+File2=c:\instalador_2\Setup.Lst
+File3=c:\instalador_2\sistema.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Paquete de instalación estándar 8|IconGroups]
+Group0=Sistema Integral de Distribución
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 8|Sistema Integral de Distribución]
+Icon1=inicio.exe
+Title1=Sistema Integral de Distribución
+StartIn1=$(AppPath)
+Key1=Icon1

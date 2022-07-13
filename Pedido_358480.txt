@@ -1,0 +1,18 @@
+Se facturo el pedido 358480 con los siguientes datos
+
+Cliente: TORRES ESPINOZA MARIA DOMINGA
+
+Guias: 
+
+Lugar de entrega de la mercancia: 
+   Dirección: MORELOS # 13 ENTRE 16 DE SEPTIEMBRE Y CONSTITUCION
+   Colonia:   HUATABAMPO CENTRO
+   Ciudad:    HUATABAMPO
+   Municipio: HUATABAMPO
+   Estado:    SONORA
+   Pais:      MEXICO
+
+Facturas:
+ 2865 con importe de       3,059.98 PESOS
+==================================
+Por un total de                   3,059.98 PESOS

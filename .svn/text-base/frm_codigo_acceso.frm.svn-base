@@ -1,0 +1,437 @@
+VERSION 5.00
+Begin VB.Form frmcodigo_acceso 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Código de Acceso a Movimientos"
+   ClientHeight    =   1005
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   3375
+   Icon            =   "frm_codigo_acceso.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   MinButton       =   0   'False
+   Moveable        =   0   'False
+   ScaleHeight     =   1005
+   ScaleWidth      =   3375
+   ShowInTaskbar   =   0   'False
+   Begin VB.TextBox txt_acceso 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   240
+      TabIndex        =   0
+      Top             =   330
+      Width           =   2910
+   End
+   Begin VB.Label lbl_embarque 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   270
+      Left            =   240
+      TabIndex        =   1
+      Top             =   30
+      Width           =   2910
+   End
+End
+Attribute VB_Name = "frmcodigo_acceso"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim var_habilita_forma As Boolean
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+End Sub
+
+
+Private Sub Command1_Click()
+   If mm_sonido.Command = "open" Then
+      mm_sonido.Command = "close"
+   Else
+      mm_sonido.Command = "open"
+   End If
+End Sub
+
+Private Sub mm_sonido_Done(NotifyCode As Integer)
+   x = x + 1
+End Sub
+
+Private Sub Form_Load()
+   var_cadena_seguridad = ""
+   var_habilita_forma = True
+   frmcodigo_acceso.Top = 3000
+   frmcodigo_acceso.Left = 3850
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+   Frmmenu2.StatusBar1.Panels(1) = ""
+   If var_activa_menu = True And var_habilita_forma = True And var_es_embarque = False Then
+      Frmmenu2.Enabled = True
+   End If
+End Sub
+
+Private Sub txt_acceso_GotFocus()
+   Frmmenu2.StatusBar1.Panels(1) = "Presione F6 para ver los movimientos disponibles"
+End Sub
+
+Private Sub txt_acceso_KeyDown(KeyCode As Integer, Shift As Integer)
+   If KeyCode = 117 Then
+      If rs.State = 1 Then
+         rs.Close
+      End If
+      var_activa_forma_listamovimientos = "MENU"
+      frmlistamovimientos.Show
+      var_habilita_forma = False
+      Unload Me
+      Frmmenu2.Enabled = False
+      var_activa_menu = True
+   End If
+End Sub
+
+Private Sub txt_acceso_KeyPress(KeyAscii As Integer)
+   Dim var_clave_movimiento As String
+   Dim var_requiere_referencia As Integer
+   Dim var_requiere_factura As Integer
+   Dim var_movimiento As String
+   Dim var_nombre_movimiento As String
+   Dim var_tipo_movimiento As String
+   Dim var_titulo_origen As String
+   Dim var_resto As String
+   Dim var_orden_surtido As Double
+   Dim i As Integer
+   If KeyAscii = 39 Or KeyAscii = 61 Or KeyAscii = 44 Then
+      KeyAscii = 0
+   End If
+   KeyAscii = Asc(UCase(Chr(KeyAscii)))
+   If KeyAscii = 13 Then
+      txt_acceso = (UCase(txt_acceso))
+      var_subir_directo = False
+      If var_nec_emb = False Then
+         If Len(Trim(txt_acceso)) >= 2 Then
+            i = Len(Trim(txt_acceso))
+            var_clave_movimiento = Left(Trim(txt_acceso), 2)
+            var_resto = Trim(txt_acceso)
+            If rs.State = 1 Then
+               rs.Close
+            End If
+            If rs.State = 1 Then
+               rs.Close
+            End If
+            rs.Open "select * from tb_movimientos where vcha_mov_movimiento_id = '" + var_clave_movimiento + "'", cnn, adOpenDynamic, adLockOptimistic
+            If Not rs.EOF Then
+               var_tipo_movimiento = Trim(rs!CHAR_MOV_AFECTACION)
+               var_movimiento = rs!VCHA_MOV_MOVIMIENTO_ID
+               var_nombre_movimiento = rs!vcha_mov_nombre
+               var_tipo_proveedor_movimiento = IIf(IsNull(rs!char_mov_tipo_proveedor), "", rs!char_mov_tipo_proveedor)
+               var_reporte_imprimir = IIf(IsNull(rs!vcha_mov_reporte_imprimir), "", rs!vcha_mov_reporte_imprimir)
+               If IsNull(rs!char_mov_documento) Then
+                  var_tipo_documento = ""
+               Else
+                  var_tipo_documento = rs!char_mov_documento
+               End If
+               If IsNull(rs!INTE_MOV_REFEREANCIA) Then
+                  var_requiere_referencia = 0
+               Else
+                  var_requiere_referencia = rs!INTE_MOV_REFEREANCIA
+               End If
+               If IsNull(rs!INTE_MOV_FACTURA) Then
+                   var_requiere_factura = 0
+               Else
+                  var_requiere_factura = rs!INTE_MOV_FACTURA
+               End If
+               If IsNull(rs!vcha_mov_titulo_origen) Then
+                  var_titulo_origen = ""
+               Else
+                  var_titulo_origen = rs!vcha_mov_titulo_origen
+               End If
+               If IsNull(rs!INTE_MOV_CAUSA_DEVOLUCION) Then
+                  var_causa_devolucion = False
+               Else
+                  If rs!INTE_MOV_CAUSA_DEVOLUCION = 1 Then
+                     var_causa_devolucion = True
+                  Else
+                     var_causa_devolucion = False
+                  End If
+               End If
+               rs.Close
+               If var_tipo_movimiento = "T" Then
+                  var_clave_movimiento = var_movimiento
+                  frmtraspasos.Caption = var_nombre_movimiento
+                  frmtraspasos.lblnombremovimiento.Caption = var_nombre_movimiento
+                  If Len(var_nombre_movimiento) > 27 Then
+                     frmtraspasos.lblnombremovimiento.Font.Size = 16
+                  Else
+                     frmtraspasos.lblnombremovimiento.Font.Size = 20
+                  End If
+                  var_habilita_forma = False
+                  var_activa_forma_traspasos = "MENU"
+                  frmtraspasos.Show
+                  Unload Me
+               End If
+               If var_tipo_movimiento = "TE" Then
+                  var_clave_movimiento = var_movimiento
+                  frmtraspasosentradas.Caption = var_nombre_movimiento
+                  frmtraspasosentradas.lblnombremovimiento.Caption = var_nombre_movimiento
+                  If Len(var_nombre_movimiento) > 20 Then
+                     frmtraspasosentradas.lblnombremovimiento.Font.Size = 12
+                  Else
+                     frmtraspasosentradas.lblnombremovimiento.Font.Size = 20
+                  End If
+                  var_habilita_forma = False
+                  var_activa_forma_traspasosentradas = "MENU"
+                  frmtraspasosentradas.Show
+                  Unload Me
+               End If
+               If var_tipo_movimiento = "TS" Then
+                  var_clave_movimiento = var_movimiento
+                  frmtraspasossalidas.Caption = var_nombre_movimiento
+                  frmtraspasossalidas.lblnombremovimiento.Caption = var_nombre_movimiento
+                  If Len(var_nombre_movimiento) > 27 Then
+                     frmtraspasossalidas.lblnombremovimiento.Font.Size = 16
+                  Else
+                     frmtraspasossalidas.lblnombremovimiento.Font.Size = 20
+                  End If
+                  var_habilita_forma = False
+                  var_activa_forma_traspasossalidas = "MENU"
+                  frmtraspasossalidas.Show
+                  Unload Me
+               End If
+               If var_tipo_movimiento = "+" Then
+                  If var_requiere_referencia = 1 Then
+                     var_tipo_acceso = 1
+                     var_clave_movimiento = var_movimiento
+                     frmentradas.txt_clave_movimiento = var_clave_movimiento
+                     frmentradas.txt_tipo_documento = var_tipo_documento
+                     frmentradas.txt_archivo = var_resto
+                     frmentradas.txt_archivo.Enabled = False
+                     frmentradas.lblnombremovimiento.Caption = var_nombre_movimiento
+                     frmentradas.Caption = var_nombre_movimiento
+                     frmentradas.lbl_origen = var_titulo_origen
+                     If var_requiere_factura = 0 Then
+                        frmentradas.txt_factura.Enabled = False
+                     Else
+                        frmentradas.txt_factura.Enabled = True
+                     End If
+                     If Len(var_nombre_movimiento) > 30 Then
+                        frmentradas.lblnombremovimiento.Font.Size = 18
+                     Else
+                        frmentradas.lblnombremovimiento.Font.Size = 24
+                     End If
+                     
+                     var_clave_movimiento = var_movimiento
+                     frmentradas.ejecuta
+                     var_habilita_forma = False
+                     var_activa_forma_entradas = "MENU"
+                     frmentradas.Show
+                     Unload Me
+                  Else
+                     If var_tipo_documento = "D" Then
+                        var_clave_movimiento = var_movimiento
+                        frmentradas_devoluciones.Caption = var_nombre_movimiento
+                        frmentradas_devoluciones.lblnombremovimiento.Caption = var_nombre_movimiento
+                        If Len(var_nombre_movimiento) > 27 Then
+                           frmentradas_devoluciones.lblnombremovimiento.Font.Size = 16
+                        Else
+                           frmentradas_devoluciones.lblnombremovimiento.Font.Size = 20
+                        End If
+                        var_habilita_forma = False
+                        var_activa_forma_entradas_devoluciones = "MENU"
+                        frmentradas_devoluciones.Show
+                        Unload Me
+                     Else
+                        var_clave_movimiento = var_movimiento
+                        If var_requiere_factura = 1 Then
+                           frmentradas_compras.Caption = var_nombre_movimiento
+                           frmentradas_compras.lblnombremovimiento.Caption = var_nombre_movimiento
+                           If Len(var_nombre_movimiento) > 27 Then
+                              frmentradas_compras.lblnombremovimiento.Font.Size = 16
+                           Else
+                              frmentradas_compras.lblnombremovimiento.Font.Size = 20
+                           End If
+                           var_habilita_forma = False
+                           var_activa_forma_entradas_compras = "MENU"
+                           frmentradas_compras.Show
+                           Unload Me
+                        Else
+                           frmentradas_sin_comparacion.Caption = var_nombre_movimiento
+                           frmentradas_sin_comparacion.lblnombremovimiento.Caption = var_nombre_movimiento
+                           If Len(var_nombre_movimiento) > 27 Then
+                              frmentradas_sin_comparacion.lblnombremovimiento.Font.Size = 16
+                           Else
+                              frmentradas_sin_comparacion.lblnombremovimiento.Font.Size = 20
+                           End If
+                           var_habilita_forma = False
+                           var_activa_forma_entradas_sin_comparacion = "MENU"
+                           frmentradas_sin_comparacion.Show
+                           Unload Me
+                        End If
+                     End If
+                  End If
+               End If
+               If var_tipo_movimiento = "-" Then
+                  If var_requiere_referencia = 1 Then
+                     If Len(Trim(txt_acceso)) = 10 Then
+                        MsgBox "Este movimiento Requiere un embarque", vbOKOnly, "ATENCION"
+                     Else
+                       MsgBox "Movimiento Incorrecto", vbOKOnly, "ATENCION"
+                       var_habilita_forma = False
+                       var_activa_forma_listamovimientos = "MENU"
+                       frmlistamovimientos.Show
+                       Unload Me
+                     End If
+                  Else
+                  End If
+              End If
+            Else
+               rs.Close
+               MsgBox "El movimiento no existe", vbOKOnly, "ATENCION"
+               var_habilita_forma = False
+               var_activa_forma_listamovimientos = "MENU"
+               frmlistamovimientos.Show
+               Unload Me
+            End If
+         End If
+      Else
+         If Len(Trim(txt_acceso)) >= 2 Then
+            i = Len(Trim(txt_acceso))
+            var_clave_movimiento = Left(Trim(txt_acceso), 2)
+            var_resto = Trim(txt_acceso)
+            If rs.State = 1 Then
+               rs.Close
+            End If
+            
+            rs.Open "select * from tb_movimientos where vcha_mov_movimiento_id = '" + var_clave_movimiento + "'", cnn, adOpenDynamic, adLockOptimistic
+            If Not rs.EOF Then
+               var_tipo_movimiento = Trim(rs!CHAR_MOV_AFECTACION)
+               var_movimiento = rs!VCHA_MOV_MOVIMIENTO_ID
+               var_nombre_movimiento = rs!vcha_mov_nombre
+               If IsNull(rs!char_mov_documento) Then
+                  var_tipo_documento = ""
+               Else
+                  var_tipo_documento = rs!char_mov_documento
+               End If
+               If IsNull(rs!INTE_MOV_REFEREANCIA) Then
+                  var_requiere_referencia = 0
+               Else
+                  var_requiere_referencia = rs!INTE_MOV_REFEREANCIA
+               End If
+               If IsNull(rs!INTE_MOV_FACTURA) Then
+                   var_requiere_factura = 0
+               Else
+                  var_requiere_factura = rs!INTE_MOV_FACTURA
+               End If
+               If IsNull(rs!vcha_mov_titulo_origen) Then
+                  var_titulo_origen = ""
+               Else
+                  var_titulo_origen = rs!vcha_mov_titulo_origen
+               End If
+               rs.Close
+               If var_tipo_movimiento = "-" Or var_tipo_movimiento = "T" Then
+                  If var_requiere_referencia = 1 Then
+                     If Len(Trim(txt_acceso)) = 10 Then
+                        var_tipo_acceso = 1 ' para que se no se ejecute si no hasta que se mueste la forma
+                        x = Right(txt_acceso, 7)
+                        If IsNumeric(x) Then
+                           var_orden_surtido = CDbl(x)
+                           var_clave_movimiento = var_movimiento
+                           If var_paquete = False Then
+                              frmsalidas.txt_archivo = var_orden_surtido
+                              frmsalidas.txt_clave_movimiento = var_clave_movimiento
+                              frmsalidas.txt_archivo.Enabled = False
+                              frmsalidas.lblnombremovimiento.Caption = var_nombre_movimiento
+                              frmsalidas.Caption = var_nombre_movimiento
+                              If Len(var_nombre_movimiento) > 30 Then
+                                 frmsalidas.lblnombremovimiento.Font.Size = 18
+                              Else
+                                 frmsalidas.lblnombremovimiento.Font.Size = 24
+                              End If
+                              var_clave_movimiento = var_movimiento
+                              frmsalidas.ejecuta
+                              var_habilita_forma = False
+                              var_activa_forma_salidas = "MENU"
+                              frmsalidas.Show
+                              Unload Me
+                           Else
+                              If var_empresa = "03" Then
+                                 If var_trazabilidad = 1 Then
+                                    frmsalidas_empaques_trazabilidad.txt_clave_movimiento = var_clave_movimiento
+                                    frmsalidas_empaques_trazabilidad.txt_archivo = var_orden_surtido
+                                    frmsalidas_empaques_trazabilidad.txt_archivo.Enabled = False
+                                    frmsalidas_empaques_trazabilidad.lblnombremovimiento.Caption = "EMPACADO DE MERCANCIA"
+                                    frmsalidas_empaques_trazabilidad.Caption = "EMPACADO DE MERCANCIA"
+                                    frmsalidas_empaques_trazabilidad.ejecuta
+                                    var_habilita_forma = False
+                                    var_activa_forma_salidas_empaques = "MENU"
+                                    frmsalidas_empaques_trazabilidad.Show
+                                    Unload Me
+                                 Else
+                                    frmsalidas_empaques.txt_clave_movimiento = var_clave_movimiento
+                                    frmsalidas_empaques.txt_archivo = var_orden_surtido
+                                    frmsalidas_empaques.txt_archivo.Enabled = False
+                                    frmsalidas_empaques.lblnombremovimiento.Caption = "EMPACADO DE MERCANCIA"
+                                    frmsalidas_empaques.Caption = "EMPACADO DE MERCANCIA"
+                                    frmsalidas_empaques.ejecuta
+                                    var_habilita_forma = False
+                                    var_activa_forma_salidas_empaques = "MENU"
+                                    frmsalidas_empaques.Show
+                                    Unload Me
+                                 End If
+                              Else
+                                 frmsalidas_empaques.txt_clave_movimiento = var_clave_movimiento
+                                 frmsalidas_empaques.txt_archivo = var_orden_surtido
+                                 frmsalidas_empaques.txt_archivo.Enabled = False
+                                 frmsalidas_empaques.lblnombremovimiento.Caption = "EMPACADO DE MERCANCIA"
+                                 frmsalidas_empaques.Caption = "EMPACADO DE MERCANCIA"
+                                 frmsalidas_empaques.ejecuta
+                                 var_habilita_forma = False
+                                 var_activa_forma_salidas_empaques = "MENU"
+                                 frmsalidas_empaques.Show
+                                 Unload Me
+                              End If
+                           End If
+                        Else
+                           MsgBox "Movimiento Incorrecto", vbOKOnly, "ATENCION"
+                           var_habilita_forma = False
+                           var_activa_forma_listamovimientos = "MENU"
+                           frmlistamovimientos.Show
+                           Unload Me
+                        End If
+                     Else
+                       MsgBox "Movimiento Incorrecto", vbOKOnly, "ATENCION"
+                       var_habilita_forma = False
+                       var_activa_forma_listamovimientos = "MENU"
+                       frmlistamovimientos.Show
+                       Unload Me
+                     End If
+                  Else
+                     MsgBox "Este movimiento no requiere embarque", vbOKOnly, "ATENCION"
+                  End If
+               Else
+                  MsgBox "Este movimiento no requiere embarque", vbOKOnly, "ATENCION"
+               End If
+            End If
+         End If
+      End If
+   End If
+   If KeyAscii = 27 Then
+      Unload Me
+   End If
+End Sub
+
+Private Sub txt_acceso_LostFocus()
+   Frmmenu2.StatusBar1.Panels(1) = ""
+End Sub

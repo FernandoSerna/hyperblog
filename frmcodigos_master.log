@@ -1,0 +1,15 @@
+Línea 169: la clase MSComctlLib.ListView del control lv_etiquetas no era una clase de control cargada.
+Línea 175: el nombre de la propiedad _ExtentX de lv_etiquetas no es válido.
+Línea 176: el nombre de la propiedad _ExtentY de lv_etiquetas no es válido.
+Línea 177: el nombre de la propiedad View de lv_etiquetas no es válido.
+Línea 178: el nombre de la propiedad LabelEdit de lv_etiquetas no es válido.
+Línea 179: el nombre de la propiedad LabelWrap de lv_etiquetas no es válido.
+Línea 180: el nombre de la propiedad HideSelection de lv_etiquetas no es válido.
+Línea 181: el nombre de la propiedad FullRowSelect de lv_etiquetas no es válido.
+Línea 182: el nombre de la propiedad GridLines de lv_etiquetas no es válido.
+Línea 183: el nombre de la propiedad _Version de lv_etiquetas no es válido.
+Línea 188: el nombre de la propiedad NumItems de lv_etiquetas no es válido.
+Línea 192: el nombre de la propiedad ColumnHeader(1) de lv_etiquetas no es válido.
+Línea 197: el nombre de la propiedad ColumnHeader(2) de lv_etiquetas no es válido.
+Línea 202: el nombre de la propiedad ColumnHeader(3) de lv_etiquetas no es válido.
+Línea 208: el nombre de la propiedad ColumnHeader(4) de lv_etiquetas no es válido.

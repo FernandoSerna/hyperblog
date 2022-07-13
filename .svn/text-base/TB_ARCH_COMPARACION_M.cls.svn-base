@@ -1,0 +1,60 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "TB_ARCH_COMPARACION_M"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Public MensajeError As String
+Dim cmd As New Command
+'ANADIR UN REGISTRO
+Public Function Anadir(clVCHA_EMP_EMPRESA_ID As String, clVCHA_UOR_UNIDAD_ID As String, clvcha_alm_almacen_id As String, clvcha_mov_movimiento_id As String, clINTE_COM_NUMERO As Double, _
+clCHAR_COM_TIPO_PROVEEDOR As String, clVCHA_COM_PROVEEDOR As String, clVcha_art_articulo_id As String, _
+clFLOA_COM_CANTIDAD_RECIBIDA As Double, clVCHA_COM_REFERENCIA As String, clINTE_COM_CONSECUTIVO As Double) As Boolean
+Dim rs As ADODB.recordSet, Cadena As String
+Anadir = True
+'On Error GoTo HELL
+
+Set cmd.ActiveConnection = cnn
+   cmd.CommandType = adCmdStoredProc
+   cmd.CommandText = "ARCHIVO_COMPARACION_M"
+   cmd("@VCHA_EMP_EMPRESA_ID") = clVCHA_EMP_EMPRESA_ID
+   cmd("@VCHA_UOR_UNIDAD_ID") = clVCHA_UOR_UNIDAD_ID
+   cmd("@VCHA_ALM_ALMACEN_ID") = clvcha_alm_almacen_id
+   cmd("@VCHA_MOV_MOVIMIENTO_ID") = clvcha_mov_movimiento_id
+   cmd("@INTE_COM_NUMERO") = clINTE_COM_NUMERO
+   cmd("@CHAR_COM_TIPO_PROVEEDOR") = clCHAR_COM_TIPO_PROVEEDOR
+   cmd("@VCHA_COM_PROVEEDOR") = clVCHA_COM_PROVEEDOR
+   cmd("@VCHA_ART_ARTICULO_ID") = clVcha_art_articulo_id
+   cmd("@FLOA_COM_CANTIDAD_RECIBIDA") = clFLOA_COM_CANTIDAD_RECIBIDA
+   cmd("@VCHA_COM_REFERENCIA") = clVCHA_COM_REFERENCIA
+   cmd("@INTE_COM_CONSECUTIVO") = clINTE_COM_CONSECUTIVO
+   cmd.execute
+Set cmd = Nothing
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Anadir = False
+    GoTo SIGUE
+End Function
+
+
+
+
+
+
+
+
+
+
+
+
+

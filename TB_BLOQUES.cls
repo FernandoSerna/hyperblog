@@ -1,0 +1,131 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "TB_BLOQUES"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+Public MensajeError As String
+
+Dim CMD As New Command
+
+
+'ANADIR UN REGISTRO
+Public Function Anadir(clVcha_blo_bloque_id As String, clVcha_blo_descripc As String, clDtim_aud_fechaora As String _
+, clVcha_aud_usuario As String, clVcha_aud_maquina As String, clVcha_pla_planta_id As String, clVcha_pla_uniorgan As String) As Boolean
+
+Anadir = True
+On Error GoTo HELL
+
+
+Set CMD.ActiveConnection = cnn                      'Esta es la conexión activa
+CMD.CommandType = adCmdStoredProc                   'Aquí le indico a ADO que se trata de un PA
+    
+If var_modifica_registro_bloque Then
+    CMD.CommandText = "BLOQUES_M"                         'Abrir Procedimiento Almacenado para Actualizar Cambios
+Else
+    CMD.CommandText = "BLOQUES_I"                         'Abrir Procedimiento Almacenado y Agregar Banco
+End If
+    CMD("@Vcha_blo_bloque_id") = clVcha_blo_bloque_id
+    CMD("@Vcha_blo_descripc") = clVcha_blo_descripc
+    CMD("@Vcha_blo_status") = "A"
+    CMD("@Dtim_aud_fechaora") = clDtim_aud_fechaora
+    CMD("@Vcha_aud_usuario") = clVcha_aud_usuario
+    CMD("@Vcha_aud_maquina") = clVcha_aud_maquina
+    CMD("@Vcha_pla_planta_id") = clVcha_pla_planta_id
+    CMD("@Vcha_pla_uniorgan") = clVcha_pla_uniorgan
+    
+CMD.execute                                         'Ejecutar el PA
+Set CMD = Nothing                                   'Liberar Memoria
+
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Anadir = False
+    GoTo SIGUE
+End Function
+
+
+'ELIMINAR
+Public Function Eliminar(clVcha_blo_bloque_id As String) As Boolean
+
+Eliminar = True
+On Error GoTo HELL
+
+Set CMD.ActiveConnection = cnn                      'Esta es la conexión activa
+CMD.CommandType = adCmdStoredProc                   'Aquí le indico a ADO que se trata de un PA
+    
+CMD.CommandText = "BLOQUES_E"                         'Abrir Procedimiento Almacenado y Agregar Banco
+    CMD("@VCHA_blo_bloque_id") = clVcha_blo_bloque_id
+CMD.execute                                         'Ejecutar el PA
+
+Set CMD = Nothing                                   'Liberar Memoria
+
+
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Eliminar = False
+    GoTo SIGUE
+End Function
+
+
+
+
+
+'UBICAR UN REGISTRO
+Public Function Obtener_llave(cn As adodb.Connection, ByVal rs As Recordset, ByVal var_campo As String, ByVal var_comparar As String) As String
+
+Ubicar = True
+On Error GoTo HELL
+
+'rs.Open "select * from TB_BLOQUES where " & var_campo & " =  '" + Trim(var_comparar) + "'", cn, adOpenDynamic, adLockOptimistic
+'If Not rs.EOF Then
+'  Obtener_llave = rs(0).Value
+'End If
+
+'rs.Close
+
+
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Ubicar = False
+    GoTo SIGUE
+End Function
+
+
+
+
+'SIGUIENTE REGISTRO LLAVE
+Public Function Siguiente(ByVal cn As adodb.Connection, ByVal rs As Recordset) As String
+Dim Cadena As String
+Siguiente = ""
+On Error GoTo HELL
+'rs.Open "select * from TB_BLOQUES_VIEW order by Vcha_blo_bloque_id", cn, adOpenDynamic, adLockOptimistic
+'If Not rs.EOF Then
+'  rs.MoveLast
+'  Siguiente = rs(0) + 1
+'End If
+'rs.Close
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    GoTo SIGUE
+End Function
+

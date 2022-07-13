@@ -1,0 +1,18 @@
+Se facturo el pedido 338054 con los siguientes datos
+
+Cliente: FLORES TORRES PATRICIA
+
+Guias: 
+
+Lugar de entrega de la mercancia: 
+   Dirección: PROLONGACION ZARAGOZA N. 112
+   Colonia:   VICENTE GUERRERO CENTRO
+   Ciudad:    VICENTE GUERRERO
+   Municipio: VICENTE GUERRERO
+   Estado:    DURANGO
+   Pais:      MEXICO
+
+Facturas:
+ 696 con importe de       1,528.42 PESOS
+==================================
+Por un total de                   1,528.42 PESOS

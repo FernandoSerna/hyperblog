@@ -1,0 +1,33 @@
+Línea 95: la clase MSComctlLib.ListView del control lv_lista no era una clase de control cargada.
+Línea 189: la clase MSComctlLib.ListView del control lv_devoluciones no era una clase de control cargada.
+Línea 101: el nombre de la propiedad _ExtentX de lv_lista no es válido.
+Línea 102: el nombre de la propiedad _ExtentY de lv_lista no es válido.
+Línea 103: el nombre de la propiedad View de lv_lista no es válido.
+Línea 104: el nombre de la propiedad LabelEdit de lv_lista no es válido.
+Línea 105: el nombre de la propiedad LabelWrap de lv_lista no es válido.
+Línea 106: el nombre de la propiedad HideSelection de lv_lista no es válido.
+Línea 107: el nombre de la propiedad FullRowSelect de lv_lista no es válido.
+Línea 108: el nombre de la propiedad GridLines de lv_lista no es válido.
+Línea 109: el nombre de la propiedad _Version de lv_lista no es válido.
+Línea 114: el nombre de la propiedad NumItems de lv_lista no es válido.
+Línea 118: el nombre de la propiedad ColumnHeader(1) de lv_lista no es válido.
+Línea 123: el nombre de la propiedad ColumnHeader(2) de lv_lista no es válido.
+Línea 195: el nombre de la propiedad _ExtentX de lv_devoluciones no es válido.
+Línea 196: el nombre de la propiedad _ExtentY de lv_devoluciones no es válido.
+Línea 197: el nombre de la propiedad View de lv_devoluciones no es válido.
+Línea 198: el nombre de la propiedad LabelEdit de lv_devoluciones no es válido.
+Línea 199: el nombre de la propiedad LabelWrap de lv_devoluciones no es válido.
+Línea 200: el nombre de la propiedad HideSelection de lv_devoluciones no es válido.
+Línea 201: el nombre de la propiedad FullRowSelect de lv_devoluciones no es válido.
+Línea 202: el nombre de la propiedad GridLines de lv_devoluciones no es válido.
+Línea 203: el nombre de la propiedad _Version de lv_devoluciones no es válido.
+Línea 208: el nombre de la propiedad NumItems de lv_devoluciones no es válido.
+Línea 212: el nombre de la propiedad ColumnHeader(1) de lv_devoluciones no es válido.
+Línea 217: el nombre de la propiedad ColumnHeader(2) de lv_devoluciones no es válido.
+Línea 223: el nombre de la propiedad ColumnHeader(3) de lv_devoluciones no es válido.
+Línea 228: el nombre de la propiedad ColumnHeader(4) de lv_devoluciones no es válido.
+Línea 233: el nombre de la propiedad ColumnHeader(5) de lv_devoluciones no es válido.
+Línea 238: el nombre de la propiedad ColumnHeader(6) de lv_devoluciones no es válido.
+Línea 243: el nombre de la propiedad ColumnHeader(7) de lv_devoluciones no es válido.
+Línea 248: el nombre de la propiedad ColumnHeader(8) de lv_devoluciones no es válido.
+Línea 253: el nombre de la propiedad ColumnHeader(9) de lv_devoluciones no es válido.

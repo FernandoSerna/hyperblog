@@ -1,0 +1,4 @@
+Línea 985: la clase WMPLibCtl.WindowsMediaPlayer del control wmp4 no era una clase de control cargada.
+Línea 1018: la clase WMPLibCtl.WindowsMediaPlayer del control wmp3 no era una clase de control cargada.
+Línea 1051: la clase WMPLibCtl.WindowsMediaPlayer del control wmp1 no era una clase de control cargada.
+Línea 1102: la clase WMPLibCtl.WindowsMediaPlayer del control wmp2 no era una clase de control cargada.

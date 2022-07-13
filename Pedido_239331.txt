@@ -1,0 +1,18 @@
+Se facturo el pedido 239331 con los siguientes datos
+
+Cliente: LIMA TEMIX VICENTA
+
+Guias: 
+
+Lugar de entrega de la mercancia: 
+   Dirección: NICOLAS BRAVO # 38-A %  MORELOS Y PROL BARRAGAN   
+   Colonia:   JALAPA ENRIQUEZ CENTRO
+   Ciudad:    XALAPA ENRIQUEZ
+   Municipio: XALAPA
+   Estado:    VERACRUZ
+   Pais:      MEXICO
+
+Facturas:
+ 35158 con importe de       2,764.18 PESOS
+==================================
+Por un total de                   2,764.18 PESOS

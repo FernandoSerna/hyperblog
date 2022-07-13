@@ -1,0 +1,1086 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Begin VB.Form frmconcentrado_orden_surtido 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Concentrado de Orden de Surtido"
+   ClientHeight    =   4335
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   9960
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   MinButton       =   0   'False
+   ScaleHeight     =   4335
+   ScaleWidth      =   9960
+   Begin VB.Frame Frame6 
+      Caption         =   " Agrupado "
+      Height          =   930
+      Left            =   90
+      TabIndex        =   34
+      Top             =   2505
+      Width           =   4050
+      Begin VB.OptionButton opt_agrupado 
+         Caption         =   "Agente"
+         Height          =   345
+         Left            =   210
+         TabIndex        =   35
+         Top             =   375
+         Width           =   885
+      End
+   End
+   Begin VB.Frame frm_horas 
+      Height          =   1470
+      Left            =   2115
+      TabIndex        =   31
+      Top             =   4395
+      Width           =   2040
+      Begin VB.ListBox lst_horas 
+         Height          =   1035
+         Left            =   60
+         TabIndex        =   32
+         Top             =   375
+         Width           =   1905
+      End
+      Begin VB.Label Label3 
+         BackColor       =   &H8000000D&
+         Caption         =   " Canales de Venta"
+         ForeColor       =   &H8000000E&
+         Height          =   225
+         Left            =   30
+         TabIndex        =   33
+         Top             =   120
+         Width           =   1965
+      End
+   End
+   Begin VB.Frame Frame5 
+      Caption         =   " Hora "
+      Height          =   705
+      Left            =   105
+      TabIndex        =   30
+      Top             =   4560
+      Width           =   4050
+      Begin VB.TextBox txt_hora 
+         Enabled         =   0   'False
+         Height          =   315
+         Left            =   1380
+         Locked          =   -1  'True
+         TabIndex        =   10
+         Top             =   210
+         Width           =   1065
+      End
+   End
+   Begin VB.Frame Frame4 
+      Caption         =   " Fecha "
+      Height          =   705
+      Left            =   105
+      TabIndex        =   29
+      Top             =   3480
+      Width           =   4050
+      Begin VB.TextBox txt_fecha 
+         Height          =   315
+         Left            =   1395
+         TabIndex        =   8
+         Top             =   233
+         Width           =   1065
+      End
+      Begin VB.CommandButton cmd_mes_1 
+         Height          =   330
+         Left            =   2490
+         Picture         =   "frmconcentrado_orden_surtido.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   9
+         Top             =   225
+         Width           =   345
+      End
+   End
+   Begin VB.Frame Frame3 
+      Caption         =   " Tipo Reporte "
+      Height          =   945
+      Left            =   120
+      TabIndex        =   22
+      Top             =   495
+      Width           =   4050
+      Begin VB.OptionButton opt_tipo_reporte_2 
+         Caption         =   "Detalle de Artículos"
+         Height          =   405
+         Left            =   225
+         TabIndex        =   5
+         Top             =   510
+         Width           =   2340
+      End
+      Begin VB.OptionButton opt_tipo_reporte_1 
+         Caption         =   "Agrupado por Linea"
+         Height          =   315
+         Left            =   225
+         TabIndex        =   4
+         Top             =   225
+         Width           =   1740
+      End
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   " Filtrado "
+      Height          =   930
+      Left            =   120
+      TabIndex        =   21
+      Top             =   1530
+      Width           =   4050
+      Begin VB.OptionButton opt_tipo_filtrado_1 
+         Caption         =   "Agente"
+         Height          =   345
+         Left            =   210
+         TabIndex        =   6
+         Top             =   210
+         Width           =   1500
+      End
+      Begin VB.OptionButton opt_tipo_filtrado_2 
+         Caption         =   "Canal de Venta"
+         Height          =   255
+         Left            =   210
+         TabIndex        =   7
+         Top             =   570
+         Width           =   1935
+      End
+   End
+   Begin VB.CommandButton cmd_salir 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   9465
+      Picture         =   "frmconcentrado_orden_surtido.frx":1272
+      Style           =   1  'Graphical
+      TabIndex        =   3
+      ToolTipText     =   "Salir"
+      Top             =   30
+      Width           =   330
+   End
+   Begin VB.CommandButton cmd_imprimir 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   375
+      Picture         =   "frmconcentrado_orden_surtido.frx":18AC
+      Style           =   1  'Graphical
+      TabIndex        =   2
+      ToolTipText     =   "Imprimir Alt + I"
+      Top             =   30
+      Width           =   330
+   End
+   Begin VB.CommandButton cmd_nuevo 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   45
+      Picture         =   "frmconcentrado_orden_surtido.frx":19AE
+      Style           =   1  'Graphical
+      TabIndex        =   1
+      ToolTipText     =   "Nuevo Alt + N"
+      Top             =   30
+      Width           =   330
+   End
+   Begin VB.Frame Frame2 
+      Height          =   45
+      Left            =   -15
+      TabIndex        =   0
+      Top             =   345
+      Width           =   9870
+   End
+   Begin VB.Frame frm_canales 
+      Height          =   3690
+      Left            =   4215
+      TabIndex        =   26
+      Top             =   495
+      Width           =   5610
+      Begin VB.CommandButton Command5 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   1350
+         Picture         =   "frmconcentrado_orden_surtido.frx":1AB0
+         Style           =   1  'Graphical
+         TabIndex        =   15
+         ToolTipText     =   "Marcar Rango Alt + R"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton Command4 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   690
+         Picture         =   "frmconcentrado_orden_surtido.frx":1CC6
+         Style           =   1  'Graphical
+         TabIndex        =   13
+         ToolTipText     =   "Marcar (Enter)"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton Command3 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   1020
+         Picture         =   "frmconcentrado_orden_surtido.frx":1F10
+         Style           =   1  'Graphical
+         TabIndex        =   14
+         ToolTipText     =   "Invertir Selección Alt + V"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton Command2 
+         Height          =   315
+         Left            =   30
+         Picture         =   "frmconcentrado_orden_surtido.frx":1FE2
+         Style           =   1  'Graphical
+         TabIndex        =   11
+         ToolTipText     =   "Desmarcar Todos Alt + D"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton Command1 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   360
+         Picture         =   "frmconcentrado_orden_surtido.frx":20E4
+         Style           =   1  'Graphical
+         TabIndex        =   12
+         ToolTipText     =   "Marcar Todos Alt + T"
+         Top             =   360
+         Width           =   330
+      End
+      Begin MSComctlLib.ListView lv_canales 
+         Height          =   2925
+         Left            =   60
+         TabIndex        =   27
+         Top             =   690
+         Width           =   5490
+         _ExtentX        =   9684
+         _ExtentY        =   5159
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         FullRowSelect   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   3
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "Clave"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Text            =   "Nombre"
+            Object.Width           =   6967
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Text            =   "Marca"
+            Object.Width           =   0
+         EndProperty
+      End
+      Begin VB.Label Label2 
+         BackColor       =   &H8000000D&
+         Caption         =   " Canales de Venta"
+         ForeColor       =   &H8000000E&
+         Height          =   225
+         Left            =   30
+         TabIndex        =   28
+         Top             =   120
+         Width           =   5535
+      End
+   End
+   Begin VB.Frame frm_agentes 
+      Height          =   2775
+      Left            =   4215
+      TabIndex        =   23
+      Top             =   495
+      Width           =   5610
+      Begin VB.CommandButton cmd_todos 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   360
+         Picture         =   "frmconcentrado_orden_surtido.frx":22FA
+         Style           =   1  'Graphical
+         TabIndex        =   17
+         ToolTipText     =   "Marcar Todos Alt + T"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton cmd_ninguno 
+         Height          =   315
+         Left            =   30
+         Picture         =   "frmconcentrado_orden_surtido.frx":2510
+         Style           =   1  'Graphical
+         TabIndex        =   16
+         ToolTipText     =   "Desmarcar Todos Alt + D"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton cmd_invertir 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   1020
+         Picture         =   "frmconcentrado_orden_surtido.frx":2612
+         Style           =   1  'Graphical
+         TabIndex        =   19
+         ToolTipText     =   "Invertir Selección Alt + V"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton cmd_marcar 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   690
+         Picture         =   "frmconcentrado_orden_surtido.frx":26E4
+         Style           =   1  'Graphical
+         TabIndex        =   18
+         ToolTipText     =   "Marcar (Enter)"
+         Top             =   360
+         Width           =   330
+      End
+      Begin VB.CommandButton cmd_seleccion 
+         Appearance      =   0  'Flat
+         Height          =   315
+         Left            =   1350
+         Picture         =   "frmconcentrado_orden_surtido.frx":292E
+         Style           =   1  'Graphical
+         TabIndex        =   20
+         ToolTipText     =   "Marcar Rango Alt + R"
+         Top             =   360
+         Width           =   330
+      End
+      Begin MSComctlLib.ListView lv_agentes 
+         Height          =   2025
+         Left            =   75
+         TabIndex        =   24
+         Top             =   690
+         Width           =   5490
+         _ExtentX        =   9684
+         _ExtentY        =   3572
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         FullRowSelect   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   1
+         NumItems        =   3
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Text            =   "Clave"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Text            =   "Nombre"
+            Object.Width           =   6967
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Text            =   "Marca"
+            Object.Width           =   0
+         EndProperty
+      End
+      Begin VB.Label Label1 
+         BackColor       =   &H8000000D&
+         Caption         =   " Agentes "
+         ForeColor       =   &H8000000E&
+         Height          =   225
+         Left            =   30
+         TabIndex        =   25
+         Top             =   120
+         Width           =   5535
+      End
+   End
+End
+Attribute VB_Name = "frmconcentrado_orden_surtido"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim appl As New CRAXDRT.Application
+Dim reporte As New CRAXDRT.Report
+Private Sub cmd_imprimir_Click()
+Dim var_n As Integer
+Dim var_i As Integer
+Dim var_primera_vez As Integer
+Dim var_agentes As Integer
+Dim var_cadena As String
+var_primera_vez = 1
+var_agentes = 0
+If IsDate(txt_fecha) Then
+   If opt_tipo_filtrado_2.Value = True Then
+      var_n = lv_canales.ListItems.Count
+      For var_i = 1 To var_n
+          lv_canales.ListItems(var_i).Selected = True
+          If lv_canales.selectedItem.SubItems(2) = "*" Then
+             rs.Open "select vcha_age_agente_id from vw_clientes_1 where vcha_can_canal_venta_id = '" + lv_canales.selectedItem + "'", cnn, adOpenDynamic, adLockOptimistic
+             While Not rs.EOF
+                If Not IsNull(rs!VCHA_AGE_AGENTE_ID) Then
+                   If var_primera_vez = 1 Then
+                      var_primera_vez = 0
+                      var_cadena = "vcha_age_agente_id = '" + rs!VCHA_AGE_AGENTE_ID + "'"
+                   Else
+                      var_cadena = var_cadena + " or vcha_age_agente_id = '" + rs!VCHA_AGE_AGENTE_ID + "'"
+                   End If
+                End If
+                rs.MoveNext
+             Wend
+             rs.Close
+          End If
+      Next var_i
+   End If
+   var_primera_vez = 1
+   If opt_tipo_filtrado_1.Value = True Then
+      var_n = lv_agentes.ListItems.Count
+      For var_i = 1 To var_n
+          lv_agentes.ListItems.Item(var_i).Selected = True
+          If lv_agentes.selectedItem.SubItems(2) = "*" Then
+             If var_primera_vez = 1 Then
+                var_primera_vez = 0
+                var_cadena = "vcha_age_agente_id = '" + lv_agentes.selectedItem + "'"
+             Else
+                var_cadena = var_cadena + " or vcha_age_agente_id = '" + lv_agentes.selectedItem + "'"
+             End If
+          End If
+      Next var_i
+   End If
+   If Trim(var_cadena) <> "" Then
+   
+      var_fecha_fin_1 = CDate(txt_fecha) + 1
+      var_dia = CStr(Day(CDate(txt_fecha)))
+      var_mes = CStr(Month(CDate(txt_fecha)))
+      var_año = CStr(Year(CDate(txt_fecha)))
+      If Len(Trim(var_dia)) = 1 Then
+         var_dia = "0" + var_dia
+      End If
+      If Len(Trim(var_mes)) = 1 Then
+         var_mes = "0" + var_mes
+      End If
+      var_fecha_inicio = "{d '" + var_año + "-" + var_mes + "-" + var_dia + "'}"
+          
+           
+      var_dia = CStr(Day(var_fecha_fin_1))
+      var_mes = CStr(Month(var_fecha_fin_1))
+      var_año = CStr(Year(var_fecha_fin_1))
+      If Len(Trim(var_dia)) = 1 Then
+         var_dia = "0" + var_dia
+      End If
+      If Len(Trim(var_mes)) = 1 Then
+         var_mes = "0" + var_mes
+      End If
+      var_fecha_fin = "{d '" + var_año + "-" + var_mes + "-" + var_dia + "'}"
+      rsaux2.Open "select distinct vcha_age_agente_id, inte_ors_orden_surtido from VW_ORDEN_SURTIDO where (" + var_cadena + ") AND (DTIM_ORS_FECHA_CARGA >= " + var_fecha_inicio + " and DTIM_ORS_FECHA_CARGA <= " + var_fecha_fin + "-.00000001)", cnn, adOpenDynamic, adLockOptimistic
+      If Not rsaux2.EOF Then
+         cnn.BeginTrans
+         rs.Open "select max(inte_tmp_consecutivo) from TB_TEMP_CONCENTRADO_ORDEN_SURTIDO_AGENTES", cnn, adOpenDynamic, adLockOptimistic
+         If rs.EOF Then
+            var_numero = 1
+         Else
+            var_numero = IIf(IsNull(rs(0).Value), 1, rs(0).Value + 1)
+         End If
+         rs.Close
+         While Not rsaux2.EOF
+            rs.Open "insert into TB_TEMP_CONCENTRADO_ORDEN_SURTIDO_AGENTES (INTE_TMP_CONSECUTIVO, DTIM_TEM_FECHA, VCHA_AUD_USUARIO, VCHA_AUD_MAQUINA, VCHA_AGE_AGENTE_ID, INTE_ORS_ORDEN_SURTIDO) values(" + CStr(var_numero) + ", " + var_fecha_inicio + ", '" + var_usuario_global + "', '" + fun_NombrePc + "', '" + rsaux2!VCHA_AGE_AGENTE_ID + "', " + CStr(rsaux2!INTE_ORS_ORDEN_SURTIDO) + ")", cnn, adOpenDynamic, adLockOptimistic
+            rsaux2.MoveNext
+         Wend
+         cnn.CommitTrans
+         If opt_tipo_reporte_2.Value = True Then
+            Set reporte = appl.OpenReport(App.Path + "\rep_concentrado_orden_surtido_detalle.rpt")
+            var_cadena = "{VW_CONCENTRADO_ORDENES_SURTIDO_DETALLE.INTE_TMP_CONSECUTIVO} = " + CStr(var_numero)
+            reporte.RecordSelectionFormula = var_cadena
+            frmvistasprevias.cr.ReportSource = reporte
+            For ntablas = 1 To reporte.Database.Tables.Count
+                reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+            Next ntablas
+            frmvistasprevias.cr.ViewReport
+            frmvistasprevias.Caption = "Concentrado de Ordenes de Surtido"
+            frmvistasprevias.Show 1
+            Set reporte = Nothing
+         
+            var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+            If var_si = 6 Then
+               Set reporte = appl.OpenReport(App.Path + "\rep_concentrado_orden_surtido_detalle.rpt")
+               var_cadena = "{VW_CONCENTRADO_ORDENES_SURTIDO_DETALLE.INTE_TMP_CONSECUTIVO} = " + CStr(var_numero)
+               reporte.RecordSelectionFormula = var_cadena
+               For ntablas = 1 To reporte.Database.Tables.Count
+                   reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+               Next ntablas
+               reporte.ExportOptions.FormatType = crEFTExcel80
+               reporte.ExportOptions.DestinationType = crEDTDiskFile
+               archivo = "c:\reportessid\concentrado_ordenes_surtido_" + Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+               reporte.ExportOptions.DiskFileName = archivo
+               reporte.Export False
+               Set reporte = Nothing
+            End If
+         
+         
+         
+         End If
+         If opt_tipo_reporte_1.Value = True Then
+            Set reporte = appl.OpenReport(App.Path + "\rep_concentrado_orden_surtido_linea.rpt")
+            var_cadena = "{VW_CONCENTRADO_ORDENES_SURTIDO_LINEA.INTE_TMP_CONSECUTIVO} = " + CStr(var_numero)
+            reporte.RecordSelectionFormula = var_cadena
+            frmvistasprevias.cr.ReportSource = reporte
+            For ntablas = 1 To reporte.Database.Tables.Count
+                reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+            Next ntablas
+            frmvistasprevias.cr.ViewReport
+            frmvistasprevias.Caption = "Concentrado de Ordenes de Surtido"
+            frmvistasprevias.Show 1
+            Set reporte = Nothing
+            
+            var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+            If var_si = 6 Then
+               Set reporte = appl.OpenReport(App.Path + "\rep_concentrado_orden_surtido_linea.rpt")
+               var_cadena = "{VW_CONCENTRADO_ORDENES_SURTIDO_LINEA.INTE_TMP_CONSECUTIVO} = " + CStr(var_numero)
+               reporte.RecordSelectionFormula = var_cadena
+               For ntablas = 1 To reporte.Database.Tables.Count
+                   reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+               Next ntablas
+               reporte.ExportOptions.FormatType = crEFTExcel80
+               reporte.ExportOptions.DestinationType = crEDTDiskFile
+               archivo = "c:\reportessid\concentrado_ordenes_surtido_" + Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+               reporte.ExportOptions.DiskFileName = archivo
+               reporte.Export False
+               Set reporte = Nothing
+            End If
+            
+            
+         End If
+         rs.Open "DELETE FROM TB_TEMP_CONCENTRADO_ORDEN_SURTIDO_AGENTES WHERE INTE_TMP_CONSECUTIVO = " + CStr(var_numero), cnn, adOpenDynamic, adLockOptimistic
+      End If
+      If rsaux2.State = 1 Then
+         rsaux2.Close
+      End If
+   Else
+      MsgBox "No se a seleccionado algún agente", vbOKOnly, "ATENCION"
+   End If
+Else
+   MsgBox "Fecha Incorrecta", vbOKOnly, "ATENCION"
+End If
+   
+End Sub
+
+Private Sub cmd_invertir_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_agentes.ListItems.Count
+   For i = 1 To n
+       If lv_agentes.ListItems.Item(i).SubItems(2) = "*" Then
+          lv_agentes.ListItems.Item(i).SubItems(2) = " "
+          lv_agentes.ListItems.Item(i).Bold = False
+          lv_agentes.ListItems.Item(i).ForeColor = &H80000012
+          lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = False
+          lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = False
+          lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+          lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+       Else
+          lv_agentes.ListItems.Item(i).SubItems(2) = "*"
+          lv_agentes.ListItems.Item(i).Bold = True
+          lv_agentes.ListItems.Item(i).ForeColor = &H8000&
+          lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = True
+          lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = True
+          lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+          lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+      End If
+   Next
+   lv_agentes.Refresh
+End Sub
+
+Private Sub cmd_marcar_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   i = lv_agentes.selectedItem.Index
+   If lv_agentes.selectedItem.SubItems(2) = "*" Then
+       lv_agentes.ListItems.Item(i).SubItems(2) = " "
+       lv_agentes.ListItems.Item(i).Bold = False
+       lv_agentes.ListItems.Item(i).ForeColor = &H80000012
+       lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = False
+       lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = False
+       lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+       lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+   Else
+      lv_agentes.ListItems.Item(i).SubItems(2) = "*"
+      lv_agentes.ListItems.Item(i).Bold = True
+      lv_agentes.ListItems.Item(i).ForeColor = &H8000&
+      lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = True
+      lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = True
+      lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+      lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+  End If
+  lv_agentes.Refresh
+End Sub
+
+Private Sub cmd_ninguno_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_agentes.ListItems.Count
+   For i = 1 To n
+       lv_agentes.ListItems.Item(i).SubItems(2) = " "
+       lv_agentes.ListItems.Item(i).Bold = False
+       lv_agentes.ListItems.Item(i).ForeColor = &H80000012
+       lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = False
+       lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = False
+       lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+       lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+    Next
+    lv_agentes.Refresh
+
+End Sub
+
+Private Sub cmd_salir_Click()
+   Unload Me
+End Sub
+
+Private Sub cmd_seleccion_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   primera_vez = False
+   segunda_vez = False
+   n = lv_agentes.ListItems.Count
+   For i = 1 To n
+       If lv_agentes.ListItems.Item(i).SubItems(2) = "*" And primera_vez = False Then
+          numero_seleccionado1 = i
+          primera_vez = True
+       End If
+       If lv_agentes.ListItems.Item(i).SubItems(2) = "*" And primera_vez = True Then
+          numero_seleccionado2 = i
+       End If
+   Next
+   For i = numero_seleccionado1 To numero_seleccionado2
+       lv_agentes.ListItems.Item(i).SubItems(2) = "*"
+       lv_agentes.ListItems.Item(i).Bold = True
+       lv_agentes.ListItems.Item(i).ForeColor = &H8000&
+       lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = True
+       lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = True
+       lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+       lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+       lv_agentes.Refresh
+   Next
+End Sub
+
+Private Sub cmd_todos_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_agentes.ListItems.Count
+   For i = 1 To n
+       lv_agentes.ListItems.Item(i).SubItems(2) = "*"
+       lv_agentes.ListItems.Item(i).Bold = True
+       lv_agentes.ListItems.Item(i).ForeColor = &H8000&
+       lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = True
+       lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = True
+       lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+       lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+   Next
+   lv_agentes.Refresh
+End Sub
+
+Private Sub Command1_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_canales.ListItems.Count
+   For i = 1 To n
+       lv_canales.ListItems.Item(i).SubItems(2) = "*"
+       lv_canales.ListItems.Item(i).Bold = True
+       lv_canales.ListItems.Item(i).ForeColor = &H8000&
+       lv_canales.ListItems.Item(i).ListSubItems(1).Bold = True
+       lv_canales.ListItems.Item(i).ListSubItems(2).Bold = True
+       lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+       lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+   Next
+   lv_canales.Refresh
+
+End Sub
+
+Private Sub Command2_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_canales.ListItems.Count
+   For i = 1 To n
+       lv_canales.ListItems.Item(i).SubItems(2) = " "
+       lv_canales.ListItems.Item(i).Bold = False
+       lv_canales.ListItems.Item(i).ForeColor = &H80000012
+       lv_canales.ListItems.Item(i).ListSubItems(1).Bold = False
+       lv_canales.ListItems.Item(i).ListSubItems(2).Bold = False
+       lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+       lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+    Next
+    lv_canales.Refresh
+End Sub
+
+Private Sub Command3_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   n = lv_canales.ListItems.Count
+   For i = 1 To n
+       If lv_canales.ListItems.Item(i).SubItems(2) = "*" Then
+          lv_canales.ListItems.Item(i).SubItems(2) = " "
+          lv_canales.ListItems.Item(i).Bold = False
+          lv_canales.ListItems.Item(i).ForeColor = &H80000012
+          lv_canales.ListItems.Item(i).ListSubItems(1).Bold = False
+          lv_canales.ListItems.Item(i).ListSubItems(2).Bold = False
+          lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+          lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+       Else
+          lv_canales.ListItems.Item(i).SubItems(2) = "*"
+          lv_canales.ListItems.Item(i).Bold = True
+          lv_canales.ListItems.Item(i).ForeColor = &H8000&
+          lv_canales.ListItems.Item(i).ListSubItems(1).Bold = True
+          lv_canales.ListItems.Item(i).ListSubItems(2).Bold = True
+          lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+          lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+      End If
+   Next
+   lv_canales.Refresh
+End Sub
+
+Private Sub Command4_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   i = lv_canales.selectedItem.Index
+   If lv_canales.selectedItem.SubItems(2) = "*" Then
+      lv_canales.ListItems.Item(i).SubItems(2) = " "
+      lv_canales.ListItems.Item(i).Bold = False
+      lv_canales.ListItems.Item(i).ForeColor = &H80000012
+      lv_canales.ListItems.Item(i).ListSubItems(1).Bold = False
+      lv_canales.ListItems.Item(i).ListSubItems(2).Bold = False
+      lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+      lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+   Else
+      lv_canales.ListItems.Item(i).SubItems(2) = "*"
+      lv_canales.ListItems.Item(i).Bold = True
+      lv_canales.ListItems.Item(i).ForeColor = &H8000&
+      lv_canales.ListItems.Item(i).ListSubItems(1).Bold = True
+      lv_canales.ListItems.Item(i).ListSubItems(2).Bold = True
+      lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+      lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+   End If
+   lv_canales.Refresh
+End Sub
+
+Private Sub Command5_Click()
+   Dim numero_lineas As Integer
+   Dim numero_seleccionado1 As Integer
+   Dim numero_seleccionado2 As Integer
+   Dim primera_vez As Boolean
+   Dim segunda_vez As Boolean
+   Dim i As Integer
+   Dim n As Integer
+   Dim list_item As ListItem
+   primera_vez = False
+   segunda_vez = False
+   n = lv_canales.ListItems.Count
+   For i = 1 To n
+       If lv_canales.ListItems.Item(i).SubItems(2) = "*" And primera_vez = False Then
+          numero_seleccionado1 = i
+          primera_vez = True
+       End If
+       If lv_canales.ListItems.Item(i).SubItems(2) = "*" And primera_vez = True Then
+          numero_seleccionado2 = i
+       End If
+   Next
+   For i = numero_seleccionado1 To numero_seleccionado2
+       lv_canales.ListItems.Item(i).SubItems(2) = "*"
+       lv_canales.ListItems.Item(i).Bold = True
+       lv_canales.ListItems.Item(i).ForeColor = &H8000&
+       lv_canales.ListItems.Item(i).ListSubItems(1).Bold = True
+       lv_canales.ListItems.Item(i).ListSubItems(2).Bold = True
+       lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+       lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+       lv_canales.Refresh
+   Next
+End Sub
+
+Private Sub Form_Load()
+   var_cadena_seguridad = ""
+   Top = 1500
+   Left = 900
+   frm_horas.Visible = False
+   frm_canales.Visible = False
+   frm_agentes.Visible = True
+   opt_tipo_filtrado_1.Value = True
+   opt_tipo_reporte_1.Value = True
+   rs.Open "select max(dtim_ors_fecha_carga) as fecha from tb_enc_orden_surtido where vcha_emp_empresa_id = '" + var_empresa + "'", cnn, adOpenDynamic, adLockOptimistic
+   If Not rs.EOF Then
+      If Not IsNull(rs!fecha) Then
+         If IsDate(rs!fecha) Then
+            txt_fecha = rs!fecha
+         Else
+            MsgBox "Fecha incorrecta", vbOKOnly, "ATENCION"
+         End If
+      Else
+         txt_fecha = Date
+      End If
+   Else
+      txt_fecha = Date
+   End If
+   rs.Close
+   Dim list_item As ListItem
+   rs.Open "select * from TB_AGENTES WHERE VCHA_EMP_EMPRESA_ID = '" + var_empresa + "'ORDER BY VCHA_AGE_NOMBRE ", cnn, adOpenDynamic, adLockOptimistic
+   numero_items_agentes = 0
+   While Not rs.EOF
+      Set list_item = lv_agentes.ListItems.Add(, , rs!VCHA_AGE_AGENTE_ID)
+      list_item.SubItems(1) = IIf(IsNull(rs!VCHA_AGE_NOMBRE), "", rs!VCHA_AGE_NOMBRE)
+      list_item.SubItems(2) = " "
+      rs.MoveNext:
+      numero_items_agentes = numero_items_agentes + 1
+    Wend
+    rs.Close
+   If numero_items_agentes > 12 Then
+      lv_agentes.ColumnHeaders(1).Width = lv_agentes.ColumnHeaders(1).Width - 200
+   End If
+
+   rs.Open "select * from TB_CANALESVENTAS ORDER BY VCHA_CAN_NOMBRE ", cnn, adOpenDynamic, adLockOptimistic
+   numero_items_canales = 0
+   While Not rs.EOF
+      Set list_item = lv_canales.ListItems.Add(, , rs!vcha_can_canal_venta_id)
+      list_item.SubItems(1) = IIf(IsNull(rs!vcha_can_nombre), "", rs!vcha_can_nombre)
+      list_item.SubItems(2) = " "
+      rs.MoveNext:
+      numero_items_canales = numero_items_canales + 1
+    Wend
+    rs.Close
+   If numero_items_canales > 12 Then
+      lv_canales.ColumnHeaders(1).Width = lv_canales.ColumnHeaders(1).Width - 200
+   End If
+
+
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    var_swpassword = False
+    var_modifica_registro = False
+    Call activa_forma(var_activa_forma_concentrado_orden_surtido)
+End Sub
+
+Private Sub lst_horas_DblClick()
+   Dim n As Integer
+   n = lst_horas.ListIndex
+   txt_hora = lst_horas.List(n)
+   frm_horas.Visible = False
+End Sub
+
+Private Sub lst_horas_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      Dim n As Integer
+      n = lst_horas.ListIndex
+      txt_hora = lst_horas.List(n)
+      frm_horas.Visible = False
+   End If
+End Sub
+
+Private Sub lv_agentes_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+   Call pro_ordena_listas(lv_agentes, ColumnHeader)
+End Sub
+
+Private Sub lv_agentes_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      Dim numero_lineas As Integer
+      Dim numero_seleccionado1 As Integer
+      Dim numero_seleccionado2 As Integer
+      Dim primera_vez As Boolean
+      Dim segunda_vez As Boolean
+      Dim i As Integer
+      Dim n As Integer
+      Dim list_item As ListItem
+      i = lv_agentes.selectedItem.Index
+      If lv_agentes.selectedItem.SubItems(2) = "*" Then
+         lv_agentes.ListItems.Item(i).SubItems(2) = " "
+         lv_agentes.ListItems.Item(i).Bold = False
+         lv_agentes.ListItems.Item(i).ForeColor = &H80000012
+         lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = False
+         lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = False
+         lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+         lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+      Else
+         lv_agentes.ListItems.Item(i).SubItems(2) = "*"
+         lv_agentes.ListItems.Item(i).Bold = True
+         lv_agentes.ListItems.Item(i).ForeColor = &H8000&
+         lv_agentes.ListItems.Item(i).ListSubItems(1).Bold = True
+         lv_agentes.ListItems.Item(i).ListSubItems(2).Bold = True
+         lv_agentes.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+         lv_agentes.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+      End If
+      lv_agentes.Refresh
+   End If
+End Sub
+
+Private Sub lv_canales_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+   Call pro_ordena_listas(lv_canales, ColumnHeader)
+End Sub
+
+Private Sub lv_canales_KeyPress(KeyAscii As Integer)
+   If KeyAscii = 13 Then
+      Dim numero_lineas As Integer
+      Dim numero_seleccionado1 As Integer
+      Dim numero_seleccionado2 As Integer
+      Dim primera_vez As Boolean
+      Dim segunda_vez As Boolean
+      Dim i As Integer
+      Dim n As Integer
+      Dim list_item As ListItem
+      n = lv_canales.ListItems.Count
+      i = lv_canales.selectedItem.Index
+      If lv_canales.ListItems.Item(i).SubItems(2) = "*" Then
+      lv_canales.ListItems.Item(i).SubItems(2) = " "
+             lv_canales.ListItems.Item(i).Bold = False
+             lv_canales.ListItems.Item(i).ForeColor = &H80000012
+             lv_canales.ListItems.Item(i).ListSubItems(1).Bold = False
+             lv_canales.ListItems.Item(i).ListSubItems(2).Bold = False
+             lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H80000012
+             lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H80000012
+          Else
+             lv_canales.ListItems.Item(i).SubItems(2) = "*"
+             lv_canales.ListItems.Item(i).Bold = True
+             lv_canales.ListItems.Item(i).ForeColor = &H8000&
+             lv_canales.ListItems.Item(i).ListSubItems(1).Bold = True
+             lv_canales.ListItems.Item(i).ListSubItems(2).Bold = True
+             lv_canales.ListItems.Item(i).ListSubItems(1).ForeColor = &H8000&
+             lv_canales.ListItems.Item(i).ListSubItems(2).ForeColor = &H8000&
+         End If
+      lv_canales.Refresh
+   End If
+End Sub
+
+Private Sub opt_tipo_filtrado_1_Click()
+   If opt_tipo_filtrado_1.Value = True Then
+      frm_agentes.Visible = True
+      frm_canales.Visible = False
+   Else
+      frm_agentes.Visible = False
+      frm_canales.Visible = True
+   End If
+End Sub
+
+Private Sub opt_tipo_filtrado_1_Validate(Cancel As Boolean)
+   If opt_tipo_filtrado_1.Value = True Then
+      frm_agentes.Visible = True
+      frm_canales.Visible = False
+   Else
+      frm_agentes.Visible = False
+      frm_canales.Visible = True
+   End If
+
+End Sub
+
+Private Sub opt_tipo_filtrado_2_Click()
+   If opt_tipo_filtrado_1.Value = True Then
+      frm_agentes.Visible = True
+      frm_canales.Visible = False
+   Else
+      frm_agentes.Visible = False
+      frm_canales.Visible = True
+   End If
+End Sub
+
+Private Sub txt_hora_KeyDown(KeyCode As Integer, Shift As Integer)
+  ' On Error GoTo salir:
+   If KeyCode = 116 Then
+      lst_horas.Clear
+      If IsDate(txt_fecha) Then
+         var_fecha_fin_1 = CDate(txt_fecha) + 1
+         var_dia = CStr(Day(CDate(txt_fecha)))
+         var_mes = CStr(Month(CDate(txt_fecha)))
+         var_año = CStr(Year(CDate(txt_fecha)))
+         If Len(Trim(var_dia)) = 1 Then
+            var_dia = "0" + var_dia
+         End If
+         If Len(Trim(var_mes)) = 1 Then
+            var_mes = "0" + var_mes
+         End If
+         var_fecha_inicio = "{d '" + var_año + "-" + var_mes + "-" + var_dia + "'}"
+             
+              
+         var_dia = CStr(Day(var_fecha_fin_1))
+         var_mes = CStr(Month(var_fecha_fin_1))
+         var_año = CStr(Year(var_fecha_fin_1))
+         If Len(Trim(var_dia)) = 1 Then
+            var_dia = "0" + var_dia
+         End If
+         If Len(Trim(var_mes)) = 1 Then
+            var_mes = "0" + var_mes
+         End If
+         var_fecha_fin = "{d '" + var_año + "-" + var_mes + "-" + var_dia + "'}"
+     
+         rs.Open "SELECT DISTINCT TIME_ORS_HORA FROM TB_enc_ORDEN_SURTIDO WHERE DTIM_ORS_FECHA_CARGA >= " + var_fecha_inicio + " AND DTIM_ORS_FECHA_CARGA <= " + var_fecha_fin, cnn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            While Not rs.EOF
+                  If Not IsNull(rs!time_ors_hora) Then
+                     lst_horas.AddItem (rs!time_ors_hora)
+                  End If
+                  rs.MoveNext
+            Wend
+            frm_horas.Visible = True
+            lst_horas.SetFocus
+         Else
+            MsgBox "No existen ordenes de surtido de la fecha especificada", vbOKOnly, "ATENCION"
+         End If
+         rs.Close
+      Else
+          MsgBox "Fecha Incorrecta", vbOKOnly, "ATENCION"
+      End If
+   End If
+   Exit Sub
+salir:
+   MsgBox "Formato de fecha incorrecto", vbOKOnly, "ATENCION"
+   If rs.State = 1 Then
+      rs.Close
+   End If
+End Sub

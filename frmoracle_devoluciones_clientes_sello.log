@@ -1,0 +1,37 @@
+Línea 131: la clase MSComctlLib.ListView del control lv_lista no era una clase de control cargada.
+Línea 310: la clase MSComctlLib.ListView del control lv_entradas no era una clase de control cargada.
+Línea 539: la clase MSComctlLib.ImageList del control ImageList no era una clase de control cargada.
+Línea 137: el nombre de la propiedad _ExtentX de lv_lista no es válido.
+Línea 138: el nombre de la propiedad _ExtentY de lv_lista no es válido.
+Línea 139: el nombre de la propiedad View de lv_lista no es válido.
+Línea 140: el nombre de la propiedad LabelEdit de lv_lista no es válido.
+Línea 141: el nombre de la propiedad LabelWrap de lv_lista no es válido.
+Línea 142: el nombre de la propiedad HideSelection de lv_lista no es válido.
+Línea 143: el nombre de la propiedad FullRowSelect de lv_lista no es válido.
+Línea 144: el nombre de la propiedad GridLines de lv_lista no es válido.
+Línea 145: el nombre de la propiedad _Version de lv_lista no es válido.
+Línea 150: el nombre de la propiedad NumItems de lv_lista no es válido.
+Línea 154: el nombre de la propiedad ColumnHeader(1) de lv_lista no es válido.
+Línea 159: el nombre de la propiedad ColumnHeader(2) de lv_lista no es válido.
+Línea 164: el nombre de la propiedad ColumnHeader(3) de lv_lista no es válido.
+Línea 316: el nombre de la propiedad _ExtentX de lv_entradas no es válido.
+Línea 317: el nombre de la propiedad _ExtentY de lv_entradas no es válido.
+Línea 318: el nombre de la propiedad View de lv_entradas no es válido.
+Línea 319: el nombre de la propiedad LabelEdit de lv_entradas no es válido.
+Línea 320: el nombre de la propiedad LabelWrap de lv_entradas no es válido.
+Línea 321: el nombre de la propiedad HideSelection de lv_entradas no es válido.
+Línea 322: el nombre de la propiedad FullRowSelect de lv_entradas no es válido.
+Línea 323: el nombre de la propiedad GridLines de lv_entradas no es válido.
+Línea 324: el nombre de la propiedad _Version de lv_entradas no es válido.
+Línea 329: el nombre de la propiedad NumItems de lv_entradas no es válido.
+Línea 333: el nombre de la propiedad ColumnHeader(1) de lv_entradas no es válido.
+Línea 338: el nombre de la propiedad ColumnHeader(2) de lv_entradas no es válido.
+Línea 343: el nombre de la propiedad ColumnHeader(3) de lv_entradas no es válido.
+Línea 348: el nombre de la propiedad ColumnHeader(4) de lv_entradas no es válido.
+Línea 542: el nombre de la propiedad _ExtentX de ImageList no es válido.
+Línea 543: el nombre de la propiedad _ExtentY de ImageList no es válido.
+Línea 545: el nombre de la propiedad ImageWidth de ImageList no es válido.
+Línea 546: el nombre de la propiedad ImageHeight de ImageList no es válido.
+Línea 547: el nombre de la propiedad MaskColor de ImageList no es válido.
+Línea 548: el nombre de la propiedad _Version de ImageList no es válido.
+Línea 599: el nombre de la propiedad Images de ImageList no es válido.

@@ -1,0 +1,4143 @@
+Attribute VB_Name = "md"
+
+
+
+Option Explicit
+Global var_clave_establecimiento_global As String
+Global var_clave_titular_global As String
+Global var_tipo_datos_adicionales As Integer
+Global var_nombre_cliente_ad As String
+Global var_paterno_cliente_ad As String
+Global var_materno_cliente_ad As String
+Global var_calle_cliente_ad  As String
+Global var_numero_cliente_ad As String
+Global var_clave_tel_pais_ad As String
+Global var_clave_tel_estado_ad As String
+Global var_numero_interno_cliente_ad As String
+Global var_aplicar_nota_credito As Integer
+Global var_clave_movimiento_nc As String
+Global var_numero_nc  As Integer
+Global var_planta_transito_global As String
+Global var_ruta_documentos_electronicos_pdf As String
+Global var_lista_precios_global As String
+Global var_descripcion_global As String
+Global var_precio_global As Double
+Global var_ruta_factura_pdf As String
+Global var_pedido_internet As Double
+Global var_cliente_pedido_internet As String
+Global var_ruta_documentos_electronicos As String
+Global var_si_anticipo As Boolean
+Global var_archivo_buscar As String
+Global var_codigo_anticipo As String
+Global var_importe_anticipo As Double
+Global var_consecutivo_anticipo As Integer
+Global var_cliente_anticipo As String
+Global var_numero_traspaso_cantia As Double
+Global var_almacen_traspaso_cantia As String
+Global var_acepta_traspaso_global As Integer
+Global var_clave_movimiento_apartados_Cantia As String
+Global var_consecutivo_apartados_Cantia As Integer
+Global var_cadena_promocion_171209 As String
+Global var_tipo_cambio_global As Double
+Global var_nota_traspasos As String
+Global var_nota_traspasos_transito As String
+Global var_servidor As String
+Global var_numero_embarque_global As Double
+Global var_nombre_empresa As String
+Global var_posible_limite_credito As Integer
+Global var_kanban_es_un_kanban As String
+Global var_kanban_almacen_id As String
+Global var_kanban_articulo_id As String
+Global var_kanban_exito As String
+Global var_kanban_mensaje As String
+Global var_kanban_numero_linea As Double
+Global var_codigo_seleccionado As String
+Global var_sello_caja As String
+Global var_posible_kanban As Integer
+
+Global var_conexion_traspasOS_Tiendas As String
+Global var_tarjeta_kanban As String
+Global var_bd_reportes As String
+Global var_conexion_reportes As String
+Global var_sr_movimientos As String
+Global var_bd_movimientos As String
+
+Global var_sr_reportes As String
+
+Global var_numero_embarque As Double
+Global var_embarque_packing_list As Double
+Global var_consecutivo_packing_list As Double
+Global var_agente_packing_list As String
+Global var_nombre_reporte As String
+Global var_nombre_paqueteria As String
+Global var_clave_caja As String
+Global var_nombre_caja As String
+Global var_paqueteria As String
+Global var_posible_paqueteria As Integer
+Global var_tamaño_caja As String
+Global var_guia As String
+Global var_si_asignacion_paqueteria As Integer
+Global var_correo_estado_cuenta As Integer
+Global var_tipo_reporte_estado_cuenta As Integer
+Global var_clave_estado_cuenta As String
+Global var_consecutivo_estado_cuenta As Integer
+Global var_trazabilidad As Integer
+Global var_posible_entrada As Boolean
+Global var_si_elimino As Integer
+Global organizacion_OC As String
+Global var_unidad_OC As String
+Global var_cadena_reporte_articulos As String
+Global var_cadena_reporte_articulos_catalogos As String
+Global var_cadena_reporte_articulos_familias As String
+Global var_cadena_reporte_articulos_tallas As String
+Global var_cadena_reporte_articulos_lineas As String
+Global var_costo_tela As Double
+Global var_codigo_tela As String
+Global var_conexion_pedidos_tiendas As String
+Global var_conexion_string As String
+Global var_conexion_string_sqlquezada2 As String
+Global var_conexion_string_distribucion As String
+Global VAR_GLOBAL_ACCESO_SORTEO As Integer
+Global strRecepcion_ID As String
+Global var_tipo_lectura As Integer
+Global var_activa_forma_reporte_catalogo_articulos_almacen  As String
+Global var_cadena_seguridad As String
+Global var_fecha_general As Date
+Global fecha_sistema As Date
+Global var_fecha_sistema_string As String
+Global parametros(6) As String
+Global cnn As ADODB.Connection
+Global cnn_ver_factura_electronica As ADODB.Connection
+Global cnn_pedido_cantia_textilera As ADODB.Connection
+Global cnn_estampados As ADODB.Connection
+Global cnn_sqlquezada2 As ADODB.Connection
+Global cnn_distribucion As ADODB.Connection
+Global cnn_admcdindustrial As ADODB.Connection
+Global cnn_reportes As ADODB.Connection
+Global cnn_excel As ADODB.Connection
+Global cnn_clientes_tiendas As ADODB.Connection
+Global cnn_etiquetas_textilera As ADODB.Connection
+Global cnn_trazabilidad As ADODB.Connection
+Global cnn_facturas_ei As ADODB.Connection
+Global cnn_sid_estampados As ADODB.Connection
+Global cnn_sid_quezada As ADODB.Connection
+Global cnn_sip_multibondeados As ADODB.Connection
+Global cnn_puntos_monedero As ADODB.Connection
+
+Global cnn_importacion As ADODB.Connection
+Global cnn_intercompañias As ADODB.Connection
+Global cnnoracle As ADODB.Connection
+Global cnnoracle_2 As ADODB.Connection
+Global cnnoracle_3 As ADODB.Connection
+
+Global cnntraspasos_tiendas As ADODB.Connection
+Global cnnsorteo As ADODB.Connection
+
+Global cnnaccess As ADODB.Connection
+Global cnn_compucaja As ADODB.Connection
+
+Global rs As ADODB.recordSet
+Global rsaux As ADODB.recordSet
+Global rsres As ADODB.recordSet
+Global rsdet As ADODB.recordSet
+Global rsaux1 As ADODB.recordSet
+Global rsaux2 As ADODB.recordSet
+Global rsaux3 As ADODB.recordSet
+Global rsaux4 As ADODB.recordSet
+Global rsaux5 As ADODB.recordSet
+Global rsaux6 As ADODB.recordSet
+Global rsaux7 As ADODB.recordSet
+Global rsaux8 As ADODB.recordSet
+Global rsaux9 As ADODB.recordSet
+Global rsaux10 As ADODB.recordSet
+Global rsaux11 As ADODB.recordSet
+
+Global var_negado_desde As Integer
+Global var_modifica_registro_agente As Boolean
+Global var_modifica_registro_agrupadores As Boolean
+Global var_modifica_registro_almacen As Boolean
+Global var_modifica_registro_articulo As Boolean
+Global var_modifica_registro_bloque As Boolean
+Global var_modifica_registro_caja As Boolean
+Global var_modifica_registro_canal_venta As Boolean
+Global var_modifica_registro_catalogo As Boolean
+Global var_modifica_registro_causas_devolucion As Boolean
+Global var_modifica_registro_ciudad As Boolean
+Global var_modifica_registro_clase_articulo As Boolean
+Global var_modifica_registro_clase As Boolean
+Global var_modifica_registro_cliente As Boolean
+Global var_modifica_registro_colonia As Boolean
+Global var_modifica_registro_color As Boolean
+Global var_modifica_registro_comision As Boolean
+Global var_modifica_registro_detalle_establecimiento As Boolean
+Global var_modifica_registro_familia_agrupador As Boolean
+Global var_modifica_registro_diseño As Boolean
+Global var_modifica_registro_empresa As Boolean
+Global var_modifica_registro_equivalencia As Boolean
+Global var_modifica_regsitro_establecimientos As Boolean
+Global var_modifica_registro_estado As Boolean
+Global var_modifica_registro_estampado As Boolean
+Global var_modifica_registro_familia_agrupadores As Boolean
+Global var_modifica_registro_familia_ariculos As Boolean
+Global var_modifica_registro_licencia As Boolean
+Global var_modifica_registro_linea As Boolean
+Global var_modifica_registro_lista_precios As Boolean
+Global var_modifica_registro_menu As Boolean
+Global var_modifica_registro_moneda As Boolean
+Global var_modifica_registro_movimiento As Boolean
+Global var_modifica_registro_municipio As Boolean
+Global var_modifica_registro_pais As Boolean
+Global var_modifica_registro_plazo As Boolean
+Global var_modifica_registro_prioridad As Boolean
+Global var_modifica_registro_producto As Boolean
+Global var_modifica_registro_proveedor As Boolean
+Global var_modifica_registro_puesto As Boolean
+Global var_modifica_registro_referencia As Boolean
+Global var_modifica_registro_ruta As Boolean
+Global var_modifica_registro_sublinea As Boolean
+Global var_modifica_registro_subtipoarticulo As Boolean
+Global var_modifica_registro_subtipouso As Boolean
+Global var_modifica_registro_talla As Boolean
+Global var_modifica_registro_tipoagente As Boolean
+Global var_modifica_registro_tipoarticulo As Boolean
+Global var_modifica_registro_tipocambio As Boolean
+Global var_modifica_registro_tipoestampado As Boolean
+Global var_modifica_registro_tipopedido As Boolean
+Global var_modifica_registro_tipo_cliente As Boolean
+Global var_modifica_registro_titular As Boolean
+Global var_modifica_registro_tono As Boolean
+Global var_modifica_registro_transaccion As Boolean
+Global var_modifica_registro_transporte As Boolean
+Global var_modifica_registro_unidad As Boolean
+Global var_modifica_registro_unidadorganizacional As Boolean
+Global var_modifica_registro_uso As Boolean
+Global var_modifica_registro_usuario As Boolean
+Global var_modifica_registro_vehiculo As Boolean
+Global var_modifica_registro_vendedor As Boolean
+Global var_modifica_registro_zona As Boolean
+Global var_modifica_registro_agrupador_catalogos As Boolean
+Global var_modifica_registro_descuentos_pago_correcto As Boolean
+Global var_modifica_registro_ubicacion_almacen As Boolean
+Global var_modifica_registro_personas As Boolean
+
+Global var_tipo_filtrado_cliente As Integer
+Global var_establecimiento_regreso As String
+Global var_usuario_regreso As String
+Global var_titular_regreso As String
+Global var_cliente_regreso As String
+Global var_grupo_actual_regreso As String
+Global var_grupo_real_regreso As String
+Global var_agente_regreso As String
+Global var_estado_regreso As String
+Global var_municipio_regreso As String
+Global var_ciudad_regreso As String
+Global var_colonia_regreso As String
+Global maximo_pedido As Double
+
+Global var_clave_lista_global As String
+Global var_nombre_lista_global As String
+
+Global var_aceptar_direccion As Boolean
+
+Global var_dir_codigo_postal As String
+Global var_dir_pais As String
+Global var_dir_nombre_pais As String
+Global var_dir_estado As String
+Global var_dir_nombre_estado As String
+Global var_dir_municipio As String
+Global var_dir_nombre_municipio As String
+Global var_dir_ciudad As String
+Global var_dir_nombre_ciudad As String
+Global var_dir_colonia As String
+Global var_dir_nombre_colonia As String
+
+Global var_catalogo_articulos As Boolean
+Global var_llamado_comisiones As Boolean
+Global var_parametros_empresa As String
+Global var_parametros_bloque As String
+Global var_parametros_menus As String
+Global ban_tipo_articulo As String
+Global var_nombre_planta As String
+Global var_usuario_global As String
+Global var_passwor_global As String
+Global sw_primera_validacion As Boolean
+Global sw_mostrar_forma As Boolean
+Global var_nombre_movimiento_embarque_regreso As String
+Global var_numero_movimiento_embarque_regreso As Double
+Global var_numero_nivel_surtido As Double
+Global Tb_usuarios As Tb_usuarios
+Global Tb_plantas As Tb_plantas
+Global Tb_Bloques As Tb_Bloques
+Global TB_LINEAS As TB_LINEAS
+Global TB_MOVIMIENTOS As TB_MOVIMIENTOS
+Global TB_ALMACENES As TB_ALMACENES
+Global TB_Articulos As TB_Articulos
+Global TB_Unidad As TB_Unidad
+Global TB_Proveedor As TB_Proveedor
+Global TB_TRANSACCIONES As TB_TRANSACCIONES
+Global TB_DETALLE As TB_DETALLE
+Global TB_MENUS As TB_MENUS
+Global clsdate As clsdate
+Global TB_PUESTOS As TB_PUESTOS
+
+Global var_modifica_registro As Boolean
+Global var_modifica_registro_gr As Boolean
+Global var_modifica_registro_ga As Boolean
+Global var_numero_planta As String
+Global vector_valida_passwords(50) As String
+Global var_indice_menu As Byte
+Global var_valida_passwords As Boolean
+Global var_menus As String
+Global var_forma As Form
+Global var_swpassword As Boolean
+Global var_supervisor As String
+Global var_sw_menus As Boolean
+Global var_puesto As String
+Global var_movimiento As Byte
+Global varagrupador As String
+Global vardetallearticulo As String
+Global vardetallelinea As String
+Global vardetallesublinea As String
+Global vardetalleproducto As String
+Global vardetalletipoarticulo As String
+Global varfamiliaagrupador As String
+Global vardetalleagrupador As String
+Global varpais As String
+Global varestado As String
+Global varnombrepais As String
+Global varnombreestado As String
+Global vardetallecliente As String
+Global vardetalleclavecliente As String
+Global varestablecimiento  As String
+Global vartipotitular As Integer
+Global vartitular As String
+Global varautomaticogrupoactual As Integer
+Global varautomaticogruporeal As Integer
+Global varfamiliaagrupadores As String
+
+Global var_activa_forma_agentes As String
+Global var_activa_forma_agrupadores As String
+Global var_activa_forma_agrupadores2 As String
+Global var_activa_forma_almacenes As String
+Global var_activa_forma_articulos2 As String
+Global var_activa_forma_aseguradoras As String
+Global var_activa_forma_asigna_causa_devolucion As String
+Global var_activa_forma_asigna_pagos_no_aplicados As String
+Global var_activa_forma_asignacion_negado As String
+Global var_activa_forma_autorizapedidos As String
+Global var_activa_forma_bonificaciones As String
+Global var_activa_forma_bonificaciones_financieras As String
+Global var_activa_forma_cajas As String
+Global var_activa_forma_calendario As String
+Global var_activa_forma_canalesventas As String
+Global var_activa_forma_cancela_cajas As String
+Global var_activa_forma_cancela_documentos_existentes As String
+Global var_activa_forma_cancela_facturas As String
+Global var_activa_forma_cancela_facturas_devolucion As String
+Global var_activa_forma_cargapedidos As String
+Global var_activa_forma_catalogos As String
+Global var_activa_forma_catalogos_canales As String
+Global var_activa_forma_catempresas As String
+Global var_activa_forma_causas_devolucion As String
+Global var_activa_forma_causas_no_otorgamiento As String
+Global var_activa_forma_cerrado_pedidos As String
+Global var_activa_forma_cheques_devueltos As String
+Global var_activa_forma_cheques_devueltos_inicio As String
+Global var_activa_forma_ciudades As String
+Global var_activa_forma_clasearticulos As String
+Global var_activa_forma_clases As String
+Global var_activa_forma_clases_cartera As String
+Global var_activa_forma_clasificacion_clientes As String
+Global var_activa_forma_clientes As String
+Global var_activa_forma_clientes2 As String
+Global var_activa_forma_clonacionagrupadores As String
+Global var_activa_forma_codigo_acceso As String
+Global var_activa_forma_colonias As String
+Global var_activa_forma_colores As String
+Global var_activa_forma_comisiones As String
+Global var_activa_forma_concentrado_orden_surtido As String
+Global var_activa_forma_costos_predeterminados As String
+Global var_activa_forma_descuentos_catalogos As String
+Global var_activa_forma_descuentos_promociones As String
+Global var_activa_forma_descuentos_pronto_pago As String
+Global var_activa_forma_descuentos_volumen As String
+Global var_activa_forma_descuentos_volumen_cliente As String
+Global var_activa_forma_descuentos_volumen_grupo_actual As String
+Global var_activa_forma_descuentos_volumen_grupo_real As String
+Global var_activa_forma_descuentos_volumen_titular As String
+Global var_activa_forma_descuentos_pronto_pago_cambios As String
+Global var_activa_forma_detalle_cajas As String
+Global var_activa_forma_detalle_documentos_fiscales As String
+Global var_activa_forma_detalle_establecimientos As String
+Global var_activa_forma_detalle_lista_precios As String
+Global var_activa_forma_detalleagrupadores As String
+Global var_activa_forma_direcciones As String
+Global var_activa_forma_diseños As String
+Global var_activa_forma_ejecuta_sistema As String
+Global var_activa_forma_embarques As String
+Global var_activa_forma_embarques_activos As String
+Global var_activa_forma_embarques_paquetes As String
+Global var_activa_forma_embarques_paquetes_2 As String
+Global var_activa_forma_empresas As String
+Global var_activa_forma_entradas As String
+Global var_activa_forma_entradas_compras As String
+Global var_activa_forma_entradas_devoluciones As String
+Global var_activa_forma_entradas_reempaque As String
+Global var_activa_forma_entradas_sin_comparacion As String
+Global var_activa_forma_equipos As String
+Global var_activa_forma_equivalencias As String
+Global var_activa_forma_establecimientos As String
+Global var_activa_forma_estados As String
+Global var_activa_forma_estados_cuenta As String
+Global var_activa_forma_estampados As String
+Global var_activa_forma_existen_rapidas As String
+Global var_activa_forma_existencias_generales As String
+Global var_activa_forma_fact_merc_vistas As String
+Global var_activa_forma_factura_embarques As String
+Global var_activa_forma_factura_empresas As String
+Global var_activa_forma_facturas As String
+Global var_activa_forma_familia_agrupadores As String
+Global var_activa_forma_generapedido As String
+Global var_activa_forma_gruposactuales As String
+Global var_activa_forma_gruposreales As String
+Global var_activa_forma_informacion_articulos_enviar As String
+Global var_activa_forma_informacion_pedido_sugerido As String
+Global var_activa_forma_inicio As String
+Global var_activa_forma_inventario_documentos As String
+Global var_activa_forma_kardex As String
+Global var_activa_forma_licencias As String
+Global var_activa_forma_lineas As String
+Global var_activa_forma_listadeprecios As String
+Global var_activa_forma_listamovimientos As String
+Global var_activa_forma_listatitulares As String
+Global var_activa_forma_listaunidades As String
+Global var_activa_forma_menu1 As String
+Global var_activa_forma_menu2 As String
+Global var_activa_forma_menus As String
+Global var_activa_forma_migracion As String
+Global var_activa_forma_migrar_informacion_paises As String
+Global var_activa_forma_monedas As String
+Global var_activa_forma_mov_almacenes As String
+Global var_activa_forma_movimientos As String
+Global var_activa_forma_municipios As String
+Global var_activa_forma_nota_credito_saldos_descuento_financiero As String
+Global var_activa_forma_nota_credito_descuento_financiero As String
+Global var_activa_forma_notas_cargo As String
+Global var_activa_forma_notas_credito As String
+Global var_activa_forma_numero_embarque As String
+Global var_activa_forma_ordenescompra As String
+Global var_activa_forma_ordensurtido As String
+Global var_activa_forma_packing_list As String
+Global var_activa_forma_paises As String
+Global var_activa_forma_passwords As String
+Global var_activa_forma_passwords2 As String
+Global var_activa_forma_permisos As String
+Global var_activa_forma_plazos As String
+Global var_activa_forma_portada As String
+Global var_activa_forma_prioridades As String
+Global var_activa_forma_productos As String
+Global var_activa_forma_promociones_inicio_catalogo As String
+Global var_activa_forma_proveedores As String
+Global var_activa_forma_puestos As String
+Global var_activa_forma_rangos_promociones_catalogos As String
+Global var_activa_forma_relacion_cobranza As String
+Global var_activa_forma_relacion_cobranza_listado As String
+Global var_activa_forma_reporte_acumulado_ventas As String
+Global var_activa_forma_reporte_ajustes_reempaque As String
+Global var_activa_forma_reporte_catalogo_articulos As String
+Global var_activa_forma_reporte_comisiones As String
+Global var_activa_forma_reporte_concentrado_entradas_salidas As String
+Global var_activa_forma_reporte_entradas_produccion As String
+Global var_activa_forma_reporte_entradas_salidas As String
+Global var_activa_forma_reporte_totalizador_movimientos As String
+Global var_activa_forma_reporte_envios_tiendas As String
+Global var_activa_forma_reporte_mercancia_empacada_transito As String
+Global var_activa_forma_reporte_movimientos As String
+Global var_activa_forma_reporte_nivel_surtido As String
+Global var_activa_forma_reporte_ordenes_surtido As String
+Global var_activa_forma_reporte_ordenes_surtido_pendientes As String
+Global var_activa_forma_reporte_valuacion_devoluciones As String
+Global var_activa_forma_reporte_valuacion_facturas As String
+Global var_activa_forma_rutas As String
+Global var_activa_forma_salidas As String
+Global var_activa_forma_salidas_empaques As String
+Global var_activa_forma_salidas_reempaque As String
+Global var_activa_forma_salidas_sin_comparacion As String
+Global var_activa_forma_series As String
+Global var_activa_forma_sublineas As String
+Global var_activa_forma_subtipoarticulos As String
+Global var_activa_forma_subtiposusos As String
+Global var_activa_forma_supervisor1 As String
+Global var_activa_forma_tallas As String
+Global var_activa_forma_tipoagentes As String
+Global var_activa_forma_tipoarticulos As String
+Global var_activa_forma_tipocambio As String
+Global var_activa_forma_tipoestampados As String
+Global var_activa_forma_tipopedidos As String
+Global var_activa_forma_tiposclientes As String
+Global var_activa_forma_titulares As String
+Global var_activa_forma_tonos As String
+Global var_activa_forma_transportes As String
+Global var_activa_forma_traspasos As String
+Global var_activa_forma_traspasos_calidad As String
+Global var_activa_forma_traspasosentradas As String
+Global var_activa_forma_traspasossalidas As String
+Global var_activa_forma_unidades As String
+Global var_activa_forma_unidadesorganizacionales As String
+Global var_activa_forma_usos As String
+Global var_activa_forma_usuarios As String
+Global var_activa_forma_vehiculos As String
+Global var_activa_forma_vigencias_catalogo_canal_Venta As String
+Global var_activa_forma_vistasprevias As String
+Global var_activa_forma_zonas As String
+Global var_activa_forma_principal_configuracion As String
+Global var_activa_forma_aplicacion_descuentos_canal_venta As String
+Global var_activa_forma_agrupador_catalogos As String
+Global var_activa_forma_reporte_valuacion_facturacion_catalogos As String
+Global var_activa_forma_descuentos_pago_correcto As String
+Global var_activa_forma_asignacion_catalogo_lista_precios As String
+Global var_activa_forma_listado_almacenes As String
+Global var_activa_forma_bloqueos As String
+Global var_activa_forma_movimientos_bloqueados As String
+Global var_activa_forma_personas As String
+Global var_activa_forma_embarques_bloqueados As String
+Global var_activa_forma_salidas_proveedor As String
+
+
+
+Global var_activa_forma_salidas_cajas As String
+Global vartipocliente As Integer
+Global var_operacion_bitacora As String
+Global var_operacion_bitacora_articulos As String
+Global var_clave_referencia As String
+Global var_clave_movimiento As String
+Global var_despliega_menu As Boolean
+Global var_modifica_cliente As Boolean
+Global var_clave_usuario_global As String
+Global var_nombre_usuario_global As String
+Global var_apellidos_usuario_global As String
+Global var_empresa_global As String
+Global var_bloque_global As String
+Global var_global_permiso1 As Integer
+Global var_global_permiso2 As Integer
+Global var_global_permiso3 As Integer
+Global var_global_permiso4 As Integer
+Global var_global_menu As String
+Global var_accion_submenu As String
+Global var_opcion_seguridad As Integer
+Global var_accion_forma As Integer
+Global var_acepta_seguridad As Integer
+Global var_usuario_permiso As String
+Global var_tipo_permiso As Integer
+Global var_movimiento_almacen As String
+Global var_agente_seleccionado As String
+Global var_empresa As String
+Global var_unidad_organizacional As String
+Global var_requier_factura As Integer
+Global var_tipo_documento As String
+Global var_renglones_factura As Integer
+Global var_numero_folio_regreso As Double
+Global var_paquete As Boolean
+Global var_numero_embarque_paquete As Integer
+Public MensajeError As String
+Public SQL As String
+Public execute As Boolean
+Public indice As Integer
+Global numero_devuelto As String
+Global var_tipo_acceso As Integer
+Global var_nec_emb As Boolean
+Global var_autoriza_mov As Boolean
+Global var_subir_directo As Boolean
+Global var_causa_devolucion As Boolean
+Global var_numero_jaula As Integer
+Global var_tipo_detalle_devolucion As Integer
+Global canstr As String
+Global var_posible_accion As Boolean
+Global var_global_supervisor_1 As String
+Global var_global_supervisor_2 As String
+Global var_global_relectura As Integer
+Global var_global_aceptar_demas As Integer
+Global var_global_bloqueado As Integer
+Global var_tipo_proveedor_movimiento As String
+Global var_devolucion_factura As Integer
+Global var_reporte_imprimir As String
+Dim cmd As New Command
+Global var_verificador As Boolean
+Global var_clave_lista As String
+Dim var_top As Double
+Dim var_left As Double
+Global var_activa_menu As Boolean
+Global var_es_embarque As Boolean
+Global var_conexion_sorteo As String
+' The column selected for sorting.
+Public m_SortColumn As Integer
+
+' The current sort order.
+Public m_SortOrder As SortSettings
+Global var_numero_embarque_regreso As Double
+
+
+Global Const ODBC_ADD_DSN = 1 ' Add data source
+Global Const ODBC_CONFIG_DSN = 2 ' Configure (edit) data source
+Global Const ODBC_REMOVE_DSN = 3 ' Remove data source
+Global Const vbAPINull As Long = 0& ' NULL Pointer
+'delcaracion de funciones
+
+
+Declare Function SQLConfigDataSource Lib "ODBCCP32.DLL" ( _
+            ByVal hwndParent As Long, ByVal fRequest As Long, ByVal _
+             lpszDriver As String, ByVal lpszAttributes As String) As Long
+
+
+'___________________________ Type para Clasificar nivel nodo__________________
+
+Public Enum ObjectType
+    otNone = 0
+    otnivel2 = 1
+    otnivel3 = 2
+    otnivel4 = 3
+    otnivel22 = 4
+    otNivel32 = 5
+    otNivel42 = 6
+End Enum
+
+Public SourceNode As Object
+Public SourceType As ObjectType
+Public TargetNode As Object
+
+' constante para FORMATO DE LIST VIEW
+Private Const GWL_STYLE = (-16)
+Private Const LVM_FIRST = &H1000
+Private Const LVM_GETHEADER = (LVM_FIRST + 31)
+
+Private Const LVM_SETEXTENDEDLISTVIEWSTYLE = LVM_FIRST + 54
+Private Const LVM_GETEXTENDEDLISTVIEWSTYLE = LVM_FIRST + 55
+Private Const LVS_EX_FULLROWSELECT = &H20
+Private Const HDS_BUTTONS = &H2
+Private Const LVM_DELETEITEM = (LVM_FIRST + 8)
+
+Public Declare Function Sleep Lib "kernel32" (ByVal a As Long) As Long
+ 
+ 
+ 
+
+
+
+
+
+' constante para cajas de mensajeX
+Public Const NV_CLOSEMSGBOX As Long = &H5000&
+  
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long
+
+'retarda los mensajes de textos
+Private Declare Function KillTimer Lib "user32" (ByVal hwnd As Long, ByVal nIDEvent As Long) As Long
+Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As Long
+Private Declare Function SetForegroundWindow Lib "user32" (ByVal hwnd As Long) As Long
+Public Declare Function SetTimer Lib "user32" (ByVal hwnd As Long, ByVal nIDEvent As Long, ByVal uElapse As Long, ByVal lpTimerFunc As Long) As Long
+
+'para buscar en una lista alfabeticamente
+
+' obtiene el nombre de la maquina
+Public Declare Function GetComputerName Lib "kernel32.dll" Alias "GetComputerNameA" (ByVal lpBuffer As String, nSize As Long) As Long
+
+' obtiene el nombre del usuario
+Public Declare Function GetUserName Lib "advapi32.dll" Alias "GetUserNameA" (ByVal lpBuffer As String, nSize As Long) As Long
+' despliega automaticos los combos boxes
+
+Public Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+        
+Private Const CB_ERR = (-1)                 'combo error code
+Private Const CB_FINDSTRING = &H14C         'hex value to invoke find
+Private Const CB_FINDSTRINGEXACT = &H158    'hex value to invoke find with exact matching
+Private Const CB_SHOWDROPDOWN = &H14F       'hex value to drop down combo
+
+Public Function ListView_DeleteItem(hwnd As Long, ByVal item As MSComctlLib.ListItem) As Boolean
+  ListView_DeleteItem = SendMessage(hwnd, LVM_DELETEITEM, item, 0)
+End Function
+
+'==== Procedimiento para definir que conexion que vamos a usar en toda la aplicacion ====
+
+Public Sub Main()
+    
+    On Error Resume Next
+    Dim x As Integer
+    Dim i As Integer, linea As String
+    Dim var_archivo_local As String
+    
+    Set cnn = CreateObject("ADODB.connection")
+    Set cnn_ver_factura_electronica = CreateObject("ADODB.connection")
+    Set cnn_pedido_cantia_textilera = CreateObject("ADODB.connection")
+    Set cnn_estampados = CreateObject("ADODB.connection")
+    Set cnn_etiquetas_textilera = CreateObject("ADODB.connection")
+    Set cnn_sqlquezada2 = CreateObject("ADODB.connection")
+    Set cnn_distribucion = CreateObject("ADODB.connection")
+    Set cnn_admcdindustrial = CreateObject("ADODB.connection")
+    Set cnn_reportes = CreateObject("ADODB.connection")
+    Set cnn_importacion = CreateObject("ADODB.connection")
+    Set cnnoracle = CreateObject("ADODB.connection")
+    Set cnnoracle_2 = CreateObject("ADODB.connection")
+    Set cnnoracle_3 = CreateObject("ADODB.connection")
+    Set cnntraspasos_tiendas = CreateObject("ADODB.connection")
+    Set cnnaccess = CreateObject("ADODB.connection")
+    Set cnn_clientes_tiendas = CreateObject("ADODB.connection")
+    Set cnn_trazabilidad = CreateObject("ADODB.connection")
+    Set cnnsorteo = CreateObject("ADODB.connection")
+    Set cnn_facturas_ei = CreateObject("ADODB.connection")
+    Set cnn_sid_estampados = CreateObject("ADODB.connection")
+    Set cnn_sid_quezada = CreateObject("ADODB.connection")
+    Set cnn_sip_multibondeados = CreateObject("ADODB.connection")
+    Set cnn_compucaja = CreateObject("ADODB.connection")
+    Set cnn_puntos_monedero = CreateObject("ADODB.connection")
+    Set rs = CreateObject("ADODB.recordset")
+    Set rsaux = CreateObject("ADODB.recordset")
+    Set rsaux1 = CreateObject("ADODB.recordset")
+    Set rsaux2 = CreateObject("ADODB.recordset")
+    Set rsaux3 = CreateObject("ADODB.recordset")
+    Set rsaux4 = CreateObject("ADODB.recordset")
+    Set rsaux5 = CreateObject("ADODB.recordset")
+    Set rsaux6 = CreateObject("ADODB.recordset")
+    Set rsaux7 = CreateObject("ADODB.recordset")
+    Set rsaux8 = CreateObject("ADODB.recordset")
+    Set rsaux9 = CreateObject("ADODB.recordset")
+    Set rsaux10 = CreateObject("ADODB.recordset")
+    Set rsaux11 = CreateObject("ADODB.recordset")
+    Dim var_si_oracle As Integer
+    var_tipo_lectura = 1
+    Open (App.Path + "\SID.SID") For Input As #1
+    i = 0
+    var_si_oracle = 0
+    Do While Not EOF(1)
+       Line Input #1, linea
+       If i = 8 Then
+           
+          If Trim(linea) = "" Then
+             var_si_oracle = 0
+          Else
+             If Not IsNumeric(linea) Then
+                var_si_oracle = 0
+             Else
+                If CDbl(linea) > 0 Then
+                   var_si_oracle = 1
+                Else
+                   var_si_oracle = 0
+                End If
+             End If
+          End If
+       End If
+       i = i + 1
+    Loop
+    Close #1
+
+    If Dir("c:\reportessid", vbDirectory) = "" Then
+       MkDir ("c:\reportessid")
+    End If
+    
+    
+    Open (App.Path + "\SID.SID") For Input As #1
+    i = 0
+    Do While Not EOF(1)
+       Line Input #1, linea
+       parametros(i) = linea
+       i = i + 1
+    Loop
+    
+    Close #1
+ 'inicio
+     'MsgBox parametros(0)
+    
+    cnn_compucaja.Open "Provider=SQLOLEDB.1;Password=compucaja;Persist Security Info=True;User ID=sa;Initial Catalog=Compucaja;Data Source=SRVTDACANTIA"
+    cnn_sip_multibondeados.Open "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=multibondeados;Data Source=admcdindustrial"
+    
+    cnn_distribucion.Open "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=vianney;Data Source=DISTRIBUCION"
+    x = 1
+    If x = 1 Then
+       cnn_pedido_cantia_textilera.Open "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=SIDTEXTILERA;Data Source=sqlquezada2"
+    End If
+    cnn_admcdindustrial.Open "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=sid;Data Source=admcdindustrial"
+    If UCase(parametros(0)) = "NINGUNO" Then
+       frmservidores.Show 1
+       rs.Open "select * from tb_servidores where vcha_ser_servidor_id = '" + var_servidor + "'", cnn_distribucion, adOpenDynamic, adLockOptimistic
+       'MsgBox rs!vcha_Ser_Servidor
+       parametros(0) = rs!vcha_Ser_Servidor
+       parametros(1) = rs!vcha_Ser_base_datos
+       rs.Close
+    End If
+    
+    rs.Open "select * from tb_servidores where vcha_Ser_base_datos = '" + parametros(1) + "'", cnn_distribucion, adOpenDynamic, adLockOptimistic
+    If Not rs.EOF Then
+       var_bd_movimientos = rs!vcha_ser_base_Datos_movimientos
+       var_sr_movimientos = rs!vcha_ser_servidor_movimientos
+       var_bd_reportes = rs!vcha_ser_base_datos_reportes
+       var_sr_reportes = rs!vcha_ser_servidor_reportes
+       var_conexion_reportes = rs!VCHA_SER_CONEXION_REPORTE
+    End If
+    rs.Close
+    'MsgBox var_conexion_reportes
+    cnn_reportes.Open var_conexion_reportes
+    'If Trim(UCase(Trim(parametros(0)))) = "ADMCDINDUSTRIAL" Then
+    '   var_bd_reportes = "sid"
+    'Else
+    '   If Trim(UCase(Trim(parametros(0)))) = "sqlquezada2" Then
+    '      If Trim(UCase(Trim(parametros(1)))) = "SIDESTAMPADOS" Then
+    '         var_bd_reportes = "sidESTAMPADOS"
+    '      Else
+    '         If Trim(UCase(Trim(parametros(1)))) = "SIDTEXTILERA" Then
+    '            var_bd_reportes = "sidtextilera"
+    '         Else
+    '            var_bd_reportes = "sidcantia"
+    '         End If
+    '      End If
+    '   Else
+    '      If Trim(UCase(Trim(parametros(0)))) = "SQLQUEZADA" Then
+    '         'var_bd_reportes = "SIDQUEZADA"
+    '      Else
+    '         var_bd_reportes = "vianney"
+    '      End If
+    '   End If
+    'End If
+    rs.Open "select top 10 * from tb_encabezado_cartera", cnn_reportes, adOpenDynamic, adLockOptimistic
+    rs.Close
+    
+    var_conexion_string = "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=" & parametros(1) & ";Data Source=" & parametros(0)
+    If UCase(Trim(parametros(0))) = "ADMCDINDUSTRIAL" Then
+       var_conexion_string_distribucion = "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=" & var_bd_reportes & ";Data Source=ADMCDINDUSTRIAL"
+    Else
+       var_conexion_string_distribucion = "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=vianney;Data Source=DISTRIBUCION"
+    End If
+    var_conexion_string_sqlquezada2 = "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=sidtextilera;Data Source=sqlquezada2"
+    If var_tipo_lectura = 1 Then
+       cnnaccess.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + App.Path + "\bd_salidas.mdb;Persist Security Info=False"
+       cnnaccess.CursorLocation = adUseClient
+    End If
+    
+    cnn_importacion = "Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=vianney;Data Source=distribucion"
+                        
+    cnn_estampados.Open "Provider=SQLOLEDB.1;Password=elia;Persist Security Info=True;User ID=sa;Initial Catalog=sipestampados;Data Source=sqlquezada2"
+    cnn_estampados.CursorLocation = adUseClient
+    cnn.Open var_conexion_string
+    cnn_sqlquezada2.Open var_conexion_string_sqlquezada2
+    cnn_etiquetas_textilera.Open var_conexion_string_sqlquezada2
+    cnn.CursorLocation = adUseClient
+    If var_si_oracle = 0 Then
+       cnnoracle.Open "Provider=OraOLEDB.Oracle.1;User ID=INTERFACE;Data Source=ap;Extended Properties=;Persist Security Info=True;Password=INTERFACE"
+       cnn_trazabilidad.Open "Provider=OraOLEDB.Oracle.1;User ID=INTERFACE;Data Source=ap;Extended Properties=;Persist Security Info=True;Password=INTERFACE"
+       cnnoracle.CursorLocation = adUseClient
+    End If
+    
+    
+    rs.Open "select * from tb_principal", cnn, adOpenDynamic, adLockOptimistic
+    var_renglones_factura = IIf(IsNull(rs!INTE_PRI_RENGLONES_FACTURA), 0, rs!INTE_PRI_RENGLONES_FACTURA)
+    var_trazabilidad = IIf(IsNull(rs!inte_pri_trazabilidad), 0, rs!inte_pri_trazabilidad)
+    rs.Close
+    var_archivo_local = App.Path + "\sistema.exe"
+    var_fecha_sistema_string = "Sistema Integral de Distribución S.I.D.   [Ultima actualización " + Trim(CStr(FileDateTime(var_archivo_local))) + "]"
+    If UCase(parametros(1)) = "SIDALMACENBKP" Then
+       var_conexion_pedidos_tiendas = "Provider=OraOLEDB.Oracle.1;Password=mvtosbanca;Persist Security Info=True;User ID=mvtosbanca;Data Source=dbtest"
+       var_conexion_sorteo = "Provider=OraOLEDB.Oracle.1;Password=tiendas;Persist Security Info=True;User ID=tiendas;Data Source=dbtest"
+       var_conexion_traspasOS_Tiendas = "Provider=OraOLEDB.Oracle.1;Password=tiendas;Persist Security Info=True;User ID=tiendas;Data Source=dbtest"
+       cnn_puntos_monedero.Open "Provider=OraOLEDB.Oracle.1;Password=tiendas;Persist Security Info=True;User ID=tiendas;Data Source=dbtest"
+    Else
+       var_conexion_pedidos_tiendas = "Provider=OraOLEDB.Oracle.1;Password=mvtosbanca;Persist Security Info=True;User ID=mvtosbanca;Data Source=oradborc"
+       var_conexion_traspasOS_Tiendas = "Provider=OraOLEDB.Oracle.1;Password=tiendas;Persist Security Info=True;User ID=tiendas;Data Source=ap"
+        cnn_puntos_monedero.Open "Provider=OraOLEDB.Oracle.1;Password=tiendas;Persist Security Info=True;User ID=tiendas;Data Source=ap"
+    End If
+    
+     cnnoracle_2.Open var_conexion_pedidos_tiendas
+     cnnoracle_3.Open "Provider=OraOLEDB.Oracle.1;Password=distribucion;Persist Security Info=True;User ID=DISTRIBUCION;Data Source=oradborc"
+    cnn_sid_estampados.Open "Provider=SQLOLEDB.1;Password=elia;Persist Security Info=True;User ID=sa;Initial Catalog=sidtextilera;Data Source=sqlquezada2"
+    cnn_sid_quezada.Open "Provider=SQLOLEDB.1;Password=elia;Persist Security Info=True;User ID=sa;Initial Catalog=sqlquezada;Data Source=sqlquezada2"
+    
+     cnntraspasos_tiendas.Open var_conexion_traspasOS_Tiendas
+     cnntraspasos_tiendas.CursorLocation = adUseClient
+    frmsistema_integral.Caption = var_fecha_sistema_string
+    var_posible_paqueteria = 0
+    If UCase(fun_NombrePc) = "JFSERNA" And UCase(Trim(parametros(0))) = "DBPRUEBAS" Then
+       var_posible_kanban = 1
+    Else
+       var_posible_kanban = 0
+    End If
+    var_numero_embarque_global = 0
+    If var_empresa = "02" Then
+       var_cadena_promocion_171209 = "Artículos marcados con * incluyen promoción del 5%   "
+    Else
+       var_cadena_promocion_171209 = "Artículos marcados con * incluyen promoción  "
+    End If
+    'var_cadena_promocion_171209 = "Esta factura causará IVA del 16% si es pagada después del 10 de Enero de 2010(Artículo 8, fracc. III de las disposiciones transitorias de la Ley del IVA, vigente a partir del 1 de Enero 2010)"
+    var_cliente_pedido_internet = ""
+    
+    Frmacceso.Show
+End Sub
+
+
+'************************************************************************************
+
+'                   PROCEDIMIENTOS GUARDA TODOS LOS DATOS
+
+'************************************************************************************
+ 
+'==================== Procedimiento para guardar Los menus ==========================
+Public Function convierte_numero(ByVal x As String) As String
+   Dim var_contador As Integer
+   Dim z As String
+   numero_devuelto = ""
+   z = x
+   x = ""
+   For var_contador = 1 To Len(Trim(z))
+      If Mid(z, var_contador, 1) <> "," Then
+         x = x + Mid(z, var_contador, 1)
+      End If
+   Next
+   numero_devuelto = x
+End Function
+
+Public Function Obtener_Identificador_Recepcion(cnnoracle As ADODB.Connection, ByRef strError) As Boolean
+    'Objetos command
+    Dim cmdCommand As New ADODB.Command
+    
+On Error GoTo Error_Insertar_Recepcion
+    Obtener_Identificador_Recepcion = True
+    strError = ""
+    
+    Set cmdCommand.ActiveConnection = cnnoracle
+    cmdCommand.CommandType = adCmdStoredProc
+    cmdCommand.CommandText = "SP_RECEPCION_ID"
+    cmdCommand.Parameters.Refresh
+    
+    cmdCommand.execute
+    
+    strRecepcion_ID = cmdCommand.Parameters("V_ID").Value
+    
+    Set cmdCommand = Nothing
+    Exit Function
+Error_Insertar_Recepcion:
+    Obtener_Identificador_Recepcion = False
+    strError = Err.Description
+    var_posible_entrada = False
+End Function
+
+
+Public Function Insertar_Recepcion(var_orden_compra As Double, var_numero_linea As Double, var_cantidad As Double, var_linea As Double, var_numero_movimiento As Double, var_p_rc_ord_id As Double, ByRef strError As String, var_factura_oracle As String) As Boolean
+    'Objetos command
+    Dim cmdCommand As New ADODB.Command
+    Dim var_si_paso As Boolean
+    Dim var_factura_oracle_2 As Double
+    Dim var_factura_x As String
+    Dim var_j As Integer
+'On Error GoTo Error_Insertar_Recepcion
+    Insertar_Recepcion = True
+    strError = ""
+    'MsgBox cnnoracle
+    Set cmdCommand.ActiveConnection = cnnoracle
+    cmdCommand.CommandType = adCmdStoredProc
+    'var_factura_oracle_2 = Cdbl(var_factura_oracle)
+    var_factura_x = ""
+    For var_j = 1 To Len(var_factura_oracle)
+        If IsNumeric(Mid(var_factura_oracle, var_j, 1)) Then
+           var_factura_x = var_factura_x + Mid(var_factura_oracle, var_j, 1)
+        End If
+    Next var_j
+    
+    var_factura_oracle_2 = CDbl(var_factura_x)
+    cmdCommand.CommandText = "SP_RECEPCIONES_INS2"
+    cmdCommand.Parameters.Refresh
+    cmdCommand.Parameters("P_RC_NUMERO_RECEPCION").Size = 30
+    cmdCommand.Parameters("P_RC_RECEPCION_ID").Value = CDbl(strRecepcion_ID)
+    cmdCommand.Parameters("P_RC_ORDEN_COMPRA_ID").Value = var_orden_compra 'orden de compra
+    cmdCommand.Parameters("P_RC_NUMERO_LINEA").Value = var_numero_linea 'numero de lineam po.line_num
+    cmdCommand.Parameters("P_RC_CANTIDAD").Value = var_cantidad
+    cmdCommand.Parameters("P_RC_LINEA_ID").Value = var_linea 'po.line_id
+    cmdCommand.Parameters("P_RC_ORG_ID").Value = var_p_rc_ord_id 'po.line_id
+    cmdCommand.Parameters("P_RC_FACTURA").Value = CDbl(var_factura_oracle_2)
+    'cmdCommand.Parameters(8).Value = var_factura_oracle
+    
+    'cmdCommand.Parameters("P_RC_USUARIO_ID").Value = 0
+     
+    If var_empresa = "18" Then
+       cmdCommand.Parameters("P_RC_NUMERO_RECEPCION").Value = "SIDT_" + Trim(CStr(var_numero_movimiento)) 'mi numero de movimiento
+    Else
+       If var_empresa = "31" Then
+          cmdCommand.Parameters("P_RC_NUMERO_RECEPCION").Value = "CANT_" + Trim(CStr(var_numero_movimiento)) 'mi numero de movimiento
+       Else
+          cmdCommand.Parameters("P_RC_NUMERO_RECEPCION").Value = "SID_" + Trim(CStr(var_numero_movimiento)) 'mi numero de movimiento
+       End If
+    End If
+    'MsgBox CDbl(rs!P_RC_LINEA_ID)
+    cmdCommand.execute
+    
+    Set cmdCommand = Nothing
+    Exit Function
+Error_Insertar_Recepcion:
+    Insertar_Recepcion = False
+    strError = Err.Description
+    MsgBox strError, vbOKOnly
+    
+End Function
+
+
+
+Public Function calcula_verificador(mcodigo As String)
+   Dim sum1 As Integer
+   Dim sum2 As Integer
+   Dim icont As Integer
+   Dim VERIFICADOR As Integer
+   Dim verificador2 As Integer
+   Dim var_codigo As String
+   Dim longitud As Integer
+   Dim msuma As Integer
+   sum1 = 0
+   sum2 = 0
+   longitud = Len(mcodigo)
+   For icont = 1 To longitud - 1
+      If ((icont / 2) - Int((icont / 2))) = 0 Then
+         sum2 = sum2 + Val(Mid(mcodigo, icont, 1))
+      Else
+         sum1 = sum1 + Val(Mid(mcodigo, icont, 1))
+      End If
+   Next icont
+   msuma = sum1 * 13 + sum2
+   VERIFICADOR = 10 - ((msuma / 10) - Int(msuma / 10)) * 10
+   If VERIFICADOR = 10 Then
+      VERIFICADOR = 0
+   End If
+   verificador2 = Val(Mid(Trim(mcodigo), longitud, 1))
+   var_verificador = False
+   If VERIFICADOR = verificador2 Then
+      var_verificador = True
+   End If
+End Function
+
+Public Sub salir()
+   End
+End Sub
+
+Public Sub pro_guardar_menus(ByVal forma As Form)
+Dim cmd As New Command                                  'Este es el objeto Command que declaramos
+
+Set cmd.ActiveConnection = cnn                          'Esta es la conexión activa
+    cmd.CommandType = adCmdStoredProc                   'Aquí le indico a ADO que se trata de un PA
+    
+    cmd.CommandText = "MENUS_I"                     'Abrir Procedimiento Almacenado y Agregar Banco
+    With forma
+    
+        cmd("@VCHA_MEN_MENU_ID") = "MNU_" & UCase(.Text1(0))
+        cmd("@VCHA_MEN_NIVEL") = .Text1(2)
+        cmd("@VCHA_MEN_DESCRIPC") = .Text1(0)
+        cmd("@VCHA_MEN_TOOLTIP") = .Text1(1)
+        cmd("@VCHA_MEN_COMPONEN") = ""
+        cmd("@VCHA_MEN_MODULO") = ""
+        cmd("@VCHA_MEN_STATUS") = "A"
+
+    cmd.execute                                         'Ejecutar el PA
+    Set cmd = Nothing                                   'Liberar Memoria
+    End With
+
+End Sub
+
+
+Public Sub ejecuta_forma()
+   Dim var_tipo_ejecucion As String
+   Dim appl As New CRAXDRT.Application
+   Dim reporte As New CRAXDRT.Report
+   Dim ntablas As Double
+   Dim archivo As String
+   Dim var_cadena As String
+   Dim var_si As Integer
+   If Trim(var_accion_submenu) > 0 Then
+      Frmmenu2.Enabled = False
+   End If
+   var_activa_menu = True
+   var_numero_embarque = 0
+   'formas
+   Select Case var_accion_submenu
+       Case "01"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmarticulos2.Show
+       Case "02"
+          var_opcion_seguridad = 2
+          vartipotitular = 1
+          var_tipo_filtrado_cliente = 1
+          var_activa_forma_listatitulares = "MENU"
+          frmlistatitulares.Show
+       Case "03"
+          var_opcion_seguridad = 2
+          var_nec_emb = False
+          var_activa_forma_codigo_acceso = "MENU"
+          frmcodigo_acceso.Show
+       Case "04"
+          var_opcion_seguridad = 2
+          var_activa_forma_cajas = "MENU"
+          frmcajas.Show
+       Case "05"
+          var_opcion_seguridad = 2
+          var_activa_forma_canalesventas = "MENU"
+          frmcanalesventas.Show
+       Case "06"
+          var_opcion_seguridad = 2
+          var_activa_forma_catalogos = "MENU"
+          frmcatalogos.Show
+       Case "07"
+          var_opcion_seguridad = 2
+          var_activa_forma_catempresas = "MENU"
+          frmcatempresas.Show
+       Case "08"
+          var_opcion_seguridad = 2
+          var_activa_forma_ciudades = "MENU"
+          frmciudades.Show
+       Case "09"
+          var_opcion_seguridad = 2
+          var_activa_forma_clasearticulos = "MENU"
+          frmclasearticulos.Show
+       Case "10"
+          var_opcion_seguridad = 2
+          var_activa_forma_monedas = "MENU"
+          frmmonedas.Show
+       Case "11"
+          var_opcion_seguridad = 2
+          var_activa_forma_movimientos = "MENU"
+          frmmovimientos.Show
+       Case "12"
+          var_opcion_seguridad = 2
+          var_activa_forma_ordenescompra = "MENU"
+          frmordenescompra.Show
+       Case "13"
+          var_opcion_seguridad = 2
+          var_activa_forma_paises = "MENU"
+          frmpaises.Show
+       Case "14"
+          var_opcion_seguridad = 2
+          var_activa_forma_plazos = "MENU"
+          frmplazos.Show
+       Case "15"
+          var_opcion_seguridad = 2
+          var_activa_forma_productos = "MENU"
+          frmproductos.Show
+       Case "16"
+          var_opcion_seguridad = 2
+          
+       Case "17"
+          var_opcion_seguridad = 2
+          var_activa_forma_rutas = "MENU"
+          frmrutas.Show
+       Case "18"
+          var_opcion_seguridad = 2
+          var_activa_forma_sublineas = "MENU"
+          frmsublineas.Show
+       Case "19"
+          var_opcion_seguridad = 2
+          var_activa_forma_subtipoarticulos = "MENU"
+          frmsubtipoarticulos.Show
+       Case "20"
+          var_opcion_seguridad = 2
+          var_activa_forma_subtiposusos = "MENU"
+          frmsubtiposusos.Show
+       Case "21"
+          var_opcion_seguridad = 2
+          var_activa_forma_tallas = "MENU"
+          frmtallas.Show
+       Case "22"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipoagentes = "MENU"
+          frmtipoagentes.Show
+       Case "23"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipoarticulos = "MENU"
+          frmtipoarticulos.Show
+       Case "24"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipocambio = "MENU"
+          frmtipocambio.Show
+       Case "25"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipoestampados = "MENU"
+          frmtipoestampados.Show
+       Case "26"
+          var_opcion_seguridad = 2
+          var_activa_forma_tiposclientes = "MENU"
+          frmtiposclientes.Show
+       Case "27"
+          var_opcion_seguridad = 2
+          var_activa_forma_titulares = "MENU"
+          var_tipo_filtrado_cliente = 1
+          frmtitulares.Show
+       Case "28"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_tonos = "MENU"
+          frmtonos.Show
+       Case "29"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_transportes = "MENU"
+          frmtransportes.Show
+       Case "30"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_unidades = "MENU"
+          frmunidades.Show
+       Case "31"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_usos = "MENU"
+          frmusos.Show
+       Case "32"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_usuarios = "MENU"
+          frmusuarios.Show
+       Case "33"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_vehiculos = "MENU"
+          frmvehiculos.Show
+       Case "34"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_agentes = "MENU"
+          frmagentes.Show
+       Case "35"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_licencias = "MENU"
+          frmlicencias.Show
+       Case "36"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_diseños = "MENU"
+          frmdiseños.Show
+       Case "37"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_lineas = "MENU"
+          frmlineas.Show
+       Case "38"
+          Frmmenu2.Enabled = False
+          var_opcion_seguridad = 2
+          var_activa_forma_menus = "MENU"
+          frmmenus.Show
+       Case "40"
+          var_opcion_seguridad = 2
+          var_activa_forma_puestos = "MENU"
+          frmpuestos.Show
+       Case "42"
+          var_opcion_seguridad = 2
+          var_activa_forma_zonas = "MENU"
+          frmzonas.Show
+       Case "43"
+          var_opcion_seguridad = 2
+          var_activa_forma_cargapedidos = "MENU"
+          frmcargapedidos.Show
+       Case "44"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipopedidos = "MENU"
+          frmtipopedidos.Show
+       Case "45"
+          var_opcion_seguridad = 2
+          vartipotitular = 2
+          var_activa_forma_listatitulares = "MENU"
+          frmlistatitulares.Show
+       Case "46"
+          var_opcion_seguridad = 2
+          var_activa_forma_gruposactuales = "MENU"
+          frmgruposactuales.Show
+       Case "47"
+          var_opcion_seguridad = 2
+          var_activa_forma_gruposreales = "MENU"
+          frmgruposreales.Show
+       Case "48"
+          var_opcion_seguridad = 2
+          var_activa_forma_clientes2 = "MENU"
+          frmclientes2.Show
+       Case "49"
+          var_opcion_seguridad = 2
+          var_activa_forma_generapedido = "MENU"
+          If var_empresa = "16" Then
+             frmgenera_pedidos_multibondeados.Show
+          Else
+             frmgenerapedido.Show
+          End If
+       Case "50"
+          var_opcion_seguridad = 2
+          var_activa_forma_tipopedidos = "MENU"
+          frmtipopedidos.Show
+       Case "51"
+          var_opcion_seguridad = 2
+          var_activa_forma_autorizapedidos = "MENU"
+          frmautorizapedidos.Show
+       Case "52"
+          var_opcion_seguridad = 2
+          var_activa_forma_ordensurtido = "MENU"
+          frmordensurtido.Show
+       Case "53"
+          var_opcion_seguridad = 2
+          var_activa_forma_kardex = "MENU"
+          'frmkardex.Show
+          frmreporte_kardex_nuevo.Show
+       Case "54"
+          var_paquete = False
+          var_opcion_seguridad = 2
+          var_nec_emb = True
+          var_es_embarque = True
+          var_activa_forma_numero_embarque = "MENU"
+          frmnumero_embarque.Show
+       Case "55"
+          var_opcion_seguridad = 2
+          var_activa_forma_factura_embarques = "MENU"
+          If var_empresa = "16" Then
+             'frmfactura_embarques_multobondeados.Show
+             frmfactura_embarques.Show
+          Else
+             If var_empresa = "31" And parametros(1) = "SIDTEXTILERA" Then
+                frmfactura_embarques_nuevo_hogar.Show
+             Else
+                If var_unidad_organizacional = "35" Or var_empresa = "28" Then
+                   frmfactura_embarques_nuevo_hogar.Show
+                Else
+                   frmfactura_embarques.Show
+                End If
+             End If
+          End If
+       Case "56"
+          var_paquete = True
+          var_nec_emb = True
+          var_activa_forma_numero_embarque = "MENU"
+          frmnumero_embarque.Show
+       Case "57"
+          var_activa_forma_equipos = "MENU"
+          frmequipos.Show
+       Case "58"
+          var_opcion_seguridad = 2
+          var_activa_forma_cancela_cajas = "MENU"
+          frmcancela_cajas.Show
+       Case "59"
+          var_opcion_seguridad = 2
+          var_activa_forma_causas_devolucion = "MENU"
+          frmcausas_devolucion.Show
+       Case "60"
+          var_opcion_seguridad = 2
+          var_activa_forma_asigna_causa_devolucion = "MENU"
+          frmasigna_causa_devolucion.Show
+       Case "61"
+          var_opcion_seguridad = 2
+           var_activa_forma_asignacion_negado = "MENU"
+          frmasignacion_negado_orden_surtido.Show
+       Case "63"
+          var_opcion_seguridad = 2
+          var_activa_forma_embarques_activos = "MENU"
+          frmembarques_activos.Show
+       Case "64"
+          var_opcion_seguridad = 2
+          var_activa_forma_notas_credito = "MENU"
+          var_aplicar_nota_credito = 0
+          frmnotas_credito.Show
+       Case "65"
+          var_opcion_seguridad = 2
+          var_activa_forma_estampados = "MENU"
+          frmestampados.Show
+       Case "66"
+          var_opcion_seguridad = 2
+          var_activa_forma_colores = "MENU"
+          frmcolores.Show
+       Case "67"
+          var_opcion_seguridad = 2
+          var_activa_forma_unidadesorganizacionales = "MENU"
+          frmunidadesorganizacionales.Show
+       Case "68"
+          var_opcion_seguridad = 2
+          var_activa_forma_almacenes = "MENU"
+          frmalmacenes.Show
+       Case "69"
+          var_opcion_seguridad = 2
+          var_activa_forma_proveedores = "MENU"
+          frmproveedores.Show
+       Case "70"
+          var_opcion_seguridad = 2
+          var_activa_forma_listadeprecios = "MENU"
+          frmlistadeprecios.Show
+       Case "71"
+          var_opcion_seguridad = 2
+          var_activa_forma_descuentos_catalogos = "MENU"
+          frmdescuentos_catalogos.Show
+       Case "72"
+          var_opcion_seguridad = 2
+          var_activa_forma_descuentos_promociones = "MENU"
+          frmdescuentos_promociones.Show
+       Case "73"
+          var_opcion_seguridad = 2
+          var_activa_forma_descuentos_volumen = "MENU"
+          frmdescuentos_volumen.Show
+       Case "74"
+          var_opcion_seguridad = 2
+          var_activa_forma_estados_cuenta = "MENU"
+          frmestados_cuenta.Show
+       Case "75"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_movimientos = "MENU"
+          frmreporte_movimientos.Show
+       Case "76"
+          var_opcion_seguridad = 2
+          var_activa_forma_relacion_cobranza_listado = "MENU"
+          frmrelacion_cobranza_listado.Show
+       Case "77"
+          var_opcion_seguridad = 2
+          var_activa_forma_asigna_pagos_no_aplicados = "MENU"
+          frmasigna_pagos_no_aplicados.Show
+       Case "78"
+          var_opcion_seguridad = 2
+          var_activa_forma_notas_cargo = "MENU"
+          frmnotas_cargo.Show
+       Case "79"
+          var_opcion_seguridad = 2
+          var_activa_forma_facturas = "MENU"
+          frmfacturas.Show
+       Case "80"
+          var_opcion_seguridad = 2
+          var_activa_forma_cheques_devueltos = "MENU"
+          frmcheques_devueltos.Show
+       Case "81"
+          var_opcion_seguridad = 2
+          var_activa_forma_bonificaciones = "MENU"
+          frmbonificaciones.Show
+       Case "82"
+          var_opcion_seguridad = 2
+          var_activa_forma_bonificaciones_financieras = "MENU"
+          frmbonificaciones_financieras.Show
+       Case "83"
+          var_opcion_seguridad = 2
+          var_activa_forma_cancela_facturas = "MENU"
+          frmcancela_facturas.Show
+       Case "84"
+          var_opcion_seguridad = 2
+          var_activa_forma_cheques_devueltos_inicio = "MENU"
+          frmcheques_devueltos_inicio.Show
+       Case "85"
+          var_opcion_seguridad = 2
+          var_activa_forma_clases_cartera = "MENU"
+          frmclases_cartera.Show
+       Case "86"
+          rs.Open "select CHAR_PRI_TIPO_AGRUPAMIENTO from tb_principal where vcha_emp_empresa_id = '" + var_empresa + "'", cnn, adOpenDynamic, adLockOptimistic
+          If Not rs.EOF Then
+             var_tipo_ejecucion = IIf(IsNull(rs!CHAR_PRI_TIPO_AGRUPAMIENTO), "", rs!CHAR_PRI_TIPO_AGRUPAMIENTO)
+             If var_tipo_ejecucion <> "" Then
+                If var_tipo_ejecucion = "A" Then
+                   rs.Close
+                   var_opcion_seguridad = 2
+                   var_activa_forma_descuentos_volumen_grupo_actual = "MENU"
+                   frmdescuentos_calculo.Show
+                End If
+                If var_tipo_ejecucion = "R" Then
+                   rs.Close
+                   var_opcion_seguridad = 2
+                   var_activa_forma_descuentos_volumen_grupo_real = "MENU"
+                   frmdescuentos_volumen_grupo_real.Show
+                End If
+                If var_tipo_ejecucion = "T" Then
+                   var_opcion_seguridad = 2
+                   var_activa_forma_descuentos_volumen_titular = "MENU"
+                   frmdescuentos_volumen_titular.Show
+                   rs.Close
+                End If
+                If var_tipo_ejecucion = "C" Then
+                   rs.Close
+                   var_opcion_seguridad = 2
+                   var_activa_forma_descuentos_volumen_cliente = "MENU"
+                   frmdescuentos_volumen_cliente.Show
+                End If
+             Else
+                rs.Close
+                MsgBox "No se a asignado un tipo de asignación para descuentos por volumen", vbOKOnly, "ATENCION"
+             End If
+          End If
+       Case "87"
+          var_opcion_seguridad = 2
+          var_activa_forma_clasificacion_clientes = "MENU"
+          frmclasificacion_clientes.Show
+       Case "88"
+          var_opcion_seguridad = 2
+          var_activa_forma_causas_no_otorgamiento = "MENU"
+          frmcausas_no_otorgamiento.Show
+       Case "89"
+          var_opcion_seguridad = 2
+          var_activa_forma_descuentos_pronto_pago_cambios = "MENU"
+          frmdescuentos_pronto_pago_cambios.Show
+       Case "90"
+          var_opcion_seguridad = 2
+          var_activa_forma_familia_agrupadores = "MENU"
+          frmfamilia_agrupadores.Show
+       Case "91"
+          var_opcion_seguridad = 2
+          var_activa_forma_promociones_inicio_catalogo = "MENU"
+          frmpromociones_inicio_catalogo.Show
+       Case "92"
+          var_opcion_seguridad = 2
+          var_activa_forma_rangos_promociones_catalogos = "MENU"
+          frmrangos_promociones_catalogos.Show
+       Case "93"
+          var_opcion_seguridad = 2
+          var_activa_forma_cancela_documentos_existentes = "MENU"
+          If var_empresa = "16" Then
+             var_si = 7
+             If var_si = 6 Then
+                frmcancela_documentos_existentes_multibondeados.Show
+             Else
+                frmcancela_documentos_existentes.Show
+             End If
+          Else
+             frmcancela_documentos_existentes.Show
+          End If
+       Case "94"
+          var_opcion_seguridad = 2
+          var_activa_forma_cancela_facturas_devolucion = "MENU"
+          frmcancela_facturas_devolucion.Show
+       Case "95"
+          var_opcion_seguridad = 2
+          var_activa_forma_ejecuta_sistema = "MENU"
+          frmejectuta_sistema.Show
+       Case "96"
+          var_opcion_seguridad = 2
+          var_activa_forma_equivalencias = "MENU"
+          frmequivalencias.Show
+       Case "97"
+          var_opcion_seguridad = 2
+          var_activa_forma_informacion_pedido_sugerido = "MENU"
+          frminformacion_pedido_sugerido_rutas.Show
+       Case "98"
+          var_opcion_seguridad = 2
+          var_activa_forma_informacion_articulos_enviar = "MENU"
+          frminformacion_articulos_enviar.Show
+       Case "99"
+          var_opcion_seguridad = 2
+          var_activa_forma_cerrado_pedidos = "MENU"
+          frmcerrado_pedidos.Show
+       Case "100"
+          var_opcion_seguridad = 2
+          var_activa_forma_concentrado_orden_surtido = "MENU"
+          frmconcentrado_orden_surtido.Show
+       Case "101"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_nivel_surtido = "MENU"
+          frmreporte_nivel_surtido.Show
+       Case "102"
+          var_opcion_seguridad = 2
+          var_activa_forma_inventario_documentos = "MENU"
+          frminventario_documentos.Show
+       Case "103"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_comisiones_2.Show
+       Case "104"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpacking_list.Show
+       Case "105"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_facturas = "MENU"
+          frmreporte_valuacion_facturas.Show
+       Case "106"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_valuacion_devoluciones_2.Show
+       Case "107"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_envios_tiendas = "MENU"
+          frmreporte_envios_tiendas.Show
+       Case "108"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmexistencias_generales.Show
+       Case "109"
+          var_opcion_seguridad = 2
+          var_activa_forma_costos_predeterminados = "MENU"
+          frmcostos_predeterminados.Show
+       Case "110"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_acumulado_ventas = "MENU"
+          frmreporte_acumulado_ventas.Show
+       Case "111"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_ajustes_reempaque = "MENU"
+          frmreporte_ajustes_reempaque.Show
+       Case "112"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_entradas_produccion = "MENU"
+          frmreporte_entradas_produccion.Show
+       Case "113"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_mercancia_empacada_transito = "MENU"
+          frmreporte_mercancia_empacada_transito.Show
+       Case "114"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_ordenes_surtido_pendientes = "MENU"
+          frmreporte_ordenes_surtido_pendientes.Show
+       Case "115"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_entradas_salidas = "MENU"
+          frmreporte_entradas_salidas.Show
+       Case "116"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_catalogo_articulos = "MENU"
+          frmreporte_catalogo_articulos.Show
+       Case "117"
+          var_opcion_seguridad = 3
+          var_activa_forma_detalle_documentos_fiscales = "MENU"
+          frmdetalle_documentos_fiscales.Show
+       Case "118"
+          var_opcion_seguridad = 4
+          var_activa_forma_reporte_concentrado_entradas_salidas = "MENU"
+          frmreporte_concentrado_entradas_salidas.Show
+       Case "119"
+          var_opcion_seguridad = 4
+          var_activa_forma_estados = "MENU"
+          frmestados.Show
+       Case "120"
+          var_opcion_seguridad = 4
+          var_activa_forma_municipios = "MENU"
+          frmmunicipios.Show
+       Case "121"
+          var_opcion_seguridad = 4
+          var_activa_forma_colonias = "MENU"
+          frmcolonias.Show
+       Case "122"
+          var_opcion_seguridad = 4
+          var_activa_forma_migracion = "MENU"
+          frmmigrar_cartera.Show
+       Case "123"
+          var_opcion_seguridad = 4
+          var_activa_forma_principal_configuracion = "MENU"
+          frmprincipal_configuracion.Show
+       Case "124"
+          var_opcion_seguridad = 4
+          var_activa_forma_aplicacion_descuentos_canal_venta = "MENU"
+          frmaplicacion_descuentos_canal_venta.Show
+        Case "125"
+          var_opcion_seguridad = 4
+          var_activa_forma_agrupador_catalogos = "MENU"
+          frmagrupador_catalogos.Show
+        Case "126"
+          var_opcion_seguridad = 4
+          var_activa_forma_reporte_valuacion_facturacion_catalogos = "MENU"
+          frmreporte_valuacion_facturacion_catalogos.Show
+        Case "127"
+          var_opcion_seguridad = 4
+          var_activa_forma_descuentos_pago_correcto = "MENU"
+          frmdescuentos_pago_correcto.Show
+        Case "128"
+           var_opcion_seguridad = 4
+           var_activa_forma_asignacion_catalogo_lista_precios = "MENU"
+           frmasignacion_catalogo_lista_precios.Show
+        Case "129"
+           var_opcion_seguridad = 4
+           var_activa_forma_listado_almacenes = "MENU"
+           frmlistado_almacenes.Show
+        Case "130"
+           var_opcion_seguridad = 4
+           var_activa_forma_bloqueos = "MENU"
+           frmbloqueos.Show
+        Case "131"
+           var_opcion_seguridad = 4
+           var_activa_forma_movimientos_bloqueados = "MENU"
+           frmmovimientos_bloqueados.Show
+        Case "132"
+           var_opcion_seguridad = 4
+           var_activa_forma_personas = "MENU"
+           frmpersonal.Show
+        Case "133"
+           var_opcion_seguridad = 4
+           var_activa_forma_embarques_bloqueados = "MENU"
+           frmembarques_bloqueados.Show
+        Case "134"
+           var_opcion_seguridad = 4
+           var_activa_forma_asignacion_negado = "MENU"
+          frmasignacion_negado_orden_surtido.Show
+        Case "135"
+           var_opcion_seguridad = 4
+           var_activa_forma_reporte_totalizador_movimientos = "MENU"
+           frmreporte_totalizador.Show
+        Case "136"
+           Dim var_consecutivo As Double
+           Dim var_almacen_nombre As String
+           var_si = MsgBox("¿Desea el reporte de todos los almacenes?", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+               If rsaux5.State = 1 Then
+                  rsaux5.Close
+               End If
+               rsaux5.Open "SELECT * FROM TB_ALMACENES_REPORTE_CATALGO_ARTICULOS", cnn, adOpenDynamic, adLockOptimistic
+               While Not rsaux5.EOF
+                     cnn.BeginTrans
+                     If rs.State = 1 Then
+                        rs.Close
+                     End If
+                     rs.Open "select max(inte_tem_consecutivo) from TB_TEMP_REPORTE_CATALOGO_ARTICULOS_ALMACEN", cnn, adOpenDynamic, adLockOptimistic
+                     If Not rs.EOF Then
+                        var_consecutivo = IIf(IsNull(rs(0).Value), 0, rs(0).Value) + 1
+                     Else
+                        var_consecutivo = 1
+                     End If
+                     rs.Close
+                     rs.Open "insert into TB_TEMP_REPORTE_CATALOGO_ARTICULOS_ALMACEN (inte_tem_consecutivo, vcha_alm_almacen_id, vcha_Art_Articulo_id) select " + CStr(var_consecutivo) + ", '" + rsaux5!VCHA_ALM_ALMACEN_ID + "', vcha_art_articulo_id from tb_articulos", cnn, adOpenDynamic, adLockOptimistic
+                     cnn.CommitTrans
+                     rs.Open "select * from tb_almacenes where vcha_alm_almacen_id = '" + rsaux5!VCHA_ALM_ALMACEN_ID + "'", cnn, adOpenDynamic, adLockOptimistic
+                     
+                     var_almacen_nombre = rs!VCHA_ALM_NOMBRE
+                     rs.Close
+                     var_si = MsgBox("¿Desea exportar el reporte del almacen " + var_almacen_nombre + " excel?", vbYesNo, "ATENCION")
+                     If var_si = 6 Then
+                        If parametros(0) = "ADMCDINDUSTRIAL" Then
+                           Set reporte = appl.OpenReport(App.Path + "\rep_catalogo_articulos_almacen_Q0Z.rpt")
+                        Else
+                           Set reporte = appl.OpenReport(App.Path + "\rep_catalogo_articulos_almacen.rpt")
+                        End If
+                        reporte.RecordSelectionFormula = "{VW_CATALOGO_ARTICULOS_ALMACEN.INTE_tem_CONSECUTIVO} = " + CStr(var_consecutivo)
+                        For ntablas = 1 To reporte.Database.Tables.Count
+                            reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+                        Next ntablas
+                        reporte.ExportOptions.FormatType = crEFTExcel80
+                        reporte.ExportOptions.DestinationType = crEDTDiskFile
+                        archivo = "c:\reportessid\catalogo_articulos_" + rsaux5!VCHA_ALM_ALMACEN_ID + "_" + Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+                        reporte.ExportOptions.DiskFileName = archivo
+                        reporte.Export False
+                        Set reporte = Nothing
+                        MsgBox "Se a terminado de guardar el archivo " + archivo
+                     End If
+                     rs.Open "delete from TB_TEMP_REPORTE_CATALOGO_ARTICULOS_ALMACEN where inte_tem_consecutivo = " + CStr(var_consecutivo), cnn, adOpenDynamic, adLockOptimistic
+                     rsaux5.MoveNext
+              Wend
+              rsaux5.Close
+              Frmmenu2.Enabled = True
+           Else
+              cnn.BeginTrans
+              rs.Open "select max(inte_tem_consecutivo) from TB_TEMP_REPORTE_CATALOGO_ARTICULOS_ALMACEN", cnn, adOpenDynamic, adLockOptimistic
+              If Not rs.EOF Then
+                 var_consecutivo = IIf(IsNull(rs(0).Value), 0, rs(0).Value) + 1
+              Else
+                 var_consecutivo = 1
+              End If
+              rs.Close
+              rs.Open "insert into TB_TEMP_REPORTE_CATALOGO_ARTICULOS_ALMACEN (inte_tem_consecutivo, vcha_alm_almacen_id, vcha_Art_Articulo_id) select " + CStr(var_consecutivo) + ", '8', vcha_art_articulo_id from tb_articulos", cnn, adOpenDynamic, adLockOptimistic
+              cnn.CommitTrans
+              
+              Set reporte = appl.OpenReport(App.Path + "\rep_catalogo_articulos_almacen.rpt")
+              reporte.RecordSelectionFormula = "{VW_CATALOGO_ARTICULOS_ALMACEN.INTE_tem_CONSECUTIVO} = " + CStr(var_consecutivo)
+              
+              
+              
+              frmvistasprevias.cr.ReportSource = reporte
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              frmvistasprevias.cr.ViewReport
+              frmvistasprevias.Caption = "Catálogo de artículos por almacén"
+              frmvistasprevias.Show 1
+              Set reporte = Nothing
+              var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+              If var_si = 6 Then
+                 Set reporte = appl.OpenReport(App.Path + "\rep_catalogo_articulos_almacen.rpt")
+                 For ntablas = 1 To reporte.Database.Tables.Count
+                     reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+                 Next ntablas
+                 reporte.ExportOptions.FormatType = crEFTExcel80
+                 reporte.ExportOptions.DestinationType = crEDTDiskFile
+                 archivo = "c:\reportessid\catalogo_articulos" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+                 reporte.ExportOptions.DiskFileName = archivo
+                 reporte.Export False
+                 Set reporte = Nothing
+                 MsgBox "Se a terminado de guardar el archivo " + archivo
+              End If
+              Frmmenu2.Enabled = True
+           End If
+        Case "137"
+           Set reporte = appl.OpenReport(App.Path + "\rep_logistica_inventario.rpt")
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Reporte de Inventario para Logistica "
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+              Set reporte = appl.OpenReport(App.Path + "\rep_logistica_inventario.rpt")
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              reporte.ExportOptions.FormatType = crEFTExcel80
+              reporte.ExportOptions.DestinationType = crEDTDiskFile
+              archivo = "c:\reportessid\Logistica_inventario" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+              reporte.ExportOptions.DiskFileName = archivo
+              reporte.Export False
+              Set reporte = Nothing
+              MsgBox "Se a terminado de guardar el archivo " + archivo
+           End If
+           Frmmenu2.Enabled = True
+        Case "138"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_entradas_salidas = "MENU"
+          frmreporte_logistica_negado.Show
+        Case "139"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_antiguedad_saldos.Show
+        Case "140"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_estado_cuenta.Show
+        Case "141"
+           Set reporte = appl.OpenReport(App.Path + "\rep_antiguedad_saldos_agente.rpt")
+           reporte.RecordSelectionFormula = "{VW_ANTIGUEDAD_SALDOS_AGENTES.VCHA_EMP_EMPRESA_ID} = '" + var_empresa + "'"
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Reporte de Antigüedad de Saldos"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+              Set reporte = appl.OpenReport(App.Path + "\rep_antiguedad_saldos_agente.rpt")
+              reporte.RecordSelectionFormula = "{VW_ANTIGUEDAD_SALDOS_AGENTES.VCHA_EMP_EMPRESA_ID} = '" + var_empresa + "'"
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              reporte.ExportOptions.FormatType = crEFTExcel80
+              reporte.ExportOptions.DestinationType = crEDTDiskFile
+              archivo = "c:\reportessid\" + var_nombre_empresa + "_REPORTE_ANTIGuedad_saldos_agente" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+              reporte.ExportOptions.DiskFileName = archivo
+              reporte.Export False
+              Set reporte = Nothing
+              MsgBox "Se a terminado de guardar el archivo " + archivo
+           End If
+           Frmmenu2.Enabled = True
+        Case "142"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_entradas_salidas = "MENU"
+          frmreporte_concecutivo_tipo_documento.Show
+        Case "143"
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmbusqueda_documento_cargo.Show
+        Case "144"
+          var_opcion_seguridad = 2
+          var_activa_forma_clasificacion_clientes = "MENU"
+          frmreporte_descuentos_otorgados.Show
+        Case "145"
+          var_activa_forma_reporte_catalogo_articulos = "MENU"
+          frmcambio_agente_cartera.Show
+       Case "146"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          'frmreporte_comisiones.Show
+          frmreporte_surtido.Show
+       Case "147"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_cedula_antiguedad_saldos.Show
+        Case "148"
+           var_si = 1
+           If var_si = 0 Then
+              Set reporte = appl.OpenReport(App.Path + "\rep_principales_clientes_GRUPO_ACTUAL.rpt")
+              reporte.RecordSelectionFormula = "{VW_ANTIGUEDAD_SALDOS_GRUPO_ACTUAL.VCHA_EMP_EMPRESA_ID} = '" + var_empresa + "'"
+              frmvistasprevias.cr.ReportSource = reporte
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              frmvistasprevias.cr.ViewReport
+              frmvistasprevias.Caption = "Reporte de Principales Clientes"
+              frmvistasprevias.Show 1
+              Set reporte = Nothing
+              var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+              If var_si = 6 Then
+                 Set reporte = appl.OpenReport(App.Path + "\rep_principales_clientes_GRUPO_ACTUAL.rpt")
+                 reporte.RecordSelectionFormula = "{VW_ANTIGUEDAD_SALDOS_GRUPO_ACTUAL.VCHA_EMP_EMPRESA_ID} = '" + var_empresa + "'"
+                 For ntablas = 1 To reporte.Database.Tables.Count
+                     reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+                 Next ntablas
+                 reporte.ExportOptions.FormatType = crEFTExcel80
+                 reporte.ExportOptions.DestinationType = crEDTDiskFile
+                 archivo = "c:\reportessid\Reporte_principales_clientes_" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+                 reporte.ExportOptions.DiskFileName = archivo
+                 reporte.Export False
+                 Set reporte = Nothing
+                 MsgBox "Se a terminado de guardar el archivo " + archivo
+              End If
+           Else
+              var_opcion_seguridad = 2
+              var_activa_forma_packing_list = "MENU"
+              frmreporte_principales_clientes_historico.Show
+           End If
+       Case "149"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_devoluciones.Show
+       Case "150"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmfolios_documentos.Show
+       Case "151"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_comisiones = "MENU"
+          frmreporte_clientes.Show
+       Case "152"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_devoluciones_total.Show
+       Case "153"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_dias_promedio_pago.Show
+       Case "154"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmrelacion_cobranza_captura_2.Show
+       Case "155"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmgrafica_surtido.Show
+       Case "156"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmbonificaciones_externas.Show
+       Case "157"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_mercadotecnia_ventas.Show
+       Case "158"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmaplicacion_cancelaciones.Show
+       Case "159"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_ventas_netas.Show
+       Case "161"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmcargos.Show
+       Case "162"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_ventas_catalogos.Show
+       Case "163"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmremision_vistas.Show
+       Case "164"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmconceptos.Show
+       Case "165"
+          var_opcion_seguridad = 2
+          var_activa_forma_reporte_valuacion_devoluciones = "MENU"
+          frmreporte_antiguedad_saldos_historico.Show
+       Case "166"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_orden_compra.Show
+       Case "167"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreclasificacion_almacen.Show
+       Case "168"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_ventas_netas_tipo_reporte.Show
+       Case "169"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimpresion_etiquetas_textilera.Show
+       Case "170"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmarchivo_envios.Show
+       Case "171"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_articulos_vendidos_tipo_canal.Show
+       Case "172"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmarticulos_textilera.Show
+       Case "173"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmejecuta_Calculos_Mensuales.Show
+       Case "174"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmeliminacion_documentos_fiscales.Show
+       Case "175"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmeliminacion_relacion_cobranza.Show
+       Case "176"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmimportacion_facturacion.Show
+       Case "177"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmejecutar_ajustes_inventario.Show
+       Case "178"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmimportacion_informacion.Show
+       Case "179"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_detalle_facturacion.Show
+       Case "180"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmlista_precios.Show
+       Case "181"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmimportar_informacion_articulos.Show
+       Case "182"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmdescuentos_promociones_textilera.Show
+       Case "183"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmexistencias_generales_textilera.Show
+       Case "184"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmusuarios_pedidos_vistas.Show
+       Case "185"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_detalle_devolucion.Show
+       Case "186"
+           Set reporte = appl.OpenReport(App.Path + "\REP_EXISTENCIAS_NUMERO_SERIE.rpt")
+           reporte.RecordSelectionFormula = "{VW_EXISTENCIAS_SERIES.VCHA_EXI_EMPRESA_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_UNIDAD_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_ALMACEN_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_MOVIMIENTO_SALIDA} = ''"
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Reporte de Principales Clientes"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+              Set reporte = appl.OpenReport(App.Path + "\REP_EXISTENCIAS_NUMERO_SERIE.rpt")
+              reporte.RecordSelectionFormula = "{VW_EXISTENCIAS_SERIES.VCHA_EXI_EMPRESA_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_UNIDAD_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_ALMACEN_SALIDA} = '' AND {VW_EXISTENCIAS_SERIES.VCHA_EXI_MOVIMIENTO_SALIDA} = ''"
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              reporte.ExportOptions.FormatType = crEFTExcel80
+              reporte.ExportOptions.DestinationType = crEDTDiskFile
+              archivo = "c:\reportessid\reporte_existencias_serie_" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+              reporte.ExportOptions.DiskFileName = archivo
+              reporte.Export False
+              Set reporte = Nothing
+              MsgBox "Se a terminado de guardar el archivo " + archivo
+           End If
+           Frmmenu2.Enabled = True
+       Case "187"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmdesuento_promocion_cliente.Show
+       Case "188"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcorreccion_documentos_fiscales.Show
+       Case "189"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_entradas_calidad.Show
+       Case "190"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmfactura_orden_compra_estampados.Show
+       Case "191"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_catalogos_vendidos.Show
+       Case "192"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_ubicaciones.Show
+       Case "193"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_devoluciones_calidad.Show
+       Case "194"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcreacion_equipos.Show
+       Case "195"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcomportamiento_equipos_embarque.Show
+       Case "196"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcarga_pedido_coppel.Show
+       Case "197"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmimpresion_etiqueta_coppel.Show
+       Case "198"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmgenera_archivo_distribucion_coppel.Show
+       Case "199"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmorden_compra_oracle.Show
+       Case "200"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmrelacion_facturas.Show
+       Case "201"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmverificar_saldos_clientes_tiendas.Show
+       Case "202"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmverificar_saldos_clientes_tiendas_consulta_2.Show
+       Case "203"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_existencias_cajas_pedidos_tiendas.Show
+       Case "204"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmmanifiesto.Show
+       Case "205"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_facturacion_tiendas.Show
+       Case "206"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmestatus_pedidos_tiendas.Show
+       Case "207"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmEquivalenciasCoppel.Show
+       Case "208"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmliberacion_pedidos_tiendas.Show
+       Case "209"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmaplicacion_nota_credito.Show
+       Case "210"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmnotas_credito_no_aplicables.Show
+       Case "211"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frminventario_textilera.Show
+       Case "212"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_valuacion_facturas_tiendas.Show
+       Case "213"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcorreccion_embarques_erroneos_cajas.Show
+       Case "214"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcancelacion_liberacion_pedidos_tiendas.Show
+       Case "215"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmsorteo_obtener_boletos.Show
+       Case "216"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcancelacion_embarque_refacturacion.Show
+       Case "217"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmsorteo_asignacion_premios.Show
+       Case "218"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcorreccion_cobranza_aplicada_no_reflejada.Show
+       Case "219"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcancelacion_facturacion_tiendas.Show
+       Case "220"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmcancelacion_facturacion_tiendas_eliminacion.Show
+        Case "221"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmconsulta_saldo_clientes_tiendas.Show
+        Case "222"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_antiguedad_saldos_con_dias_promedio.Show
+        Case "223"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmetiquetas_ubicaciones.Show
+        Case "224"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmrestauracion_oracle.Show
+        Case "225"
+          var_opcion_seguridad = 2
+          var_activa_forma_existencias_generales = "MENU"
+          frmreporte_mercadotecnia_ventas_fechas.Show
+        Case "226"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimpresion_etiquetas_textilera_almacen.Show
+        Case "227"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmmochilas_warner.Show
+        Case "228"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcancelacion_embarque_relectura_cajas.Show
+        Case "229"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmestampados_textilera.Show
+        Case "230"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmnavidad.Show
+        Case "231"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmconcentrado_ordenes_tiendas.Show
+        Case "232"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcreacion_tablas_inventario_textilera.Show
+        Case "233"
+           Set reporte = appl.OpenReport(App.Path + "\rep_abonos_mal_aplicados.rpt")
+           reporte.RecordSelectionFormula = "{VW_ABONOS_NO_APLICADOS_FINAL.FLOA_ECU_IMPORTE_ABONO}  = -100000 and {VW_ABONOS_NO_APLICADOS_FINAL.FLOA_CAR_IMPORTE_NETO} > 0 AND {VW_ABONOS_NO_APLICADOS_FINAL.INTE_CAR_NOTA_CREDITO_APLICADA} = 1"
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Reporte de Principales Clientes"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           var_si = MsgBox("¿Desea exportar el reporte a excel?", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+              Set reporte = appl.OpenReport(App.Path + "\rep_abonos_mal_aplicados.rpt")
+              reporte.RecordSelectionFormula = "{VW_ABONOS_NO_APLICADOS_FINAL.FLOA_ECU_IMPORTE_ABONO}  = -100000  and {VW_ABONOS_NO_APLICADOS_FINAL.FLOA_CAR_IMPORTE_NETO} > 0  AND {VW_ABONOS_NO_APLICADOS_FINAL.INTE_CAR_NOTA_CREDITO_APLICADA} = 1"
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              reporte.ExportOptions.FormatType = crEFTExcel80
+              reporte.ExportOptions.DestinationType = crEDTDiskFile
+              archivo = "c:\reportessid\rep_abonos_mal_aplicados" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+              reporte.ExportOptions.DiskFileName = archivo
+              reporte.Export False
+              Set reporte = Nothing
+              MsgBox "Se a terminado de guardar el archivo " + archivo
+           End If
+           Frmmenu2.Enabled = True
+        Case "234"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_facturacion_franquicias.Show
+        Case "235"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_concecutivo_tipo_documento_agente.Show
+        Case "236"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimportacion_facturacion_tiendas.Show
+        Case "237"
+           cnn.BeginTrans
+           rs.Open "select max(inte_tem_consecutivo) from TB_TEMP_REPORTE_SEMANAL", cnn, adOpenDynamic, adLockOptimistic
+           If rs.EOF Then
+              var_consecutivo = 1
+           Else
+              var_consecutivo = IIf(IsNull(rs(0).Value), 0, rs(0).Value) + 1
+           End If
+           rs.Close
+           rs.Open "insert into TB_TEMP_REPORTE_SEMANAL (inte_tem_consecutivo) values (" + CStr(var_consecutivo) + ")", cnn, adOpenDynamic, adLockOptimistic
+           cnn.CommitTrans
+           rs.Open "EXEC SP_FACTURACION_SEMANAL " + CStr(var_consecutivo), cnn, adOpenDynamic, adLockOptimistic
+           Set reporte = appl.OpenReport(App.Path + "\rep_reporte_semanal.rpt")
+           reporte.RecordSelectionFormula = "{TB_TEMP_REPORTE_SEMANAL.INTE_TEM_CONSECUTIVO} = " + CStr(var_consecutivo)
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           reporte.ExportOptions.FormatType = crEFTExcel80
+           reporte.ExportOptions.DestinationType = crEDTDiskFile
+           archivo = "c:\reportessid\facturacion_semanal_" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+           reporte.ExportOptions.DiskFileName = archivo
+           reporte.Export False
+           Set reporte = Nothing
+           MsgBox "Se a terminado de guardar el archivo " + archivo
+           rs.Open "delete from TB_TEMP_REPORTE_SEMANAL where inte_tem_consecutivo = " + CStr(var_consecutivo), cnn, adOpenDynamic, adLockOptimistic
+           rs.Open "delete from TB_TEMP_TABLA_AUXILIAR_SEMANAS where inte_tem_consecutivo = " + CStr(var_consecutivo), cnn, adOpenDynamic, adLockOptimistic
+           Frmmenu2.Enabled = True
+        Case "238"
+        'REPORTE DE CHIQUIBLANCOS
+        Case "239"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_facturacion_agente.Show
+        Case "240"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmbloquear_articulos.Show
+        Case "241"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmgenerar_Archivos_clientes_cobranza.Show
+        Case "242"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_Facturacion_multibondeados.Show
+        Case "243"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcambiar_descuentos_clientes_multibondeados.Show
+        Case "244"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcancelacion_facturacion_eliminacion_multibondeados.Show
+        Case "245"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmliberar_apartado.Show
+        Case "246"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_lotes_multibondeados.Show
+        Case "247"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmejecuta_calculo_pagos_multibondeados.Show
+        Case "248"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmactualizar_entradas_multibondeados.Show
+        Case "249"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcambio_precios_devolucion.Show
+        Case "250"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_lista_de_precios.Show
+        Case "251"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcorreccion_facturas_contado_no_aplicadas_FT.Show
+        Case "252"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmver_pedido.Show
+        Case "253"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          'frmabonos_aplicados_cargo_serie.Show
+        Case "254"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_devoluciones_detalle_articulo.Show
+        Case "255"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcorreccion_importes_ORACLE.Show
+        Case "256"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmetiquetas_bodesa.Show
+        Case "257"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmlista_empaque_bodesa.Show
+        Case "258"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_estado_cuenta_depositos.Show
+        Case "259"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_total_surtido_semanal.Show
+        Case "260"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmordenes_surtido_asignacion_camion.Show
+        Case "261"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmchoferes.Show
+        Case "262"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpaqueterias.Show
+        Case "263"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_movimientos_no_impresos.Show
+        Case "264"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_entradas_traspasos_compras.Show
+        Case "265"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_total_surtido_diario.Show
+        Case "266"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmmetas.Show
+        Case "267"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcomisiones_nuevo_esquema.Show
+        Case "268"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmenvios_tiendas_textilera.Show
+        Case "269"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreportes_inventario.Show
+        Case "270"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          'frminventario_numero_conteo.Show
+        Case "271"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmasignacion_paqueteria_orden_surtido.Show
+        Case "272"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmsubir_ubicaciones.Show
+        Case "273"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimpresion_guias.Show
+        Case "274"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpaqueteria_almacen.Show
+        Case "275"
+           Set reporte = appl.OpenReport(App.Path + "\rep_movimientos_no_cerrados.rpt")
+           reporte.RecordSelectionFormula = "{VW_MOVIMIENTOS_NO_CERRADOS.VCHA_EMP_EMPRESA_ID} = '" + var_empresa + "'"
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           reporte.ExportOptions.FormatType = crEFTExcel80
+           reporte.ExportOptions.DestinationType = crEDTDiskFile
+           archivo = "c:\reportessid\movimientos_no_impresos_" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+           reporte.ExportOptions.DiskFileName = archivo
+           reporte.Export False
+           Set reporte = Nothing
+           MsgBox "Se a terminado de guardar el archivo " + archivo
+           Frmmenu2.Enabled = True
+        Case "276"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_total_relaciones_aplicadas_por_dia.Show
+        Case "277"
+           Set reporte = appl.OpenReport(App.Path + "\rep_APARTADO.rpt")
+           reporte.RecordSelectionFormula = "{vw_jv_apartados_concentrados.surtir} - {vw_jv_apartados_concentrados.surtida} - {vw_jv_apartados_concentrados.NEGADA} - {vw_jv_apartados_concentrados.APARTADO} <> 0 and {vw_jv_apartados_concentrados.surtir} = 500000"
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Descuadre de apartado"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           Frmmenu2.Enabled = True
+        Case "278"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmaplicacion_pagos.Show
+        Case "279"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcambio_precio.Show
+        Case "280"
+           Set reporte = appl.OpenReport(App.Path + "\rep_notas_credito_penditentes.rpt")
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Notas de crédito pendientes de imprimit"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+           Frmmenu2.Enabled = True
+        Case "281"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_negado_produccion.Show
+        Case "282"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_antiguedad_saldos_historico_filtro.Show
+        Case "283"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_negado_produccion_resumen.Show
+        Case "285"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmubicaciones_almacen_detalle.Show
+        Case "286"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmagentes_paqueterias.Show
+        Case "287"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmasignacion_codigo_externo.Show
+        Case "288"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcompletar_orden_de_surtido_access.Show
+        Case "289"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_antiguedad_saldos_historico_empresas.Show
+        Case "290"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcarga_pedido_coppel_excel.Show
+        Case "291"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmgenera_archivo_distribucion_coppel_EXCEL.Show
+        Case "292"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_movimientos_usuarios.Show
+        Case "293"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpaqueteria_multipack.Show
+        Case "294"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpaqueteria_odm.Show
+        Case "295"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmpaqueteria_estrella_blanca.Show
+        Case "296"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimportacion_clientes.Show
+        Case "297"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmagregar_descripcion_packing_list.Show
+        Case "298"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_relacion_cobranza_auditoria.Show
+        Case "299"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_entradas_calidad_auditoria.Show
+        Case "300"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmdepositos_mal_aplicados.Show
+        Case "301"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmsubrutas.Show
+        Case "302"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmasignacion_subruta_clientes.Show
+        Case "303"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_aplicacion_depositos.Show
+        Case "304"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmimportacion_codigos_SIP_SID.Show
+        Case "305"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreportes_depositos.Show
+        Case "306"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_movimientos_kardex.Show
+        Case "307"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_facturacion.Show
+        Case "308"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmsalidas_almacen_calidad.Show
+        Case "309"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmrefacturacion_facturas_importes_mal.Show
+        Case "310"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_facturacion_estampados.Show
+        Case "311"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmreporte_lotes_facturados.Show
+        Case "312"
+           cnn.BeginTrans
+           rs.Open "SELECT MAX(INTE_TEM_CONSECUTIVO) FROM TB_FACTURAS_TRANSITO_ESTAMPADOS", cnn, adOpenDynamic, adLockOptimistic
+           If Not rs.EOF Then
+              var_consecutivo = IIf(IsNull(rs(0).Value), 0, rs(0).Value)
+           Else
+              var_consecutivo = 0
+           End If
+           rs.Close
+           var_consecutivo = var_consecutivo + 1
+           rs.Open "insert into TB_FACTURAS_TRANSITO_ESTAMPADOS (inte_tem_consecutivo) values (" + CStr(var_consecutivo) + ")", cnn, adOpenDynamic, adLockOptimistic
+           cnn.CommitTrans
+           If parametros(0) = "sqlquezada2" Then
+              var_cadena = "INSERT INTO TB_FACTURAS_TRANSITO_ESTAMPADOS (INTE_TEM_CONSECUTIVO, INTE_CAR_NUMERO, VCHA_CLI_CLAVE_ID, DTIM_CAR_FECHA, VCHA_ART_ARTICULO_ID, FLOA_SAL_CANTIDAD, VCHA_ART_NOMBRE_ESPAÑOL) select " + CStr(var_consecutivo) + ", tec.inte_Car_numero, tec.vcha_Cli_clave_id, tec.dtim_Car_Fecha, sal.vcha_Art_articulo_id, sal.floa_sal_cantidad, art.vcha_Art_nombre_español from tb_encabezado_cartera tec, tb_Salidas sal, tb_Articulos art where tec.vcha_cli_clave_id = 'C000002362' and tec.vcha_esb_establecimiento_id = 'E000001752' and sal.vcha_Art_Articulo_id =art.vcha_Art_Articulo_id and tec.vcha_car_documento = 'FA' and tec.vcha_emp_Empresa_id = '15' and (tec.char_Car_estatus <> 'C' or tec.char_Car_Estatus is null) and tec.vcha_mov_movimiento_id <> '' and tec.vcha_emp_empresa_id = sal.vcha_Emp_Empresa_id and tec.vcha_ser_serie_id = sal.vcha_ser_Serie_id and tec.inte_car_numero = sal.inte_car_numero and tec.inte_Car_numero not in (select distinct inte_Car_numero from tb_encabezado_Cartera ec,"
+              var_cadena = var_cadena + " admcdindustrial.sid.dbo.tb_encabezado_movimientos em where ec.vcha_emp_Empresa_id = '15' and ec.vcha_Car_documento= 'FA' and (ec.char_Car_estatus <>"
+              var_cadena = var_cadena + " 'C' or ec.char_Car_estatus is null) and ec.vcha_mov_movimiento_id <> '' and em.vcha_mov_movimiento_id = 'EI' and em.inte_emo_numero_origen = ec.inte_Car_numero)  and sal.dtim_sal_fecha >= {d '2009-06-12'} order by tec.dtim_Car_fecha"
+           Else
+              var_cadena = "INSERT INTO TB_FACTURAS_TRANSITO_ESTAMPADOS (INTE_TEM_CONSECUTIVO, INTE_CAR_NUMERO, VCHA_CLI_CLAVE_ID, DTIM_CAR_FECHA, VCHA_ART_ARTICULO_ID, FLOA_SAL_CANTIDAD, VCHA_ART_NOMBRE_ESPAÑOL) select " + CStr(var_consecutivo) + ", tec.inte_Car_numero, tec.vcha_Cli_clave_id, tec.dtim_Car_Fecha, sal.vcha_Art_articulo_id, sal.floa_sal_cantidad, art.vcha_Art_nombre_español from sqlquezada2.sidtextilera.dbo.tb_encabezado_cartera tec, sqlquezada2.sidtextilera.dbo.tb_Salidas sal, sqlquezada2.sidtextilera.dbo.tb_Articulos art where tec.vcha_cli_clave_id = 'C000002362' and tec.vcha_esb_establecimiento_id = 'E000001752' and sal.vcha_Art_Articulo_id =art.vcha_Art_Articulo_id and tec.vcha_car_documento = 'FA' and tec.vcha_emp_Empresa_id = '15' and (tec.char_Car_estatus <> 'C' or tec.char_Car_Estatus is null) and tec.vcha_mov_movimiento_id <> '' and tec.vcha_emp_empresa_id = sal.vcha_Emp_Empresa_id and "
+              var_cadena = var_cadena + " tec.vcha_ser_serie_id = sal.vcha_ser_Serie_id and tec.inte_car_numero = sal.inte_car_numero and tec.inte_Car_numero not in (select distinct inte_Car_numero from sqlquezada2.SIDTEXTILERA.DBO.tb_encabezado_Cartera ec,"
+              var_cadena = var_cadena + " admcdindustrial.sid.dbo.tb_encabezado_movimientos em where ec.vcha_emp_Empresa_id = '15' and ec.vcha_Car_documento= 'FA' and (ec.char_Car_estatus <>"
+              var_cadena = var_cadena + " 'C' or ec.char_Car_estatus is null) and ec.vcha_mov_movimiento_id <> '' and em.vcha_mov_movimiento_id = 'EI' and em.inte_emo_numero_origen = ec.inte_Car_numero)  and sal.dtim_sal_fecha >= {d '2009-06-12'} order by tec.dtim_Car_fecha"
+           End If
+           'MsgBox var_cadena
+           rs.Open var_cadena, cnn, adOpenDynamic, adLockOptimistic
+           
+           Set reporte = appl.OpenReport(App.Path + "\REP_FACTURAS_TRANSITO_ESTAMPADOS.rpt")
+           reporte.RecordSelectionFormula = "{VW_FACTURAS_TRANSITO_ESTAMPADOS.INTE_TEM_CONSECUTIVO} = " + CStr(var_consecutivo)
+           frmvistasprevias.cr.ReportSource = reporte
+           For ntablas = 1 To reporte.Database.Tables.Count
+               reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+           Next ntablas
+           frmvistasprevias.cr.ViewReport
+           frmvistasprevias.Caption = "Facturas en transito de estampados el refugio"
+           frmvistasprevias.Show 1
+           Set reporte = Nothing
+                                 
+           var_si = MsgBox("¿Desea exportar el reporte a excel", vbYesNo, "ATENCION")
+           If var_si = 6 Then
+              Set reporte = appl.OpenReport(App.Path + "\REP_FACTURAS_TRANSITO_ESTAMPADOS.rpt")
+              reporte.RecordSelectionFormula = "{VW_FACTURAS_TRANSITO_ESTAMPADOS.INTE_TEM_CONSECUTIVO} = " + CStr(var_consecutivo)
+              For ntablas = 1 To reporte.Database.Tables.Count
+                  reporte.Database.Tables(ntablas).SetLogOnInfo parametros(6), var_bd_reportes, parametros(4), parametros(5)
+              Next ntablas
+              reporte.ExportOptions.FormatType = crEFTExcel80
+              reporte.ExportOptions.DestinationType = crEDTDiskFile
+              archivo = "c:\reportessid\facturas_transito_" & Replace(Str(Date), "/", "") & "_" & CStr(Hour(Time)) + "_" + CStr(Minute(Time)) + "_" + CStr(Second(Time)) + "_.xls"
+              reporte.ExportOptions.DiskFileName = archivo
+              reporte.Export False
+              Set reporte = Nothing
+              MsgBox "Se a terminado de guardar el archivo " + archivo
+           End If
+           rs.Open "delete from TB_FACTURAS_TRANSITO_ESTAMPADOS where inte_tem_consecutivo = " + CStr(var_consecutivo), cnn, adOpenDynamic, adLockOptimistic
+           Frmmenu2.Enabled = True
+        Case "313"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmcodigos_recontables.Show
+        Case "314"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmalta_articulo_sid_distribucion.Show
+        Case "315"
+          var_opcion_seguridad = 2
+          var_activa_forma_packing_list = "MENU"
+          frmenvio_estado_cuenta_correo.Show
+        Case "316"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_articulos_nuevos.Show
+        Case "317"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcuadre_sid_oracle.Show
+        Case "318"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_devoluciones_costos.Show
+        Case "319"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_facturacion_estampados_con_lotes.Show
+        Case "320"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcorreccion_saldos.Show
+        Case "321"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcambio_establecimientos_facturas.Show
+        Case "322"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcarga_inventario_documentos.Show
+        Case "323"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcancelacion_notas_produccion.Show
+        Case "324"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_ventas_lineas.Show
+        Case "325"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmactualizar_lista_precios.Show
+        Case "326"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          'no hace nada
+          frmreporte_valuacion_facturacion_detalle.Show
+        Case "327"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmubicaciones_acomodo.Show
+        Case "328"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmubicaciones_salidas.Show
+        Case "329"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmubicaciones_reorganziar.Show
+        Case "330"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmexistencias_rapidas_compucaja.Show
+        Case "331"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcargar_pedido_cantia.Show
+        Case "332"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcargar_pedido_cantia.Show
+        Case "333"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_facturas_enviadas_estampados.Show
+        Case "334"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmubicaciones.Show
+        Case "335"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcargar_movimientos_compucaja.Show
+        Case "336"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_pedidos_tienda_cantia.Show
+        Case "337"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmimpresion_notas_cargo_1_por_ciento_iva.Show
+        Case "338"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmimportar_codigos_compucaja.Show
+        Case "339"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcambiar_estatus_codigos_cantia.Show
+        Case "340"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmpedido_cantia_textilera.Show
+        Case "341"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_ventas_netas_periodo.Show
+        Case "342"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_ventas_netas_cantia.Show
+        Case "343"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmestado_cuenta_correo.Show
+        Case "344"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmestablecimientos_plantas.Show
+        Case "345"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmsubir_polizas_intercompañias.Show
+        Case "346"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_antiguedad_saldos_dolares.Show
+        Case "347"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmrelacion_facturas_fechas.Show
+        Case "348"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcorreccion_relacion_cobranza.Show
+        Case "349"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcomparacion_compucaja_sid.Show
+        Case "350"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmalta_articulos_textilera_vianney.Show
+        Case "351"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmsubir_polizas.Show
+        Case "352"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_relacion_cobranza_auditoria_nuevo.Show
+        Case "353"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_movimientos_2.Show
+        Case "354"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_anexos_contabilidad.Show
+        Case "355"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmalta_codigos_textilera.Show
+        Case "356"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcancelacion_documentos_electronicos.Show
+        Case "357"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmpdf.Show
+        Case "358"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmfactura_electronica_cantia.Show
+        Case "359"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmnota_credito_electronica_cantia.Show
+        Case "360"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmver_factura_electronica.Show
+        Case "361"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmver_notas_credito_electronica.Show
+        Case "362"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmcambiar_almacen_archivo_comparacion.Show
+        Case "363"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_documentos_electronicos_enviados.Show
+        Case "364"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmEtiquetasPreciosCantia.Show
+        Case "365"
+          var_opcion_seguridad = 2
+          var_activa_forma_articulos2 = "MENU"
+          frmreporte_depositos_saldo.Show
+        End Select
+End Sub
+
+
+
+
+
+Public Sub activa_forma(var_activa_forma As String)
+   Select Case var_activa_forma
+       Case "MENU"
+            Frmmenu2.Enabled = True
+       Case "frmsalidas"
+            frmsalidas.Enabled = True
+       Case "frmsalidas_cajas"
+            frmsalidas_cajas.Enabled = True
+       Case "frmclientes"
+            frmclientes.Enabled = True
+       Case "frmarticulos2"
+            frmarticulos2.Enabled = True
+       Case "frmlistatitulares"
+            frmlistatitulares.Enabled = True
+       Case "frmcodigo_acceso"
+            frmcodigo_acceso.Enabled = True
+       Case "frmcajas"
+            frmcajas.Enabled = True
+       Case "frmcanalesventas"
+            frmcanalesventas.Enabled = True
+       Case "frmcatalogos"
+            frmcatalogos.Enabled = True
+       Case "frmcatempresas"
+            frmcatempresas.Enabled = True
+       Case "frmciudades"
+            frmciudades.Enabled = True
+       Case "frmclasearticulos"
+            frmclasearticulos.Enabled = True
+       Case "frmmonedas"
+            frmmonedas.Enabled = True
+       Case "frmmovimientos"
+            frmmovimientos.Enabled = True
+       Case "frmordenescompra"
+            frmordenescompra.Enabled = True
+       Case "frmpaises"
+            frmpaises.Enabled = True
+       Case "frmplazos"
+            frmplazos.Enabled = True
+       Case "frmproductos2"
+            frmproductos.Enabled = True
+       Case "16"
+          var_opcion_seguridad = 2
+       Case "frmrutas"
+            frmrutas.Enabled = True
+       Case "frmsublineas"
+            frmsublineas.Enabled = True
+       Case "frmsubtipoarticulos"
+            frmsubtipoarticulos.Enabled = True
+       Case "frmsubtiposusos"
+            frmsubtiposusos.Enabled = True
+       Case "frmtallas"
+            frmtallas.Enabled = True
+       Case "frmtipoagentes"
+            frmtipoagentes.Enabled = True
+       Case "frmtipoarticulos"
+            frmtipoarticulos.Enabled = True
+       Case "frmtipocambio"
+            frmtipocambio.Enabled = True
+       Case "frmtipoestampados"
+            frmtipoestampados.Enabled = True
+       Case "frmtiposclientes"
+            frmtiposclientes.Enabled = True
+       Case "frmtitulares"
+            frmtitulares.Enabled = True
+       Case "frmtonos"
+            frmtonos.Enabled = True
+       Case "frmtransportes"
+            frmtransportes.Enabled = True
+       Case "frmunidades"
+            frmunidades.Enabled = True
+       Case "frmusos"
+            frmusos.Enabled = True
+       Case "frmusuarios"
+            frmusuarios.Enabled = True
+       Case "frmvehiculos"
+            frmvehiculos.Enabled = True
+       Case "frmagentes"
+            frmagentes.Enabled = True
+       Case "frmlicencias"
+            frmlicencias.Enabled = True
+       Case "frmdiseños"
+            frmdiseños.Enabled = True
+       Case "frmlineas"
+            frmlineas.Enabled = True
+       Case "frmmenus"
+            frmmenus.Enabled = True
+       Case "frmpuestos"
+            frmpuestos.Enabled = True
+       Case "frmzonas"
+            frmzonas.Enabled = True
+       Case "frmcargapedidos"
+            frmcargapedidos.Enabled = True
+       Case "frmtipopedidos"
+            frmtipopedidos.Enabled = True
+       Case "frmlistatitulares"
+            frmlistatitulares.Enabled = True
+       Case "frmgruposactuales"
+            frmgruposactuales.Enabled = True
+       Case "frmgruposreales"
+            frmgruposreales.Enabled = True
+       Case "frmclientes2"
+            frmclientes2.Enabled = True
+       Case "frmgenerapedido"
+            frmgenerapedido.Enabled = True
+       Case "frmgenera_pedidos_multibondeados"
+            frmgenera_pedidos_multibondeados.Enabled = True
+       Case "frmtipopedidos"
+            frmtipopedidos.Enabled = True
+       Case "frmautorizapedidos"
+            frmautorizapedidos.Enabled = True
+       Case "frmordensurtido"
+            frmordensurtido.Enabled = True
+       Case "frmkardex"
+            frmkardex.Enabled = True
+       Case "frmnumero_embarque"
+            frmnumero_embarque.Enabled = True
+       Case "frmfactura_embarques"
+            frmfactura_embarques.Enabled = True
+       Case "frmcodigo_acceso"
+            frmcodigo_acceso.Enabled = True
+       Case "frmequipos"
+            frmequipos.Enabled = True
+       Case "frmcancela_cajas"
+            frmcancela_cajas.Enabled = True
+       Case "frmcausas_devolucion"
+            frmcancela_cajas.Enabled = True
+       Case "frmasigna_causa_devolucion"
+            frmasigna_causa_devolucion.Enabled = True
+       Case "frmasignacion_negado"
+            frmasignacion_negado.Enabled = True
+       Case "frmembarques_activos"
+            frmembarques_activos.Enabled = True
+       Case "frmnotas_credito"
+            frmnotas_credito.Enabled = True
+       Case "frmestampados"
+            frmestampados.Enabled = True
+       Case "frmcolores"
+            frmcolores.Enabled = True
+       Case "frmunidadesorganizacionales"
+            frmunidadesorganizacionales.Enabled = True
+       Case "frmalmacenes"
+            frmalmacenes.Enabled = True
+       Case "frmproveedores"
+            frmproveedores.Enabled = True
+       Case "frmlistadeprecios"
+            frmlistadeprecios.Enabled = True
+       Case "frmdescuentos_catalogos"
+            frmdescuentos_catalogos.Enabled = True
+       Case "frmdescuentos_promociones"
+            frmdescuentos_promociones.Enabled = True
+       Case "frmdescuentos_volumen"
+            frmdescuentos_volumen.Enabled = True
+       Case "frmestados_cuenta"
+            frmestados_cuenta.Enabled = True
+       Case "frmreporte_movimientos"
+            frmreporte_movimientos.Enabled = True
+       Case "frmrelacion_cobranza_listado"
+            frmrelacion_cobranza_listado.Enabled = True
+       Case "frmasigna_pagos_no_aplicados"
+            frmasigna_pagos_no_aplicados.Enabled = True
+       Case "frmnotas_cargo"
+            frmnotas_cargo.Enabled = True
+       Case "frmfacturas"
+            frmfacturas.Enabled = True
+       Case "frmcheques_devueltos"
+            frmcheques_devueltos.Enabled = True
+       Case "frmbonificaciones"
+            frmbonificaciones.Enabled = True
+       Case "frmbonificaciones_financieras"
+            frmbonificaciones_financieras.Enabled = True
+       Case "frmcancela_facturas"
+            frmcancela_facturas.Enabled = True
+       Case "frmcheques_devueltos_inicio"
+            frmcheques_devueltos_inicio.Enabled = True
+       Case "frmclases_cartera"
+            frmclases_cartera.Enabled = True
+       Case "frmdescuentos_volumen_grupo_actual"
+            frmdescuentos_volumen_grupo_actual.Enabled = True
+       Case "frmdescuentos_volumen_grupo_real"
+            frmdescuentos_volumen_grupo_real.Enabled = True
+       Case "frmdescuentos_volumen_titular"
+            frmdescuentos_volumen_titular.Enabled = True
+       Case "frmdescuentos_volumen_cliente"
+            frmdescuentos_volumen_cliente.Enabled = True
+       Case "frmclasificacion_clientes"
+            frmclasificacion_clientes.Enabled = True
+       Case "frmcausas_no_otorgamiento"
+            frmcausas_no_otorgamiento.Enabled = True
+       Case "frmdescuentos_pronto_pago_cambios"
+            frmdescuentos_pronto_pago_cambios.Enabled = True
+       Case "frmfamilia_agrupadores"
+            frmfamilia_agrupadores.Enabled = True
+       Case "frmpromociones_inicio_catalogo"
+            frmpromociones_inicio_catalogo.Enabled = True
+       Case "frmrangos_promociones_catalogos"
+            frmrangos_promociones_catalogos.Enabled = True
+       Case "frmcancela_documentos_existentes"
+            frmcancela_documentos_existentes.Enabled = True
+       Case "frmcancela_facturas_devolucion"
+            frmcancela_facturas_devolucion.Enabled = True
+       Case "frmejectuta_sistema"
+            frmejectuta_sistema.Enabled = True
+       Case "frmequivalencias"
+            frmequivalencias.Enabled = True
+       Case "frminformacion_pedido_sugerido"
+            frminformacion_pedido_sugerido.Enabled = True
+       Case "frminformacion_articulos_enviar"
+            frminformacion_articulos_enviar.Enabled = True
+       Case "frmcerrado_pedidos"
+            frmcerrado_pedidos.Enabled = True
+       Case "frmconcentrado_orden_surtido"
+            frmconcentrado_orden_surtido.Enabled = True
+       Case "frmreporte_nivel_surtido"
+            frmreporte_nivel_surtido.Enabled = True
+       Case "frminventario_documentos"
+            frminventario_documentos.Enabled = True
+       Case "frmreporte_comisiones"
+            frmreporte_comisiones.Enabled = True
+       Case "frmpacking_list"
+            frmpacking_list.Enabled = True
+       Case "frmreporte_valuacion_facturas"
+            frmreporte_valuacion_facturas.Enabled = True
+       Case "frmreporte_valuacion_devoluciones"
+            frmreporte_valuacion_devoluciones.Enabled = True
+       Case "frmreporte_envios_tiendas"
+            frmreporte_envios_tiendas.Enabled = True
+       Case "frmexistencias_generales"
+            frmexistencias_generales.Enabled = True
+       Case "frmcostos_predeterminados"
+            frmcostos_predeterminados.Enabled = True
+       Case "frmreporte_acumulado_ventas"
+            frmreporte_acumulado_ventas.Enabled = True
+       Case "frmreporte_ajustes_reempaque"
+            frmreporte_ajustes_reempaque.Enabled = True
+       Case "frmreporte_entradas_produccion"
+            frmreporte_entradas_produccion.Enabled = True
+       Case "frmreporte_mercancia_empacada_transito"
+            frmreporte_mercancia_empacada_transito.Enabled = True
+       Case "frmreporte_ordenes_surtido_pendientes"
+            frmreporte_ordenes_surtido_pendientes.Enabled = True
+       Case "frmreporte_entradas_salidas"
+            frmreporte_entradas_salidas.Enabled = True
+       Case "frmreporte_catalogo_articulos"
+            frmreporte_catalogo_articulos.Enabled = True
+       Case "frmdetalle_documentos_fiscales"
+            frmdetalle_documentos_fiscales.Enabled = True
+       Case "frmreporte_concentrado_entradas_salidas"
+            frmreporte_concentrado_entradas_salidas.Enabled = True
+       Case "frmestados"
+            frmestados.Enabled = True
+       Case "frmmunicipios"
+            frmmunicipios.Enabled = True
+       Case "frmcolonias"
+            frmcolonias.Enabled = True
+       Case "frmmigracion"
+            'frmmigracion.Enabled = True
+       Case "frmestablecimientos"
+            frmestablecimientos.Enabled = True
+       Case "frmreporte_totalizador"
+            frmreporte_totalizador.Enabled = True
+       Case "frmreclasificacion_almacen"
+            frmreclasificacion_almacen.Enabled = True
+       Case "frmreporte_ventas_netas_tipo_reporte"
+            frmreporte_ventas_netas_tipo_reporte.Enabled = True
+      End Select
+End Sub
+
+
+
+
+Public Sub ejecuta_cambios()
+   var_acepta_seguridad = 1
+End Sub
+
+
+ 
+
+'************ procedimiento para eviar correo **********************
+
+ 
+
+ 
+
+Public Sub pro_envio_correo_app(ByVal var_para As String, ByVal var_sujeto As String, ByVal var_mensaje As String, ByVal var_adjunto As String)
+End Sub
+
+ 
+
+
+'======== Procedimiento Generar el Menu de Acuerdo al Modulo   ==========================
+
+
+Public Sub pro_forma_menu(ByVal forma As Form, ByVal tabla As String, ByVal indice As Integer)
+   Dim tablas As String
+   Select Case indice + 1
+   Case 1
+      Call pro_menus_consulta(forma, tabla)
+   Case 2
+      Call pro_menus_consulta(forma, tabla)
+   Case 3
+      Call pro_menus_consulta(forma, tabla)
+   End Select
+End Sub
+
+Public Sub pro_menus_consulta(ByVal forma As Form, ByVal tabla As String)
+Dim i As Integer, x As Byte
+Dim varmenu As String, varsubmenu As String, varcaption As String
+Dim var_nivel As String
+Dim var_nivelaux2 As String, var_nivelaux3 As String, var_nivelaux4 As String
+Dim var_resultado As Integer
+
+With forma
+
+Set .XPsidemenu1.Pimagelist = .ImageList2
+Set .XPsidemenu1.hImageList = .ImageList1
+        i = 1: x = 0
+        rs.Open "select * from " & tabla & " where left(vcha_men_nivel,2) =" & Str(indice + 1) & "order by vcha_men_nivel", cnn, adOpenDynamic, adLockOptimistic
+         While Not rs.EOF
+            rsaux.Open "select TB_PUESTOS.VCHA_PUE_MENUS from TB_USUARIOS,TB_PUESTOS WHERE VCHA_USU_PUESTO = VCHA_PUE_DESCRIPCION AND VCHA_USU_USUARIO = '" & var_usuario_global & "'", cnn, adOpenDynamic, adLockOptimistic
+            
+            If rsaux.RecordCount <> 0 And rsaux(0) <> "" Then
+                var_resultado = InStr(1, rsaux(0).Value, rs(0).Value, vbTextCompare)
+                If var_resultado <> 0 Then
+                    If Trim(Mid(rs(1).Value, 7, 2)) <> "00" Then GoTo otro:
+                        'If Trim(Mid(rs(1).Value, 3, 2)) = "01" Then GoTo otro:
+                            varmenu = Str(Trim(Mid(rs(1).Value, 3, 2))): varcaption = Trim(rs(2).Value)
+                            varmenu = Trim(varmenu)
+                            If Trim(Mid(rs(1).Value, 5, 2)) = "00" Then
+ '                               .XPsidemenu1.Addpanel "P" & varmenu, varcaption, Closed, False, Mid(rs(1).Value, 3, 2)
+                                x = x + 1
+                            End If
+                            If Trim(Mid(rs(1).Value, 5, 2)) <> "00" Then
+                                var_resultado = False
+                                var_resultado = InStr(1, rsaux(0).Value, rs(0).Value + "*", vbTextCompare)
+                                'If var_resultado <> 0 Then
+                                '    vector_valida_passwords(i) = "*"
+                                'End If
+                                varsubmenu = Str(Trim(Mid(rs(1).Value, 3, 2))): varcaption = Trim(rs(2).Value)
+                                varsubmenu = Trim(varsubmenu)
+                                '.XPsidemenu1.AddHyper "H" & Str(i), "P" & varsubmenu, varcaption, True, Hyperlink, 1, "This is tooltip 1"
+                        End If
+                    End If
+                End If
+            'End If
+otro:
+            rsaux.Close
+            rs.MoveNext
+            i = i + 1
+        Wend
+        
+        For i = 1 To x
+        .XPsidemenu1.opeclo (i)
+        Next i
+        rs.Close
+End With
+End Sub
+
+'========== Procedimiento para consultar por el campo principal de cada tabla ===========
+
+
+
+
+Public Sub pro_encabezadosView(ByVal forma As Form, ByVal ctl As ListView, ByVal flat As Boolean)
+Dim imlItem As ListImage
+
+    With forma
+        If flat Then
+            'encabezados flat inabilita el click colum
+            Dim hHeader As Long
+            hHeader = SendMessage(ctl.hwnd, LVM_GETHEADER, 0, ByVal 0&)
+            SetWindowLong hHeader, GWL_STYLE, GetWindowLong(hHeader, GWL_STYLE) Xor HDS_BUTTONS
+        End If
+        SendMessage ctl.hwnd, LVM_SETEXTENDEDLISTVIEWSTYLE, 0&, ByVal (SendMessage(ctl.hwnd, LVM_GETEXTENDEDLISTVIEWSTYLE, 0&, ByVal 0&) Xor LVS_EX_FULLROWSELECT)
+        '.icono_encabezado.ImageHeight = 12
+        '.icono_encabezado.ImageWidth = 12
+        'ctl.ColumnHeaderIcons = .icono_encabezado
+        ctl.Arrange = lvwAutoTop
+        ctl.LabelEdit = lvwManual
+    End With
+End Sub
+
+
+
+
+Public Sub pro_ordena_listas(ByVal lv As ListView, ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+Dim colvar As ColumnHeader
+    If lv.Sorted = True And ColumnHeader.SubItemIndex = lv.SortKey Then
+        If lv.SortOrder = lvwAscending Then
+            lv.SortOrder = lvwDescending
+        Else
+            lv.SortOrder = lvwAscending
+        End If
+    Else
+        lv.Sorted = True
+        lv.SortKey = ColumnHeader.SubItemIndex
+        lv.SortOrder = lvwAscending
+    End If
+   ' For Each colvar In lv.ColumnHeaders
+   '     If colvar.SubItemIndex = lv.SortKey Then
+   '         If lv.SortOrder = lvwDescending Then
+   '             colvar.Icon = 1
+   '         Else
+   '             colvar.Icon = 2
+   '         End If
+   '     Else
+   '         colvar.Icon = 0
+   '     End If
+    'Next colvar
+End Sub
+
+Public Sub pro_cambiaseleccion(ByVal forma As Form, ByVal ctl As ListView, ByVal item As MSComctlLib.ListItem)
+Dim x As Byte
+
+    With forma
+        Set ctl.selectedItem = item
+        
+        If item.Checked Then
+            ' user checked an item
+            ctl.ListItems.item(ctl.selectedItem.Index).SmallIcon = 2
+            ctl.ListItems.item(ctl.selectedItem.Index).Bold = True
+            ctl.ListItems.item(ctl.selectedItem.Index).ForeColor = &H800000
+            For x = 1 To ctl.ColumnHeaders.Count - 1
+                ctl.ListItems.item(ctl.selectedItem.Index).ListSubItems(x).Bold = True
+                ctl.ListItems.item(ctl.selectedItem.Index).ListSubItems(x).ForeColor = &H800000
+            Next x
+        Else
+            ctl.ListItems.item(ctl.selectedItem.Index).SmallIcon = 1
+            ctl.ListItems.item(ctl.selectedItem.Index).ForeColor = vbBlack
+            ctl.ListItems.item(ctl.selectedItem.Index).Bold = False
+            For x = 1 To ctl.ColumnHeaders.Count - 1
+                ctl.ListItems.item(ctl.selectedItem.Index).ListSubItems(x).Bold = False
+                ctl.ListItems.item(ctl.selectedItem.Index).ListSubItems(x).ForeColor = vbBlack
+            Next x
+      
+      End If
+    End With
+
+End Sub
+
+'========== Procedimiento llenar el grids  ===================================
+
+
+
+
+Public Sub pro_llena_Treeherramientas(ByVal forma As Form)
+
+Dim i As Integer
+Dim nivel2 As Node, nivel3 As Node, nivel4 As Node
+    With forma
+        ' Asigna el TreeView sobre el ImageList.
+        For i = 1 To 7
+            .imgadmini.ListImages.Add , , .Image1(i - 1).Picture
+        Next i
+        .Treemenu.ImageList = .imgadmini
+        Set nivel2 = .Treemenu.Nodes.Add(, , "f Administracion de Usuarios", "Administracion de Usuarios", 4, 4)
+        Set nivel3 = .Treemenu.Nodes.Add(nivel2, tvwChild, "g Usuarios", "Usuarios", 1, 6)
+        Set nivel3 = .Treemenu.Nodes.Add(nivel2, tvwChild, "g Plantas", "Plantas", 2, 6)
+        Set nivel3 = .Treemenu.Nodes.Add(nivel2, tvwChild, "g Bloques del Sistema", "Bloques del Sistema", 3, 6)
+        Set nivel3 = .Treemenu.Nodes.Add(nivel2, tvwChild, "g Puestos", "Puestos", 7, 6)
+        Set nivel3 = .Treemenu.Nodes.Add(nivel2, tvwChild, "g Menus del Sistema", "Menus del Sistema", 5, 6)
+        
+        rs.Open "select * from TB_bloques", cnn, adOpenDynamic, adLockOptimistic
+        If rs.RecordCount <> 0 Then
+            While Not rs.EOF
+                Set nivel4 = .Treemenu.Nodes.Add(nivel3, tvwChild, "g " & Format(rs(0).Value, "00") & " " & rs(1).Value, Format(rs(0).Value, "00") & " " & rs(1).Value, 5, 6)
+                rs.MoveNext
+            Wend
+        End If
+        nivel3.EnsureVisible
+        rs.Close
+    End With
+    
+End Sub
+
+
+
+
+Public Sub pro_llena_TreeMenus(ByVal forma As Form, ByVal var_num_empresa As String)
+Dim i As Integer
+Dim nivel2 As Node, nivel3 As Node, nivel4 As Node
+Dim x As Integer, Y As Integer, z As Integer
+
+    With forma
+         For i = 1 To 6
+             .TreeImages.ListImages.Add , , .TreeImage(i).Picture
+             .imgadmini.ListImages.Add , , .Image1(i - 1).Picture
+         Next i
+         .OrgTree.ImageList = .TreeImages         ' Asigna el TreeView sobre el ImageList.
+         x = 1: Y = 1: z = 1
+          
+        Select Case var_num_empresa
+        Case "01"
+              rs.Open "select * from tb_menus where left(VCHA_MEN_NIVEL,2)=" & var_num_empresa & " order by vcha_men_nivel", cnn, adOpenDynamic, adLockOptimistic
+              While Not rs.EOF
+                  If Trim(Mid(rs(1).Value, 5, 2)) = "00" Then
+                      Set nivel2 = .OrgTree.Nodes.Add(, , "f" & rs(2).Value, Format(x, "00") & " " & rs(2).Value, otnivel2, otnivel22)
+                      x = x + 1: Y = 1: z = 1
+                  End If
+                  If Trim(Mid(rs(1).Value, 5, 2)) <> "00" And Trim(Mid(rs(1).Value, 7, 2)) = "00" Then
+                      Set nivel3 = .OrgTree.Nodes.Add(nivel2, tvwChild, "g" & rs(2).Value, Format(Y, "00") & " " & rs(2).Value, otnivel3, otNivel32)
+                      Y = Y + 1
+                  End If
+                  If Trim(Mid(rs(1).Value, 7, 2)) <> "00" Then
+                      Set nivel4 = .OrgTree.Nodes.Add(nivel3, tvwChild, "p" & rs(2).Value, Format(z, "00") & " " & rs(2).Value, otnivel4, otNivel42)
+                      z = z + 1
+                  End If
+                  rs.MoveNext
+              Wend
+              rs.Close
+        Case "02"
+              rs.Open "select * from tb_menus where left(VCHA_MEN_NIVEL,2)=" & var_num_empresa & " order by vcha_men_nivel", cnn, adOpenDynamic, adLockOptimistic
+              While Not rs.EOF
+                  If Trim(Mid(rs(1).Value, 5, 2)) = "00" Then
+                      Set nivel2 = .OrgTree.Nodes.Add(, , "f" & rs(2).Value, Format(x, "00") & " " & rs(2).Value, otnivel2, otnivel22)
+                      x = x + 1: Y = 1: z = 1
+                  End If
+                  If Trim(Mid(rs(1).Value, 5, 2)) <> "00" And Trim(Mid(rs(1).Value, 7, 2)) = "00" Then
+                      Set nivel3 = .OrgTree.Nodes.Add(nivel2, tvwChild, "g" & rs(2).Value, Format(Y, "00") & " " & rs(2).Value, otnivel3, otNivel32)
+                      Y = Y + 1
+                  End If
+                  If Trim(Mid(rs(1).Value, 7, 2)) <> "00" Then
+                      Set nivel4 = .OrgTree.Nodes.Add(nivel3, tvwChild, "p" & rs(2).Value, Format(z, "00") & " " & rs(2).Value, otnivel4, otNivel42)
+                      z = z + 1
+                  End If
+                  rs.MoveNext
+              Wend
+              rs.Close
+        Case "03"
+              rs.Open "select * from tb_menus where left(VCHA_MEN_NIVEL,2)=" & var_num_empresa & " order by vcha_men_nivel", cnn, adOpenDynamic, adLockOptimistic
+              While Not rs.EOF
+                        If Trim(Mid(rs(1).Value, 5, 2)) = "00" Then
+                            Set nivel2 = .OrgTree.Nodes.Add(, , "f" & rs(2).Value, Format(x, "00") & " " & rs(2).Value, otnivel2, otnivel22)
+                            x = x + 1: Y = 1: z = 1
+                        End If
+                        If Trim(Mid(rs(1).Value, 5, 2)) <> "00" And Trim(Mid(rs(1).Value, 7, 2)) = "00" Then
+                            Set nivel3 = .OrgTree.Nodes.Add(nivel2, tvwChild, "g" & rs(2).Value, Format(Y, "00") & " " & rs(2).Value, otnivel3, otNivel32)
+                            Y = Y + 1
+                        End If
+                        If Trim(Mid(rs(1).Value, 7, 2)) <> "00" Then
+                            Set nivel4 = .OrgTree.Nodes.Add(nivel3, tvwChild, "p" & rs(2).Value, Format(z, "00") & " " & rs(2).Value, otnivel4, otNivel42)
+                            z = z + 1
+                        End If
+                   
+                    rs.MoveNext
+              Wend
+              rs.Close
+        Case "04"
+        End Select
+    
+    End With
+End Sub
+
+
+
+
+'************************************************************************************
+
+'            RUTINAS O PROCEDIMIENTOS ESPECIALES
+
+'************************************************************************************
+ 
+
+
+'========================= Regresa el Objeto Tipo de Nodo. ===================
+
+Public Function NodeType(test_node As Node) As ObjectType
+    If test_node Is Nothing Then
+        NodeType = otNone
+    Else
+        Select Case Left$(test_node.Key, 1)
+            Case "f"
+                NodeType = otnivel2
+            Case "g"
+                NodeType = otnivel3
+            Case "p"
+                NodeType = otnivel4
+        End Select
+    End If
+End Function
+
+
+
+
+
+'=== Limpiar todos los Controles de una forma se le puede mod. p/cualquier control ======
+
+Public Function pro_limpiatextos(ByVal forma As Form)
+Dim ctl As Object
+    For Each ctl In forma.Controls
+        If TypeOf ctl Is TextBox Then ctl = ""
+        If TypeOf ctl Is ComboBox Then ctl = ""
+    Next ctl
+End Function
+
+Public Function pro_limpiatextos2(ByVal forma As Form)
+Dim ctl As Object
+    For Each ctl In forma.Controls
+        If TypeOf ctl Is TextBox And ctl.Name <> "txt_clave" And ctl.Name <> "txt_fecha_transaccion" Then
+            ctl = ""
+        End If
+    Next ctl
+End Function
+
+
+Public Sub pro_combodrop(ByVal Control As ComboBox, ByVal status As Boolean)
+    SendMessage Control.hwnd, CB_SHOWDROPDOWN, status, 0
+End Sub
+
+
+Public Sub pro_enfoque(ByVal KeyAscii As Integer)
+    If KeyAscii = 13 Then
+        SendKeys "{TAB}"
+    End If
+End Sub
+
+Public Sub camposbd(ByVal forma As Form, ByVal tabla As String)
+Dim i As Integer
+Dim vec(10) As Variant
+
+    With forma
+    i = 0
+    rs.Open "select * from " & tabla, cnn, adOpenDynamic, adLockOptimistic
+    While i < 5
+        .Combo1.AddItem UCase((rs(i).Name))
+        .combo4.AddItem UCase((rs(i).Name))
+        .Combo7.AddItem UCase((rs(i).Name))
+        vec(i) = rs(i)
+        rs.MoveNext
+        i = i + 1
+    Wend
+    End With
+    rs.Close
+End Sub
+
+
+'======================= Procedimiento Avanza un Lugar en Listview ===========================
+
+Public Sub pro_avanzar(ByVal forma As Form, ByVal ctl As ListView, ByVal Button As MSComctlLib.Button)
+On Error GoTo err0:
+Dim x As Long, Y As Long
+    With forma
+    x = ctl.selectedItem.Index
+    If x <> 0 Then
+        Select Case Button.Index
+        Case 2
+            If x = 1 Then x = 0
+            If x = 0 Then Exit Sub
+            ctl.ListItems.item(ctl.selectedItem.Index - 1).Selected = True
+            ctl.selectedItem.EnsureVisible
+            ctl.selectedItem.Selected = True
+        Case 3
+            If x = ctl.ListItems.Count Then Exit Sub
+            ctl.ListItems.item(ctl.selectedItem.Index + 1).Selected = True
+            ctl.selectedItem.EnsureVisible
+            ctl.selectedItem.Selected = True
+        End Select
+    End If
+    End With
+err0:
+End Sub
+
+
+'=======================     Oculta Todos los Frames de un Forma    ===========================
+
+Sub pro_oculta_frames(forma As Form)
+Dim ctl As Object
+    For Each ctl In forma.Controls
+        If TypeOf ctl Is Frame Then ctl.Visible = False
+    Next ctl
+End Sub
+
+
+
+
+'=======================  Procedimiento ordenar los flexgrids ===========================
+
+Public Sub SortByColumn(ByVal forma As Form, ByVal sort_column As Integer)
+    ' Hide the FlexGrid.
+    With forma.cuadro
+        .Visible = False
+        .Refresh
+
+    ' Sort using the clicked column.
+        .Col = sort_column
+        .ColSel = sort_column
+        .Row = 0
+        .RowSel = 0
+
+    ' If this is a new sort column, sort ascending.
+    ' Otherwise switch which sort order we use.
+    If m_SortColumn <> sort_column Then
+        m_SortOrder = flexSortGenericAscending
+    ElseIf m_SortOrder = flexSortGenericAscending Then
+        m_SortOrder = flexSortGenericDescending
+    Else
+        m_SortOrder = flexSortGenericAscending
+    End If
+    .Sort = m_SortOrder
+
+    ' Restore the previous sort column's name.
+    If m_SortColumn >= 0 Then
+        .TextMatrix(0, m_SortColumn) = Mid$(.TextMatrix(0, m_SortColumn), 3)
+    End If
+
+    ' Display the new sort column's name.
+    m_SortColumn = sort_column
+    If m_SortOrder = flexSortGenericAscending Then
+        .TextMatrix(0, m_SortColumn) = "> " & .TextMatrix(0, m_SortColumn)
+    Else
+        .TextMatrix(0, m_SortColumn) = "< " & .TextMatrix(0, m_SortColumn)
+    End If
+
+    ' Display the FlexGrid.
+    .Visible = True
+    
+    End With
+End Sub
+
+
+'=================== Oculta o Muestra el Menu Principal =================================
+
+Public Sub menuvisible(ByVal forma As Form, ByVal ban As Boolean)
+    
+
+End Sub
+
+
+'=======================  Procedimiento retardar una ventana ==================================
+
+Public Sub TimerProc(ByVal hwnd As Long, ByVal uMsg As Long, ByVal idEvent As Long, ByVal dwTime As Long)
+    
+    'this is a callback function.  This means that windows "calls back" to this function
+    'when it's time for the timer event to fire
+    'first thing we do is kill the timer so that no other timer events will fire
+    KillTimer hwnd, idEvent
+    
+    'select the type of manipulation that we want to perform
+    Select Case idEvent
+    Case NV_CLOSEMSGBOX '// we want to close this messagebox after 4 seconds
+        Dim hMessageBox As Long
+        
+        'find the messagebox window
+        'change the text to whatever the title of the message box is
+        hMessageBox = FindWindow("#32770", "TRANSACCIONES [ AVISO ]")
+        
+        'if we found it make sure it has the keyboard focus and then send it an enter to dismiss it
+        If hMessageBox Then
+            Call SetForegroundWindow(hMessageBox)
+            
+            'this will result in the default option being chosen
+            SendKeys "{enter}"
+        End If
+    End Select
+End Sub
+
+
+'=======================  Funcion nombre del Usuario ==================================
+
+Public Function fun_NombreUsuario() As String
+Const UNLEN = 256   ' Max user name length.
+Dim user_name As String
+Dim name_len As Long
+
+    user_name = Space$(UNLEN + 1)
+    name_len = Len(user_name)
+    If GetUserName(user_name, name_len) = 0 Then
+        fun_NombreUsuario = "<unknown>"
+    Else
+        fun_NombreUsuario = Left$(user_name, name_len - 1)
+    End If
+End Function
+
+'==================================
+'Obtiene Nombre de Pc
+'==================================
+
+Public Function fun_NombrePc() As String
+Dim compname As String, retval As Long   ' string to use as buffer & return value
+
+compname = Space(255)                    ' set a large enough buffer for the computer name
+retval = GetComputerName(compname, 255)  ' get the computer's name
+                                         ' Remove the trailing null character from the strong
+fun_NombrePc = Left(compname, InStr(compname, vbNullChar) - 1)
+
+End Function
+
+'==================================
+'Procedimiento Valida Numeros
+'==================================
+Function pro_valida_numeros(KeyAscii As Integer)
+    Select Case KeyAscii
+    Case 48 To 57, 52, 13, 8, 46
+    Case Else
+        KeyAscii = 0
+    End Select
+End Function
+
+
+Public Sub Autocomplete(Lvw As ListView, sFind, Mytextbox As TextBox)
+   Dim Lvfindtm As ListItem
+   Dim TempSelStart As Integer
+   Dim strTemp As String
+
+   Set Lvfindtm = Lvw.findItem(sFind, lvwText, , lvwPartial)
+   If Not Lvfindtm Is Nothing Then
+      Lvfindtm.EnsureVisible
+      Lvfindtm.Selected = True
+
+      If execute Then
+         TempSelStart = Mytextbox.SelStart
+         Mytextbox.Text = CStr(Lvfindtm)
+         If Not Mytextbox.Text = "" Then
+            Mytextbox.SelStart = TempSelStart
+            Mytextbox.SelLength = Len(Mytextbox.Text) - TempSelStart
+         End If
+      End If
+   End If
+End Sub
+
+
+Public Sub pro_busca_registro(ByVal lv As ListView, ByVal valor As String, ByVal var_codigo As Boolean)
+Dim itmfound As ListItem
+    If var_codigo Then
+        Set itmfound = lv.findItem(valor, lvwSubItem, , lvwPartial)
+    Else
+        Set itmfound = lv.findItem(valor, lvwText, , lvwPartial)
+    End If
+    
+    If itmfound Is Nothing Then
+       Set itmfound = lv.findItem(valor, lvwText, , lvwPartial)
+       If itmfound Is Nothing Then
+          Set itmfound = lv.findItem(valor, lvwSubItem, , lvwPartial)
+          If itmfound Is Nothing Then
+             MsgBox "No se Encontro Informacion", vbExclamation, "ATENCION"
+             Exit Sub
+          Else
+             itmfound.EnsureVisible
+             itmfound.Selected = True
+             lv.SetFocus
+          End If
+       Else
+          itmfound.EnsureVisible
+          itmfound.Selected = True
+          lv.SetFocus
+       End If
+    Else
+        itmfound.EnsureVisible
+        itmfound.Selected = True
+        lv.SetFocus
+    End If
+End Sub
+
+
+
+
+
+
+
+'***********************************************************************************************
+'*
+'*                         PROCEDIMIENTOS GLOBALES DE BASE DE DATOS
+'*
+'*                    _ BUSCAR UN REGISTRO Y REGRESAR CUALQUIER CAMPO
+'*                    _ BUSCAR UNA LLAVE SIGUIENTE EN CASO QUE LA LLAVE SEA NUMERICA
+'*                    _ ELIMINAR UN REGISTRO DE DE CUALQUIER TABLA MEDIANTE SU PARAMETRO
+'*
+'*
+'***********************************************************************************************
+
+'=============================== PROCEDIMIENTOS PARA BUSQUEDAS =================================
+
+'UBICAR UN REGISTRO
+Public Function Obtener_llave(cn As ADODB.Connection, ByVal rs As recordSet, ByVal var_tabla As String _
+, ByVal var_campo As String, ByVal var_comparar As String, n As Integer, ByVal var_tipo As String) As String
+Dim i As Integer
+Dim l As Integer
+Dim Cadena As String
+Dim var_comparar_2 As String
+
+'On Error GoTo HELL
+
+    If var_tipo = "N" Then
+        rs.Open "select * from " & var_tabla & " where " & var_campo & " = " + Trim(var_comparar), cn, adOpenDynamic, adLockOptimistic
+        If Not rs.EOF Then
+          Obtener_llave = IIf(IsNull(rs(n).Value), "", rs(n).Value)
+        End If
+        rs.Close
+    Else
+         l = Len(Trim(var_comparar))
+         var_comparar_2 = Trim(var_comparar)
+         Cadena = ""
+         For i = 1 To l
+             If Mid(var_comparar_2, i, 1) = "'" Then
+                Cadena = Cadena + "'" + Mid(var_comparar_2, i, 1)
+             Else
+                Cadena = Cadena + Mid(var_comparar_2, i, 1)
+             End If
+         Next i
+         var_comparar_2 = Cadena
+         var_comparar = var_comparar_2
+         rs.Open "select * from " & var_tabla & " where " & var_campo & " =  '" + Trim(var_comparar) + "'", cn, adOpenDynamic, adLockOptimistic
+         If Not rs.EOF Then
+            Obtener_llave = IIf(IsNull(rs(n).Value), "", rs(n).Value)
+         Else
+            Obtener_llave = ""
+         End If
+         rs.Close
+      End If
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    GoTo SIGUE
+End Function
+
+
+
+'=============================== PROCEDIMEINTOS LLAVE SIGIENTE =================================
+
+Public Function Siguiente(ByVal cn As ADODB.Connection, ByVal rs As recordSet, ByVal var_tabla As String, ByVal var_order_by As String) As String
+
+Siguiente = ""
+On Error GoTo HELL
+
+rs.Open "select * from " & var_tabla & " order by " & var_order_by, cn, adOpenDynamic, adLockOptimistic
+If Not rs.EOF Then
+  rs.MoveLast
+  Siguiente = rs(0) + 1
+Else
+    Siguiente = 1
+End If
+rs.Close
+
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    GoTo SIGUE
+End Function
+
+
+
+'=========================== PROCEDIMEINTOS ELIMINAR UN REGISTRO ===============================
+
+
+Public Function Eliminar(var_pro_almacenado As String, var_pro_llave As String, var_texto As String) As Boolean
+
+Eliminar = True
+'On Error GoTo HELL
+
+Set cmd.ActiveConnection = cnn                      'Esta es la conexión activa
+cmd.CommandType = adCmdStoredProc                   'Aquí le indico a ADO que se trata de un PA
+    
+cmd.CommandText = var_pro_almacenado                     'Abrir Procedimiento Almacenado y Agregar Banco
+    cmd(var_pro_llave) = var_texto
+          
+cmd.execute                                         'Ejecutar el PA
+
+Set cmd = Nothing                                   'Liberar Memoria
+
+
+SIGUE:
+On Error GoTo 0
+Exit Function
+HELL:
+    MensajeError = Err.Description
+    Eliminar = False
+    GoTo SIGUE
+End Function
+
+
+' Procedimiento para llenar grids con el contenido de una tabla, la forma mas rapida
+'_____________________________________________________________________________________
+
+
+
+
+Public Function numero_letras(monpag, var_moneda)
+'para monpag,canstr
+
+Dim digito As String
+Dim unidad As String
+Dim decena As String
+Dim ceros1 As String
+Dim ceros2 As String
+Dim posici As Integer
+Dim nument As String
+Dim lonnum As Integer
+Dim lonnum2 As Integer
+Dim numfra As String
+Dim var_nombre_moneda As String
+Dim var_nombre_moneda_plural As String
+Dim var_moneda_local As Integer
+canstr = ""
+digito = ""
+unidad = ""
+decena = ""
+ceros1 = ""
+ceros2 = ""
+posici = 1
+
+'nument = LTrim(Str(Int(monpag), 9, 0))
+'lonnum = Len(nument)
+'numfra = Str(((monpag - Int(monpag)) * 100), 2, 0)
+canstr = ""
+
+nument = LTrim(Str(Fix(monpag)))
+lonnum = Len(nument)
+numfra = Str(Fix((monpag - Int(monpag)) * 100))
+
+
+While lonnum <> 0
+   digito = Mid(nument, lonnum, 1)
+   Select Case posici
+      Case 2
+         unidad = Mid(nument, lonnum + 1, 1)
+      Case 5
+         unidad = Mid(nument, lonnum + 1, 1)
+      Case 8
+         unidad = Mid(nument, lonnum + 1, 1)
+      Case 3
+         decena = Mid(nument, lonnum + 1, 1)
+         unidad = Mid(nument, lonnum + 2, 1)
+      Case 6
+         decena = Mid(nument, lonnum + 1, 1)
+         unidad = Mid(nument, lonnum + 2, 1)
+      Case 9
+         decena = Mid(nument, lonnum + 1, 1)
+         unidad = Mid(nument, lonnum + 2, 1)
+      Case 1
+         If lonnum - 1 = 0 Then
+            lonnum2 = 1
+         Else
+            lonnum2 = lonnum - 1
+         End If
+         decena = Mid(nument, lonnum2, 1)
+      Case 4
+         If lonnum - 1 = 0 Then
+            lonnum2 = 1
+         Else
+            lonnum2 = lonnum - 1
+         End If
+         decena = Mid(nument, lonnum2, 1)
+      Case 7
+         If lonnum - 1 = 0 Then
+            lonnum2 = 1
+         Else
+            lonnum2 = lonnum - 1
+         End If
+         decena = Mid(nument, lonnum2, 1)
+   End Select
+   Select Case posici
+      Case 4
+         If lonnum > 3 And lonnum < 7 Then
+            Select Case lonnum
+               Case 4
+                  ceros1 = Mid(nument, 2, 3)
+                  ceros2 = Mid(nument, 5, 3)
+               Case 5
+                  ceros1 = Mid(nument, 3, 3)
+                  ceros2 = Mid(nument, 6, 3)
+               Case 6
+                  ceros1 = Mid(nument, 4, 3)
+                  ceros2 = Mid(nument, 7, 3)
+            End Select
+            If ceros1 = "000" Then
+               If ceros2 = "000" Then
+                  canstr = "DE " + canstr
+               Else
+                  canstr = canstr
+               End If
+            Else
+               canstr = "MIL " + canstr
+            End If
+         Else
+            canstr = "MIL " + canstr
+         End If
+      Case "1"
+         If posici = 7 And lonnum = 1 Then
+            canstr = "MILLON " + canstr
+         End If
+      Case 7
+         canstr = "MILLONES " + canstr
+   End Select
+   If digito = "1" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "UN " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         Select Case unidad
+            Case "0"
+               canstr = "DIEZ " + canstr
+            Case "1"
+               canstr = "ONCE " + canstr
+            Case "2"
+               canstr = "DOCE " + canstr
+            Case "3"
+               canstr = "TRECE " + canstr
+            Case "4"
+               canstr = "CATORCE " + canstr
+            Case "5"
+               canstr = "QUINCE " + canstr
+            Case "6"
+               canstr = "DIECISEIS " + canstr
+            Case "7"
+               canstr = "DIECISIETE " + canstr
+            Case "8"
+               canstr = "DIECIOCHO " + canstr
+            Case "9"
+               canstr = "DIECINUEVE " + canstr
+         End Select
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         If unidad = "0" And decena = "0" Then
+            canstr = "CIEN " + canstr
+         Else
+            canstr = "CIENTO " + canstr
+         End If
+      End If
+   End If
+   If digito = "2" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "DOS " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "VEINTE " + canstr
+         Else
+            canstr = "VEINTI" + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "DOSCIENTOS " + canstr
+      End If
+   End If
+   If digito = "3" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "TRES " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "TREINTA " + canstr
+         Else
+            canstr = "TREINTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "TRECIENTOS " + canstr
+      End If
+   End If
+   If digito = "4" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "CUATRO " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "CUARENTA " + canstr
+         Else
+            canstr = "CUARENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "CUATROCIENTOS " + canstr
+      End If
+   End If
+   If digito = "5" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "CINCO " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "CINCUENTA " + canstr
+         Else
+            canstr = "CINCUENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "QUINIENTOS " + canstr
+      End If
+   End If
+   If digito = "6" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "SEIS " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "SESENTA " + canstr
+         Else
+            canstr = "SESENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "SEISCIENTOS " + canstr
+      End If
+   End If
+   If digito = "7" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "SIETE " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "SETENTA " + canstr
+         Else
+            canstr = "SETENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "SETECIENTOS " + canstr
+      End If
+   End If
+   If digito = "8" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "OCHO " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "OCHENTA " + canstr
+         Else
+            canstr = "OCHENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "OCHOCIENTOS " + canstr
+      End If
+   End If
+   If digito = "9" Then
+      If (posici = 1 Or posici = 4 Or posici = 7) And decena <> "1" Then
+         canstr = "NUEVE " + canstr
+      End If
+      If (posici = 2 Or posici = 5 Or posici = 8) Then
+         If unidad = "0" Then
+            canstr = "NOVENTA " + canstr
+         Else
+            canstr = "NOVENTA Y " + canstr
+         End If
+      End If
+      If (posici = 3 Or posici = 6 Or posici = 9) Then
+         canstr = "NOVECIENTOS " + canstr
+      End If
+   End If
+   If digito = "0" And lonnum = 1 And posici = 1 Then
+      canstr = "CERO " + canstr
+   End If
+   lonnum = lonnum - 1
+   posici = posici + 1
+Wend
+rsaux11.Open "select * from tb_monedas where vcha_mon_moneda_id = '" + var_moneda + "'", cnn, adOpenDynamic, adLockOptimistic
+var_moneda_local = IIf(IsNull(rsaux11!inte_mon_moneda_local), 0, rsaux11!inte_mon_moneda_local)
+var_nombre_moneda = rsaux11!vcha_mon_nombre_plural
+rsaux11.Close
+If var_moneda_local = 1 Then
+   canstr = "(" + canstr + " PESOS " + numfra + "/100 M.N.)"
+Else
+   canstr = "(" + canstr + " " + Trim(var_nombre_moneda) + " " + numfra + "/100 " + ")"
+End If
+End Function
+
+
+Public Function Fechas(formita As Form) As Date
+    Fechas = frmcalendario.mes.Value
+End Function
+
+

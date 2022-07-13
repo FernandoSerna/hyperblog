@@ -1,0 +1,20 @@
+
+             CANTIA S.A. DE C.V.
+PEDIDO: 5
+FECHA: 16/12/2009 10:25:05 a.m.
+CLIENTE: armando valdivia
+VENDEDOR: 02 RAFAEL CORTES
+
+-----------------------------------------
+SKU: A1579
+DESCRIPCION: ESPEJO DE MESA CON AUMENTO A1579
+CANTIDAD: 10
+
+-----------------------------------------
+
+
+
+
+
+
+i
