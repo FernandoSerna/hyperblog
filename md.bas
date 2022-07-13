@@ -1011,6 +1011,7 @@ sigue_5:
 
     'commit 1
     'commit 2
+    'commit 3
     If var_prueba = 0 Then
        'MsgBox "1"
        var_conexion_string = "Provider=SQLOLEDB.1;Password=" & parametros(3) & ";Persist Security Info=True;User ID=sa;Initial Catalog=" & parametros(1) & ";Data Source=" & parametros(0)
