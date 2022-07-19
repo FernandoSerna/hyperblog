@@ -326,7 +326,7 @@ Private Sub cmd_concentrado_Click()
                         If Not rsaux7.EOF Then
                            VAR_HEADER_ID = IIf(IsNull(rsaux7!header_id), 0, rsaux7!header_id)
                            var_requisicion = IIf(IsNull(rsaux7!source_document_id), "", rsaux7!source_document_id)
-                           var_establecimiento = IIf(IsNull(rsaux7!ship_to_org_id), "0", rsaux7!ship_to_org_id)
+                           var_establecimiento = IIf(IsNull(rsaux7!SHIP_TO_ORG_ID), "0", rsaux7!SHIP_TO_ORG_ID)
                            var_nombre_agente_str = rsaux7!ruta
                         Else
                            VAR_HEADER_ID = 0
@@ -587,7 +587,7 @@ Private Sub cmd_imprimir_Click()
                      If Not rsaux7.EOF Then
                         VAR_HEADER_ID = IIf(IsNull(rsaux7!header_id), 0, rsaux7!header_id)
                         var_requisicion = IIf(IsNull(rsaux7!source_document_id), "", rsaux7!source_document_id)
-                        var_establecimiento = IIf(IsNull(rsaux7!ship_to_org_id), "0", rsaux7!ship_to_org_id)
+                        var_establecimiento = IIf(IsNull(rsaux7!SHIP_TO_ORG_ID), "0", rsaux7!SHIP_TO_ORG_ID)
                         var_nombre_agente_str = rsaux7!ruta
                      Else
                         VAR_HEADER_ID = 0
@@ -845,7 +845,7 @@ Private Sub cmd_resumen_Click()
                      If Not rsaux7.EOF Then
                         VAR_HEADER_ID = IIf(IsNull(rsaux7!header_id), 0, rsaux7!header_id)
                         var_requisicion = IIf(IsNull(rsaux7!source_document_id), "", rsaux7!source_document_id)
-                        var_establecimiento = IIf(IsNull(rsaux7!ship_to_org_id), "0", rsaux7!ship_to_org_id)
+                        var_establecimiento = IIf(IsNull(rsaux7!SHIP_TO_ORG_ID), "0", rsaux7!SHIP_TO_ORG_ID)
                         var_nombre_agente_str = rsaux7!ruta
                      Else
                         VAR_HEADER_ID = 0
@@ -878,7 +878,7 @@ Private Sub cmd_resumen_Click()
                         var_nombre_agente_str = "VIANNEY TEXTIL HOGAR SA DE CV"
                         txt_cliente = txt_entrega
                      End If
-                     rsaux11.Open "update TB_TEMP_ORACLE_NEGADO_DISTRIBUCION set tipo_pedido = '" + rs!source_header_type_name + "', RUTA = '" + var_nombre_agente_str + "', CLIENTE = '" + txt_cliente + "' where pedido = " + CStr(var_orden), cnn, adOpenDynamic, adLockOptimistic
+                     rsaux11.Open "update TB_TEMP_ORACLE_NEGADO_DISTRIBUCION set tipo_pedido = '" + rs!source_header_type_name + "', RUTA = '" + var_nombre_agente_str + "', CLIENTE = '" + Replace(txt_cliente, "'", "") + "' where pedido = " + CStr(var_orden), cnn, adOpenDynamic, adLockOptimistic
                      rs.Close
                      rsaux10.MoveNext
                Wend
@@ -1087,7 +1087,7 @@ Private Sub Command1_Click()
                      If Not rsaux7.EOF Then
                         VAR_HEADER_ID = IIf(IsNull(rsaux7!header_id), 0, rsaux7!header_id)
                         var_requisicion = IIf(IsNull(rsaux7!source_document_id), "", rsaux7!source_document_id)
-                        var_establecimiento = IIf(IsNull(rsaux7!ship_to_org_id), "0", rsaux7!ship_to_org_id)
+                        var_establecimiento = IIf(IsNull(rsaux7!SHIP_TO_ORG_ID), "0", rsaux7!SHIP_TO_ORG_ID)
                         var_nombre_agente_str = rsaux7!ruta
                      Else
                         VAR_HEADER_ID = 0
