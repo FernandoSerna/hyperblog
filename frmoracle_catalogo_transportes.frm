@@ -1,5 +1,4 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmoracle_catalogo_transportes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Catálogo de transportes"
@@ -358,110 +357,16 @@ Begin VB.Form frmoracle_catalogo_transportes
       TabIndex        =   1
       Top             =   3255
       Width           =   10695
-      Begin MSComctlLib.ListView lv_transportes 
+      Begin VB.PictureBox lv_transportes 
+         BackColor       =   &H80000005&
+         ForeColor       =   &H80000008&
          Height          =   3720
          Left            =   45
+         ScaleHeight     =   3660
+         ScaleWidth      =   10545
          TabIndex        =   19
          Top             =   135
          Width           =   10605
-         _ExtentX        =   18706
-         _ExtentY        =   6562
-         View            =   3
-         LabelEdit       =   1
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         FullRowSelect   =   -1  'True
-         GridLines       =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   1
-         NumItems        =   17
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Text            =   "Clave"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Text            =   "Nombre"
-            Object.Width           =   16316
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Text            =   "Volumen"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Text            =   "Estatus"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Text            =   "Placas"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Text            =   "Rendimiento"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Text            =   "Tipo"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Text            =   "Exportaciones"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
-            Text            =   "permsct"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
-            Text            =   "numpermisosct"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   10
-            Text            =   "nombreaseg"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   11
-            Text            =   "numpolizaseg"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   12
-            Text            =   "configvehicular"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   13
-            Text            =   "placavm"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   14
-            Text            =   "aniomodelovm"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   15
-            Text            =   "subtiporem"
-            Object.Width           =   0
-         EndProperty
-         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   16
-            Text            =   "placa"
-            Object.Width           =   0
-         EndProperty
       End
    End
    Begin VB.Frame Frame4 
@@ -681,7 +586,7 @@ End Sub
 Private Sub Command1_Click()
     rs.Open "select * from tb_oracle_transportes", cnn, adOpenDynamic, adLockOptimistic
     While Not rs.EOF
-          var_clave = IIf(IsNull(rs!CLAVE), "", rs!CLAVE)
+          var_clave = IIf(IsNull(rs!clave), "", rs!clave)
           VAR_ESTATUS = IIf(IsNull(rs!estatus), "", rs!estatus)
           var_placas = IIf(IsNull(rs!placas), "", rs!placas)
           var_rendimiento = IIf(IsNull(rs!rendimiento), 0, rs!rendimiento)
